@@ -1,6 +1,7 @@
 #! /usr/bin/env python3
 
 import os
+import re
 from zipfile import ZipFile
 from os.path import basename
 
@@ -8,6 +9,10 @@ from os.path import basename
 def convert_to_markdown(infile, outfile):
     os.system("pandoc -f dokuwiki -t markdown -o " + outfile + " " + infile)
 
+
+def unquote_markdown_headings(lines):
+    for i in range(len(lines)):
+        lines[i] = lines[i].replace('\#', '#')
 
 if __name__ == "__main__":
     for folder, _, files in os.walk(os.path.curdir):
@@ -19,11 +24,10 @@ if __name__ == "__main__":
             filename_with_txt_md = filename_with_txt+".md"
             convert_to_markdown(filename_with_txt, filename_with_txt_md)
 
-            with open(filename_with_txt_md) as file:
-                lines = file.readlines()
-                print(len(lines))
-                for i in range(len(lines)):
-                    lines[i] = lines[i].replace('\#', '#')
+            file = open(filename_with_txt_md)
+
+            lines = file.readlines()
+            unquote_markdown_headings(lines)
 
             # Assume first line (heading) is used as page name so use that as title attribute
             title = lines[0].partition(' ')[2]
