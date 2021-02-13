@@ -12,7 +12,7 @@ The current version will do the conversion and zip all markdown files for file s
 # Features
 
 - Convert latest version of `dokuwiki` pages into markdown
-- Un-escape markdown headers in any potention `markdowku` pages (it is an extension to `dokuwiki` which can render markdown "natively" so they are stored as markdown and thus escaped by the `pandoc` conversion)
+- Transparent handling of any potention `markdowku` pages (it is an extension to `dokuwiki` which can render markdown "natively" so they are stored as markdown)
 - Uses the first line, if it is a heading, for the title meta-data, if not the basename of the file is used instead
 - Un-mangle Unicode filenames (`%C3B6` etc) back to genuine unicode
 
@@ -20,7 +20,7 @@ The current version will do the conversion and zip all markdown files for file s
 
 - Use parts of `dokuwiki2git` to also capture history and other metadata and store it in a git repo which can be used as storage for Wiki.js
 - Point to a dokuwiki installation rather than use the current directory (avoids permission issues when converting a "live" site)
-- Make un-mangling an option
+- Make un-mangling of filenames an option
 
 # Usage
 

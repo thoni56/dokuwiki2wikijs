@@ -4,12 +4,6 @@ from dokuwiki2wikijs import unquote_markdown_headings, use_first_heading_or_file
 
 class Dokuwiki2WikijsTest(unittest.TestCase):
 
-    def test_unquote_markdown_headings(self):
-        lines = ["\\# Heading", " Not first \\# on line"]
-
-        unquote_markdown_headings(lines)
-        self.assertEqual(lines[0], "# Heading")
-
     def test_insert_title(self):
         lines = ["# Title"]
         use_first_heading_or_filename_as_title(lines, "")

@@ -4,15 +4,12 @@ import os
 import sys
 from zipfile import ZipFile
 from os.path import basename
+from shutil import copyfile
 
 
 def convert_to_markdown(infile, outfile):
     os.system("pandoc -f dokuwiki -t markdown -o " + outfile + " " + infile)
 
-
-def unquote_markdown_headings(lines):
-    for i in range(len(lines)):
-        lines[i] = lines[i].replace('\#', '#')
 
 def use_first_heading_or_filename_as_title(lines, default):
     if lines[0][0] == '#':
@@ -38,6 +35,12 @@ def ensure_path_exists(path):
     if not os.path.exists(directory):
         os.makedirs(directory)
 
+def is_markdown(filename):
+    with open(filename) as f:
+        first_line = f.readline()
+    return first_line[0] == '#'
+
+
 if __name__ == "__main__":
     if not os.path.exists("data/pages"):
         print("Current directory should be at the root of a dokuwiki installation")
@@ -54,13 +57,14 @@ if __name__ == "__main__":
 
             print(filename_with_txt+"("+basename+"):", end="")
 
-            convert_to_markdown(filename_with_txt, filename_with_txt_md)
+            if is_markdown(filename_with_txt):
+                copyfile(filename_with_txt, filename_with_txt_md)
+            else:
+                convert_to_markdown(filename_with_txt, filename_with_txt_md)
 
             file = open(filename_with_txt_md)
-
             lines = file.readlines()
 
-            unquote_markdown_headings(lines)
             use_first_heading_or_filename_as_title(lines, basename)
 
             filename_with_md = filename+".md"
