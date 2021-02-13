@@ -1,7 +1,7 @@
 #! /usr/bin/env python3
 
 import os
-import re
+import sys
 from zipfile import ZipFile
 from os.path import basename
 
@@ -14,42 +14,66 @@ def unquote_markdown_headings(lines):
     for i in range(len(lines)):
         lines[i] = lines[i].replace('\#', '#')
 
+def use_first_heading_or_filename_as_title(lines, default):
+    if lines[0][0] == '#':
+        title = lines[0].partition(' ')[2].strip()
+    else:
+        title = default
+    lines.insert(0, "---\n")
+    lines.insert(1, "title: "+title+"\n")
+    lines.insert(2, "---\n")
+
+def convert_filename_to_unicode(line):
+    # Only handles the ones we needed...
+    line = line.replace("%C3%84", "Ä")
+    line = line.replace("%C3%85", "Å")
+    line = line.replace("%C3%96", "Ö")
+    line = line.replace("%C3%A4", "ä")
+    line = line.replace("%C3%A5", "å")
+    line = line.replace("%C3%B6", "ö")
+    return line
+
+def ensure_path_exists(path):
+    directory = os.path.dirname(path)
+    if not os.path.exists(directory):
+        os.makedirs(directory)
+
 if __name__ == "__main__":
-    for folder, _, files in os.walk(os.path.curdir):
+    if not os.path.exists("data/pages"):
+        print("Current directory should be at the root of a dokuwiki installation")
+        sys.exit(-1)
+
+    for folder, _, files in os.walk(os.path.join(os.path.curdir, "data/pages")):
         txt_files = (file for file in files if file.endswith(".txt"))
         for f in txt_files:
             filename_with_txt = os.path.join(folder, f)
-            print(filename_with_txt+":", end="")
-
             filename_with_txt_md = filename_with_txt+".md"
+            filename = convert_filename_to_unicode(filename_with_txt[:-4])
+            basename = os.path.basename(filename)
+            ensure_path_exists(filename)
+
+            print(filename_with_txt+"("+basename+"):", end="")
+
             convert_to_markdown(filename_with_txt, filename_with_txt_md)
 
             file = open(filename_with_txt_md)
 
             lines = file.readlines()
+
             unquote_markdown_headings(lines)
+            use_first_heading_or_filename_as_title(lines, basename)
 
-            # Assume first line (heading) is used as page name so use that as title attribute
-            title = lines[0].partition(' ')[2]
-
-            basename = filename_with_txt[:-4]
-
-            # Convert %C3 in filename to Unicode
-            # ...
-
-            filename_with_md = basename+".md"
+            filename_with_md = filename+".md"
             with open(filename_with_md, "w") as file:
-                file.write("---\n")
-                file.write("title: "+title)
-                file.write("---\n")
                 file.writelines(lines)
 
+            print(len(lines))
             os.remove(filename_with_txt_md)
 
-    with ZipFile("dokuwiki.zip", 'w') as zipObj:
+    with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
         # Walk through the files in a directory
         for folder, folders, files in os.walk(os.path.curdir):
             files = (file for file in files if file.endswith(".md"))
             for file in files:
                 zipObj.write(os.path.join(folder, file))
-    print("'dokuwiki.zip' created\n")
+    print("'dokuwiki2wikijs.zip' created\n")
