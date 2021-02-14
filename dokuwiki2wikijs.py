@@ -155,7 +155,7 @@ class Converter:
             return
         pagename = pagepath.replace('/', ':')
         log.debug('Reading meta for page "%s"' % pagename)
-        with open(fullpath, 'rb') as f:
+        with open(fullpath, 'r') as f:
             for l, line in enumerate(f):
                 changeparts = line.split('\t')
                 log.debug(changeparts)
@@ -175,7 +175,7 @@ class Converter:
         log.info('Reading users.auth.php')
         parentdir = os.path.abspath(os.path.join(self.datadir, os.pardir))
         users_file = os.path.join(parentdir, 'conf', 'users.auth.php')
-        with open(users_file, 'rb') as f:
+        with open(users_file, 'r') as f:
             for line in f:
                 if not line.startswith("#") and len(line) > 1:
                     userparts = line.split(':')
