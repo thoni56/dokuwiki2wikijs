@@ -10,11 +10,13 @@ import sys
 import time
 
 USAGE = """
-dokuwiki2git converts dokuwiki data directory into a git repository containing
-the wiki pages, with proper history. Thus, migration to git-backed wiki engines
-(eg. gollum) becomes easier.
+NOTE: Experimental and non-complete...
 
-$ dokuwiki2git [options] /path/to/dokuwiki/data"""
+dokuwiki2wikijs converts a dokuwiki data directory into a git repository containing
+the wiki pages, with proper history, in markdown format, to be used as input data for
+a Wiki.js site.
+
+$ dokuwiki2wikijs [options] /path/to/dokuwiki/data"""
 
 logging.basicConfig(level=logging.DEBUG, format='%(levelname)s - %(message)s')
 log = logging.getLogger()
@@ -56,7 +58,7 @@ class Converter:
             pagename = c[3]
             if timestamp == ts and pagepath == pagename.replace(':', '/'):
                 return
-        log.warn('Attic contains "%s" timestamp %s, but is not referenced by changelog, skipping. Please report this!' % (
+        log.warning('Attic contains "%s" timestamp %s, but is not referenced by changelog, skipping. Please report this!' % (
             pagepath, timestamp))
 
     def read_attic(self):
@@ -68,7 +70,7 @@ class Converter:
             filename = os.path.join(
                 self.atticdir, pagepath + '.%s.txt.gz' % c[0])
             if not os.path.exists(filename):
-                log.warn(
+                log.warning(
                     'File "%s" does not exist, despite being in changelog, skipping' % filename)
                 continue
 
@@ -149,14 +151,25 @@ class Converter:
                     relpath = os.path.relpath(
                         os.path.join(path, f), self.metadir)
                     pagepath = relpath.rsplit('.', 1)[0]
-                    self.read_meta_page(pagepath, os.path.join(path, f))
+                    self.read_meta_for_page(pagepath, os.path.join(path, f))
                     pages += 1
         log.info('%d changelog entries for %d pages found' %
                  (len(self.changelog), pages))
 
-    def read_meta_page(self, pagepath, fullpath):
+    def demangle(self, pagename):
+        # TODO for now only convert cases that we have in our wiki
+        pagename = pagename.replace("%C3%84", "Ä")
+        pagename = pagename.replace("%C3%85", "Å")
+        pagename = pagename.replace("%C3%96", "Ö")
+        pagename = pagename.replace("%C3%A4", "ä")
+        pagename = pagename.replace("%C3%A5", "å")
+        pagename = pagename.replace("%C3%B6", "ö")
+        return pagename
+
+    def read_meta_for_page(self, pagepath, fullpath):
         if pagepath in ('_dokuwiki', '_comments', '_media'):
             return
+        pagepath = self.demangle(pagepath)
         pagename = pagepath.replace('/', ':')
         log.debug('Reading meta for page "%s"' % pagename)
         with open(fullpath, 'r') as f:
@@ -168,8 +181,9 @@ class Converter:
                 assert(len(changeparts) == 7)
                 changeparts[3].replace('\\x', '%')
                 if changeparts[3] != pagename:
+                    # TODO try to match unicode mangling
                     log.warning("Pagename mismatch in metadata for " +
-                                pagepath + " (vs. " + changeparts[3] + ") on line " + str(l))
+                            pagepath + " (vs. " + changeparts[3] + ") on line " + str(l))
                 else:
                     # create, delete, edit, minor edit, restore
                     assert(changeparts[2] in ('C', 'D', 'E', 'e', 'R'))

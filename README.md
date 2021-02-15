@@ -1,13 +1,10 @@
 # dokuwiki2wikijs
 
-We wanted to migrate from dokuwiki to the more modern Wiki.js so this is a script that does that.
-At least for now it converts pages to Markdown using `pandoc`, storing them in the same structure as the `dokuwiki` installation.
-(This might change at some point.)
+We wanted to migrate from dokuwiki to the more modern Wiki.js so this is a script that tries to do that.
 
-This README might not be completely up-to-date since this is a script for our own use.
-At some point it will probably use part of the `dokuwiki2git` script by ??? to handle easy import into Wiki.js.
+There is a working version in the history, but I have re-started from `dokuwiki2git` script by hoxu to create a git repo with changes that can then be imported into Wiki.js.
 
-The current version will do the conversion and zip all markdown files for file storage import into Wiki.js.
+NOTE: not working at this point.
 
 # Features
 
@@ -27,3 +24,8 @@ The current version will do the conversion and zip all markdown files for file s
 - `cd` into the root of your dokuwiki tree (taking a copy makes everything easier).
 - run the script and see the conversion run and a zip-file being created
 - unpack the zip in a Wiki.js file storage and press "import" (or something, I forget)
+
+# Known problems
+
+- Unicode (non-ascii) filenames works badly since dokuwiki seems to have changed the encoding in filenames over the years, and the change records use the unicode but the filenames use a mangled form (%C3%B6 e.g)...
+- Pages that have been moved using PageMove(?) are not handled. This script ignores changes that don't match up, so in practice history beyond a PageMove is lost... (A move is recorded by the changes file moved along with the `*.txt` and a 'C' is inserted in the `*.changes` and the changes file for the previous file is replaced with a single 'D' line. So it should be possible to recreate that history too, but we decided it is too much work.)
