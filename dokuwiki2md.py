@@ -44,47 +44,23 @@ def is_markdown(filename):
     return first_line[0] == '#'
 
 
-def convert_dokuwiki_file_to_md(filename_with_txt):
-    filename_with_txt_md = filename_with_txt+".md"
-    filename = convert_filename_to_unicode(filename_with_txt[:-4])
-    basename = os.path.basename(filename)
-    ensure_path_exists(filename)
+def convert_dokuwiki_file_to_md(txt_filename):
+    basename = os.path.basename(txt_filename)
+    md_filename = basename+".md"
 
-    if is_markdown(filename_with_txt):
-        copyfile(filename_with_txt, filename_with_txt_md)
+    if is_markdown(txt_filename):
+        copyfile(txt_filename, md_filename)
     else:
-        convert_to_markdown(filename_with_txt, filename_with_txt_md)
+        convert_to_markdown(txt_filename, md_filename)
 
-    file = open(filename_with_txt_md)
-    lines = file.readlines()
+    with open(md_filename) as file:
+        lines = file.readlines()
 
     use_first_heading_or_filename_as_title(lines, basename)
 
-    filename_with_md = filename+".md"
-    with open(filename_with_md, "w") as file:
-        file.writelines(lines)
-    os.remove(filename_with_txt_md)
-    return lines, file
+    return lines
 
 
 if __name__ == "__main__":
-    if not os.path.exists("data/pages"):
-        print("Current directory should be at the root of a dokuwiki installation")
-        sys.exit(-1)
-
-    for folder, _, files in os.walk(os.path.join(os.path.curdir, "data/pages")):
-        txt_files = (file for file in files if file.endswith(".txt"))
-        for f in txt_files:
-            filename_with_txt = os.path.join(folder, f)
-            print(filename_with_txt+"("+basename+"):", end="")
-            lines, file = convert_dokuwiki_file_to_md(filename_with_txt)
-
-            print(len(lines))
-
-    with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
-        # Walk through the files in a directory
-        for folder, folders, files in os.walk(os.path.curdir):
-            files = (file for file in files if file.endswith(".md"))
-            for file in files:
-                zipObj.write(os.path.join(folder, file))
-    print("'dokuwiki2wikijs.zip' created\n")
+    lines = convert_dokuwiki_file_to_md(sys.argv[1])
+    print("".join(lines))

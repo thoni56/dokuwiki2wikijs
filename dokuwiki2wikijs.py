@@ -74,7 +74,8 @@ class Converter:
 
             # depending on type of change, either add or remove
             pagepath, timestamp = self.get_pagepath_and_timestamp(filename)
-            pagefile = pagepath + '.txt'
+            txtfile = pagepath + '.txt'
+            mdfile = pagepath + '.md'
             message = pagepath + ': ' + c[5]
             user = c[4]
             email = 'dokuwiki@%s' % (c[1])
@@ -86,13 +87,16 @@ class Converter:
             author = '%s <%s>' % (user, email)
             cmds = []
             if c[2] in ('C', 'E', 'e', 'R'):  # create, edit, minor edit, restore
-                dirname = os.path.dirname(pagefile)
+                dirname = os.path.dirname(txtfile)
                 if len(dirname) > 0:
                     cmds.append('mkdir -p "%s"' % dirname)
-                cmds.append('gunzip -c "%s" > "%s"' % (filename, pagefile))
-                cmds.append('git add "%s"' % pagefile)
+                cmds.append('gunzip -c "%s" > "%s"' % (filename, txtfile))
+                cmds.append('dokuwiki2md "%s" > "%s"' %
+                            (txtfile, mdfile))
+                cmds.append('git add "%s"' % mdfile)
+                cmds.append('rm "%s"' % txtfile)
             elif c[2] == 'D':  # delete
-                cmds.append('git rm --quiet "%s"' % pagefile)
+                cmds.append('git rm --quiet "%s"' % mdfile)
             cmds.append('git commit --quiet --allow-empty --allow-empty-message --author="%s" --date="%s +0000" -m "%s"' %
                         (author, timestamp, message.replace('"', '\\"')))
             self.commands.extend(cmds)
