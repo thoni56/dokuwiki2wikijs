@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+#
+# This script uses 
 # Copyright (c) 2011-2014 Heikki Hokkanen <hoxu at users.sf.net>
 # License: AGPLv3
 import fnmatch
@@ -58,7 +60,7 @@ class Converter:
             pagename = c[3]
             if timestamp == ts and pagepath == pagename.replace(':', '/'):
                 return
-        log.warning('Attic contains "%s" timestamp %s, but is not referenced by changelog, skipping. Please report this!' % (
+        log.warning('Attic contains "%s" timestamp %s, but is not referenced by any changelog, skipping. Please report this!' % (
             pagepath, timestamp))
 
     def read_attic(self):
@@ -71,7 +73,7 @@ class Converter:
                 self.atticdir, pagepath + '.%s.txt.gz' % c[0])
             if not os.path.exists(filename):
                 log.warning(
-                    'File "%s" does not exist, despite being in changelog, skipping' % filename)
+                    'File "%s" does not exist, despite being in changelog (%s), skipping' % (filename, c[6]))
                 continue
 
             # depending on type of change, either add or remove
@@ -169,8 +171,11 @@ class Converter:
     def read_meta_for_page(self, pagepath, fullpath):
         if pagepath in ('_dokuwiki', '_comments', '_media'):
             return
-        pagepath = self.demangle(pagepath)
         pagename = pagepath.replace('/', ':')
+
+        # In .changes there are unicode characters, but the files have mangled unicode names ('%C3%B6')
+        pagename = self.demangle(pagename)
+
         log.debug('Reading meta for page "%s"' % pagename)
         with open(fullpath, 'r') as f:
             for l, line in enumerate(f):
@@ -181,13 +186,14 @@ class Converter:
                 assert(len(changeparts) == 7)
                 changeparts[3].replace('\\x', '%')
                 if changeparts[3] != pagename:
-                    # TODO try to match unicode mangling
+                    # Might be a page that has been moved with PageMove because history with old name is retained in .changes
                     log.warning("Pagename mismatch in metadata for " +
                             pagepath + " (vs. " + changeparts[3] + ") on line " + str(l))
-                else:
-                    # create, delete, edit, minor edit, restore
-                    assert(changeparts[2] in ('C', 'D', 'E', 'e', 'R'))
-                    self.changelog.append(changeparts)
+                #else:
+                # create, delete, edit, minor edit, restore
+                assert(changeparts[2] in ('C', 'D', 'E', 'e', 'R'))
+                changeparts[6] = pagepath
+                self.changelog.append(changeparts)
 
     def read_user_data(self):
         log.info('Reading users.auth.php')
