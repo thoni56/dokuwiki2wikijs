@@ -29,3 +29,10 @@ The current version will do the conversion and zip all markdown files for file s
 - Remove unnecessary tags (like from extensions)
 - Convert to "one sentence per line" convention where possible
 
+# Notes
+
+At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store.
+However it turned out that it would just import the latest version of every page anyway.
+Neither did it use the user info from the commits, all pages will be created by whoever does the import.
+There was just no benefits over a simple file storage.
+So we went back to just handling the current version of the pages.
