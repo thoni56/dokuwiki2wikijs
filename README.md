@@ -17,17 +17,28 @@ The current version will do the conversion and zip all markdown files for file s
 - Uses the first line, if it is a heading, for the title meta-data, if not the basename of the file is used instead
 - Un-mangle Unicode filenames (`%C3B6` etc) back to genuine unicode
 
+# Prerequisites
+
+- Python3
+- Pandoc with multimarkdown (don't know if that is included by default)
+
 # Usage
 
-- run the script with the path to a dokuwiki installation
+- run the script with the path to a dokuwiki installation as the argument
 - see the conversion run and get a zip-file of the converted page tree in your current directory
 - unpack the zip in a Wiki.js file storage (which you need to have set up) and press "Import Everything"
 
+or
+
+- run the script with the path to a dokuwiki page as the argument
+
+- get the converted page on the stdout
 # Upcoming
 
-- Make un-mangling of filenames an option
 - Remove unnecessary tags (like from extensions)
 - Convert to "one sentence per line" convention where possible
+- Flag wrong internal links (pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken)
+- Make un-mangling of filenames an option
 
 # Notes
 
