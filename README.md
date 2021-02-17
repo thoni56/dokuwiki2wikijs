@@ -35,7 +35,10 @@ or
 
 # Wanted features
 
-- Remove unnecessary tags (like from extensions) and/or convert others (`<sortable>` is done, `<wrap>` would be cool...)
+- Remove unnecessary tags (like from extensions) and/or convert others
+    - `<sortable>` is done
+    - `<wrap>` could be converted to blockquote (`> `) and `</wrap>` to `{.is-<type>}` where `type` is given by opening `<wrap>`
+    - ...
 - Convert to "one sentence per line" convention where possible
 - Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken.
 Don't know how to fix them...
