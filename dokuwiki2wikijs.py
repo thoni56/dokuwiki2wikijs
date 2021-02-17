@@ -127,7 +127,7 @@ if __name__ == "__main__":
 
                 filename_with_md = filename+".md"
                 with open(filename_with_md, "w") as file:
-                    file.writelines(lines)
+                    file.writelines('\n'.join(lines))
 
                 print(len(lines))
 
