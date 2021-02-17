@@ -1,8 +1,8 @@
 # dokuwiki2wikijs
 
 We wanted to migrate from dokuwiki to the more modern Wiki.js so this is a script that does that.
-At least for now it converts pages to Markdown using `pandoc`, storing them in the same structure as the `dokuwiki` installation.
-(This might change at some point.)
+
+It converts all current pages to Markdown using `pandoc`, storing them in the same structure as the `dokuwiki` installation.
 
 This README might not be completely up-to-date and the code quality not up to standard since this is a script for our own use. (Although you are welcome to use and modify it.)
 
@@ -33,26 +33,24 @@ or
 - run the script with the path to a dokuwiki page as the argument
 - get the converted page on the stdout
 
-# Upcoming
+# Wanted features
 
-- Remove unnecessary tags (like from extensions)
+- Remove unnecessary tags (like from extensions) and/or convert others (`<sortable>` is done, `<wrap>` would be cool...)
 - Convert to "one sentence per line" convention where possible
-- Flag wrong internal links (pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken)
+- Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken.
+Don't know how to fix them...
 - Make un-mangling of filenames an option
 
 # Notes
 
-At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store.
-However it turned out that it would just import the latest version of every page anyway.
-Neither did it use the user info from the commits, all pages will be created by whoever does the import.
-There was just no benefits over a simple file storage.
-So we went back to just handling the current version of the pages.
+- At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store. However it turned out that it would just import the latest version of every page anyway. Neither did it use the user info from the commits, all pages will be created by whoever does the import anyway. There was just no benefits over a simple file storage. So we went back to just handling the current version of the pages.
 
-Dokuwiki have multiple ways to find the page for a folder
+- Dokuwiki have multiple ways to find the page for a folder
 
-- page with the same name as the folder ('folder.txt' in the same directory as 'folder')
-- 'start.txt' in the folder ('folder/start.txt')
-- page with the same name as the folder _in the folder_ ('folder/folder.txt')
+    - page with the same name as the folder ('folder.txt' in the same directory as 'folder')
+    - 'start.txt' in the folder ('folder/start.txt')
+    - page with the same name as the folder _in the folder_ ('folder/folder.txt')
 
-We were thinking about automatically fixing this in the script.
-But there might actually be conflicts here, so we decided on manually adjusting the original structure so that all the occurences used a consistent, and also the (upcoming) Wiki.js, way, namely 'folder.txt' parallel to 'folder'.
+    We were thinking about automatically fixing this in the script. But there might actually be conflicts here, so we decided on manually adjust the original structure so that all the occurences used a consistent, and also the (upcoming) Wiki.js, way, namely 'folder.txt' parallel to 'folder'.
+
+- Page titles with just numbers don't work. We decided to fix this at the source too.
