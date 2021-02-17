@@ -10,7 +10,7 @@ import subprocess
 
 def pandoc(infile):
     result = subprocess.run(
-        ["pandoc", "-f", "dokuwiki", "-t", "markdown", infile], stdout=subprocess.PIPE)
+        ["pandoc", "-f", "dokuwiki", "-t", "markdown_mmd", infile], stdout=subprocess.PIPE)
     return result.stdout.decode('utf-8')
 
 
@@ -92,14 +92,14 @@ def convert_file(txtfile):
 
 
 if __name__ == "__main__":
-    if not os.path.exists("data/pages"):
-        print("Current directory should be at the root of a dokuwiki installation")
-        sys.exit(-1)
 
     if len(sys.argv) > 1:
         lines = convert_file(sys.argv[1])
         print('\n'.join(lines))
     else:
+        if not os.path.exists("data/pages"):
+            print("Current directory should be at the root of a dokuwiki installation")
+            sys.exit(-1)
 
         users = {}
         read_users()
