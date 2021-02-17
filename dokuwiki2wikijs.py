@@ -23,8 +23,11 @@ def first_heading_or_filename(lines, pagename):
 
 
 def get_metadata(lines, pagename):
+    # We surround the title with quotes to ensure Wiki.js can import it.
+    # Wiki.js requires a string and some possible titles are not considered
+    # strings (e.g. dates)
     return {
-        "title": first_heading_or_filename(lines, pagename)
+        "title": "\""+first_heading_or_filename(lines, pagename)+"\""
     }
 
 
@@ -96,7 +99,7 @@ if __name__ == "__main__":
     if len(sys.argv) != 2:
         print("Usage: %s <file or folder>" % sys.argv[0])
         sys.exit(1)
-        
+
     path = sys.argv[1]
     if not os.path.exists(path):
         print("'%s' doesn't exist" % path)
@@ -107,7 +110,8 @@ if __name__ == "__main__":
         print('\n'.join(lines))
     else:
         if not os.path.exists(os.path.join(path, "data", "pages")):
-            print("The folder given as argument should be at the root of a dokuwiki installation or copy")
+            print(
+                "The folder given as argument should be at the root of a dokuwiki installation or copy")
             sys.exit(-1)
 
         users = {}
@@ -130,7 +134,8 @@ if __name__ == "__main__":
 
                 filename_with_md = filename+".md"
                 if basename == 'start':
-                    filename_with_md = filename_with_md.replace('start.md', 'home.md')
+                    filename_with_md = filename_with_md.replace(
+                        'start.md', 'home.md')
                 with open(filename_with_md, "w") as file:
                     file.writelines('\n'.join(lines))
 
