@@ -31,8 +31,8 @@ The current version will do the conversion and zip all markdown files for file s
 or
 
 - run the script with the path to a dokuwiki page as the argument
-
 - get the converted page on the stdout
+
 # Upcoming
 
 - Remove unnecessary tags (like from extensions)
