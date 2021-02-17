@@ -47,3 +47,12 @@ However it turned out that it would just import the latest version of every page
 Neither did it use the user info from the commits, all pages will be created by whoever does the import.
 There was just no benefits over a simple file storage.
 So we went back to just handling the current version of the pages.
+
+Dokuwiki have multiple ways to find the page for a folder
+
+- page with the same name as the folder ('folder.txt' in the same directory as 'folder')
+- 'start.txt' in the folder ('folder/start.txt')
+- page with the same name as the folder _in the folder_ ('folder/folder.txt')
+
+We were thinking about automatically fixing this in the script.
+But there might actually be conflicts here, so we decided on manually adjusting the original structure so that all the occurences used a consistent, and also the (upcoming) Wiki.js, way, namely 'folder.txt' parallel to 'folder'.
