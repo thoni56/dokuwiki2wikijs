@@ -58,8 +58,8 @@ def is_markdown(filename):
     return first_line[0] == '#'
 
 
-def read_users():
-    users_file = os.path.join('conf', 'users.auth.php')
+def read_users(path):
+    users_file = os.path.join(path, 'conf', 'users.auth.php')
     with open(users_file, 'r') as f:
         for line in f:
             if not line.startswith("#") and len(line) > 1:
@@ -93,18 +93,27 @@ def convert_file(txtfile):
 
 if __name__ == "__main__":
 
-    if len(sys.argv) > 1:
-        lines = convert_file(sys.argv[1])
+    if len(sys.argv) != 2:
+        print("Usage: %s <file or folder>" % sys.argv[0])
+        sys.exit(1)
+        
+    path = sys.argv[1]
+    if not os.path.exists(path):
+        print("'%s' doesn't exist" % path)
+        sys.exit(1)
+
+    if os.path.isfile(path):
+        lines = convert_file(path)
         print('\n'.join(lines))
     else:
-        if not os.path.exists("data/pages"):
-            print("Current directory should be at the root of a dokuwiki installation")
+        if not os.path.exists(os.path.join(path, "data", "pages")):
+            print("The folder given as argument should be at the root of a dokuwiki installation or copy")
             sys.exit(-1)
 
         users = {}
-        read_users()
+        read_users(path)
 
-        for folder, _, files in os.walk(os.path.join(os.path.curdir, "data/pages")):
+        for folder, _, files in os.walk(os.path.join(path, "data", "pages")):
             txt_files = (file for file in files if file.endswith(".txt"))
             for f in txt_files:
                 filename_with_txt = os.path.join(folder, f)
@@ -123,8 +132,10 @@ if __name__ == "__main__":
                 print(len(lines))
 
         with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
-            # Walk through the files in a directory
-            for folder, folders, files in os.walk(os.path.curdir):
+            # Walk through the files in the data/pages subdir
+            curdir = os.getcwd()
+            os.chdir(os.path.join(path, "data", "pages"))
+            for folder, folders, files in os.walk("."):
                 files = (file for file in files if file.endswith(".md"))
                 for file in files:
                     zipObj.write(os.path.join(folder, file))
