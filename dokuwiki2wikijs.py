@@ -121,11 +121,16 @@ if __name__ == "__main__":
                 basename = os.path.basename(filename)
                 ensure_path_exists(filename)
 
+                if basename == 'sidebar':
+                    continue
+
                 print(filename_with_txt+"("+basename+"):", end="")
 
                 lines = convert_file(filename_with_txt)
 
                 filename_with_md = filename+".md"
+                if basename == 'start':
+                    filename_with_md = filename_with_md.replace('start.md', 'home.md')
                 with open(filename_with_md, "w") as file:
                     file.writelines('\n'.join(lines))
 
