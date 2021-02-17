@@ -11,6 +11,17 @@
             "program": "${workspaceFolder}/dokuwiki2wikijs.py",
             "cwd": "${workspaceFolder}/testdata",
             "console": "integratedTerminal"
+        },
+        {
+            "name": "dokuwiki2wikijs: singlefile",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dokuwiki2wikijs.py",
+            "cwd": "${workspaceFolder}/testdata",
+            "console": "integratedTerminal",
+            "args": [
+                "data/pages/kompetens/biblioteket/biblioteket.txt"
+            ]
         }
     ]
 }
