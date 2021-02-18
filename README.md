@@ -17,6 +17,13 @@ The current version will do the conversion and zip all markdown files for file s
 - Uses the first line, if it is a heading, for the title meta-data, if not the basename of the file is used instead
 - Un-mangle Unicode paths (`%C3B6` etc) back to genuine unicode
 - Convert basic WRAP tags to `> text{.is-<kind>}` (blockquote with CSS)
+- Removes some useless tags from plugins (for now just `<sortable>`)
+
+# Limitations
+
+It does not handle mixed (dokuwiki and markdown) content.
+The first line will determine if the page is markdown (it starts with a '#'), if so it will not be run through `pandoc`.
+No post-processing of markup is performed except for the tags described under "Features".
 
 # Prerequisites
 
