@@ -23,7 +23,7 @@
             "cwd": "${workspaceFolder}/testdata",
             "console": "integratedTerminal",
             "args": [
-                "data/pages/start.txt"
+                "data/pages/playground/playground.txt"
             ]
         }
     ]

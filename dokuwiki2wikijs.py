@@ -119,7 +119,7 @@ def remove_useless_tags(lines):
 def convert_file(txtfile):
     if is_markdown(txtfile):
         with open(txtfile) as file:
-            lines = file.readlines()
+            lines = file.read().splitlines()
     else:
         lines = str(pandoc(txtfile)).split('\n')
     lines = remove_useless_tags(lines)
