@@ -77,3 +77,10 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         lines = ["A sentence", " which continues on the next line."]
         self.assertEqual(unwrap_sentences(lines), [
             "A sentence", " which continues on the next line."])
+
+    def test_should_wrap_network_disk_correctly(self):
+        lines = ["", "Notera att du behöver ha en Samba-användare och att lösenordet behöver ändras med `smbpasswd` (och som sedan synkas till ditt",
+                 '"vanliga" Linux-användarkonto. (Se [[it:server_users|]])', '']
+        self.assertEqual(unwrap_sentences(lines), [
+            '', 'Notera att du behöver ha en Samba-användare och att lösenordet behöver ändras med `smbpasswd` (och som sedan synkas till ditt "vanliga" Linux-användarkonto.',
+            "(Se [[it:server_users|]])", ''])

@@ -45,16 +45,34 @@ def wrap_kind(tag):
 
 def unwrap_sentences(lines):
     # pandoc wraps markdown paragraphs however the input was formatted.
-    temp = []
-    for i, line in enumerate(lines):
-        while len(line) > 0 and line[-1] != '.' and len(lines[i+1]) > 0 and lines[i+1][0].isalnum():
-            line = line+' '+lines[i+1]
-            lines.pop(i+1)
+    result = []
+    compacted_lines = []
+    doing_compacting = False
+    compacted_line = ""
+
+    for line in lines:
+        if not doing_compacting:
+            if len(line) > 0 and line[-1] != '.':
+                doing_compacting = True
+                compacted_line = line
+            else:
+                compacted_lines.append(line)
+        else:
+            if len(line) > 0 and (line[0].isalnum() or line[0] == '"'):
+                compacted_line = compacted_line + ' ' + line
+            else:
+                compacted_lines.append(compacted_line)
+                compacted_lines.append(line)
+                compacted_line = ""
+                doing_compacting = False
+    if compacted_line != '':
+        compacted_lines.append(compacted_line)
+    for line in compacted_lines:
         while ". " in line:
             line1, line = line.split('. ', 1)
-            temp.append(line1 + '.')
-        temp.append(line)
-    return temp
+            result.append(line1 + '.')
+        result.append(line)
+    return result
 
 
 def convert_wrap(lines):
