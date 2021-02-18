@@ -44,7 +44,9 @@ def wrap_kind(tag):
 
 
 def unwrap_sentences(lines):
-    # pandoc wraps markdown paragraphs however the input was formatted.
+    # pandoc wraps markdown paragraphs however the input was formatted,
+    # so unwrap it according to markdown/asciidoc conventions (one sentence
+    # per line).
     result = []
     compacted_lines = []
     doing_compacting = False
@@ -101,9 +103,11 @@ def convert_filename_to_unicode(line):
     # Only handles the ones we needed...
     line = line.replace("%C3%84", "Ä")
     line = line.replace("%C3%85", "Å")
+    line = line.replace("%C3%89", "É")
     line = line.replace("%C3%96", "Ö")
     line = line.replace("%C3%A4", "ä")
     line = line.replace("%C3%A5", "å")
+    line = line.replace("%C3%A9", "é")
     line = line.replace("%C3%B6", "ö")
     return line
 
