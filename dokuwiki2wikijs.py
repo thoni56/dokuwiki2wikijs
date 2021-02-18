@@ -43,12 +43,18 @@ def wrap_kind(tag):
     return "info"
 
 
-""" Converts basic '<WRAP>' tags to Markdown blockquotes with CSS
-
-Only handles 'WRAP', not inline 'wrap' and assumes it is place in the beginning of the line.
-It also finds the kind of WRAP (info, warning, ...), but cannot handle anything else.
-You have to provide the CSS implmentation (there's callout.css in this project).
-"""
+def unwrap_sentences(lines):
+    # pandoc wraps markdown paragraphs however the input was formatted.
+    temp = []
+    for i, line in enumerate(lines):
+        while len(line) > 0 and line[-1] != '.' and len(lines[i+1]) > 0 and lines[i+1][0].isalnum():
+            line = line+' '+lines[i+1]
+            lines.pop(i+1)
+        while ". " in line:
+            line1, line = line.split('. ', 1)
+            temp.append(line1 + '.')
+        temp.append(line)
+    return temp
 
 
 def convert_wrap(lines):
@@ -124,6 +130,7 @@ def convert_file(txtfile):
         lines = str(pandoc(txtfile)).split('\n')
     lines = remove_useless_tags(lines)
     lines = convert_wrap(lines)
+    lines = unwrap_sentences(lines)
     metadata = get_metadata(lines, basename)
     add_metadata(lines, metadata)
 
