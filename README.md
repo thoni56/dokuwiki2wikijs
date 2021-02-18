@@ -15,7 +15,8 @@ The current version will do the conversion and zip all markdown files for file s
 - Point to a single file and get the conversion of that on stdout
 - Transparent handling of any potention `markdowku` pages (an extension to `dokuwiki` which can render markdown "natively" so they are stored as markdown)
 - Uses the first line, if it is a heading, for the title meta-data, if not the basename of the file is used instead
-- Un-mangle Unicode filenames (`%C3B6` etc) back to genuine unicode
+- Un-mangle Unicode paths (`%C3B6` etc) back to genuine unicode
+- Convert basic WRAP tags to `> text{.is-<kind>}` (blockquote with CSS)
 
 # Prerequisites
 
@@ -36,8 +37,8 @@ or
 # Wanted features
 
 - Remove unnecessary tags (like from extensions) and/or convert others
-    - `<sortable>` is done
-    - `<wrap>` could be converted to blockquote (`> `) and `</wrap>` to `{.is-<type>}` where `type` is given by opening `<wrap>`
+    - ~~`<sortable>` is done~~
+    - ~~`<wrap>` could be converted to blockquote (`> `) and `</wrap>` to `{.is-<type>}` where `type` is given by opening `<wrap>`~~
     - ...
 - Convert to "one sentence per line" convention where possible
 - Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken.
