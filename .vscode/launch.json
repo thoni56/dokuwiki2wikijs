@@ -11,7 +11,9 @@
             "program": "${workspaceFolder}/dokuwiki2wikijs.py",
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
-            "args": ["testdata"]
+            "args": [
+                "testdata"
+            ]
         },
         {
             "name": "dokuwiki2wikijs: singlefile",
@@ -21,7 +23,7 @@
             "cwd": "${workspaceFolder}/testdata",
             "console": "integratedTerminal",
             "args": [
-                "data/pages/kompetens/biblioteket/biblioteket.txt"
+                "data/pages/start.txt"
             ]
         }
     ]

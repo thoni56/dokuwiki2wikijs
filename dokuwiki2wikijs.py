@@ -6,6 +6,7 @@ from zipfile import ZipFile
 from os.path import basename
 from shutil import copyfile
 import subprocess
+import re
 
 
 def pandoc(infile):
@@ -29,6 +30,40 @@ def get_metadata(lines, pagename):
     return {
         "title": "\""+first_heading_or_filename(lines, pagename)+"\""
     }
+
+
+def wrap_kind(tag):
+    words = tag.split(' ')
+    if 'info' in words or 'notice' in words:
+        return "info"
+    if 'important' in words or 'warning' in words or 'caution' in words:
+        return "warning"
+    if 'alert' in words or 'danger' in words:
+        return "danger"
+    return "info"
+
+
+""" Converts basic '<WRAP>' tags to Markdown blockquotes with CSS
+
+Only handles 'WRAP', not inline 'wrap' and assumes it is place in the beginning of the line.
+It also finds the kind of WRAP (info, warning, ...), but cannot handle anything else.
+You have to provide the CSS implmentation (there's callout.css in this project).
+"""
+
+
+def convert_wrap(lines):
+    kind = "info"
+    for i, line in enumerate(lines):
+        # This might be a pandoc'ed markdown in which case tags are escaped
+        if line.startswith("<WRAP") or line.startswith("\<WRAP"):
+            tag, line = line.split('>', 1)
+            kind = wrap_kind(tag)
+            lines[i] = "> " + line
+        if "</WRAP>" in line:
+            lines[i] = lines[i].replace("</WRAP>", "{.is-"+kind+"}")
+        if "\</WRAP\>" in line:
+            lines[i] = lines[i].replace("\</WRAP\>", "{.is-"+kind+"}")
+    return lines
 
 
 def add_metadata(lines, metadata):
@@ -88,6 +123,7 @@ def convert_file(txtfile):
     else:
         lines = str(pandoc(txtfile)).split('\n')
     lines = remove_useless_tags(lines)
+    lines = convert_wrap(lines)
     metadata = get_metadata(lines, basename)
     add_metadata(lines, metadata)
 
