@@ -15,9 +15,9 @@ The problem when migrating became that the pages could contain a mix of Markdown
 We decided to fix most of these on the source side by either reverting to pure Dokuwiki or ensuring the whole page was Markdown only.
 
 This script decides what to do based on the first character in the page.
-If it's a `#` the page is _not_ sent for `pandoc` conversion, but sent transparently through.
-A very common case was that internal links im Markdown pages were still in Dokuwiki format because of the built-in support in the editor.
-The conversion tries to convert those links in markdown-pages to markdown format to mimimize manual conversion work.
+If it's a `#` the page is _not_ sent for `pandoc` conversion, but kept as-is, assuming it is already Markdown.
+A very common problem is that internal links in Markdown pages are still in Dokuwiki format because of the built-in support in the editor.
+The script tries to convert those links in markdown-pages to markdown format to mimimize manual conversion work.
 
 # Features
 
@@ -25,6 +25,7 @@ The conversion tries to convert those links in markdown-pages to markdown format
 - Point to a dokuwiki installation to get a zip of the complete page tree
 - Point to a single file and get the conversion of that on stdout
 - Transparent handling of any potention `markdowku` pages (an extension to `dokuwiki` which can render markdown "natively" so they are stored as markdown)
+- Converts Dokuwiki links in Markdown pages to Markdown format
 - Uses the first line, if it is a heading, for the title meta-data, if not the basename of the file is used instead
 - Un-mangle Unicode paths (`%C3B6` etc) back to genuine unicode
 - Convert basic WRAP tags to `> text{.is-<kind>}` (blockquote with CSS)
@@ -32,9 +33,11 @@ The conversion tries to convert those links in markdown-pages to markdown format
 
 # Limitations
 
-It does not handle mixed (dokuwiki and markdown) content.
+It does not handle mixed (dokuwiki and markdown) content well.
 The first line will determine if the page is markdown (it starts with a '#'), if so it will not be run through `pandoc`.
-No post-processing of markup is performed except for the tags described under "Features".
+No post-processing of markup is performed except for the tags and links as described under "Features".
+
+It does not (at this time) convert media files.
 
 # Prerequisites
 
@@ -58,10 +61,11 @@ or
     - ~~`<sortable>` is done~~
     - ~~`<wrap>` could be converted to blockquote (`> `) and `</wrap>` to `{.is-<type>}` where `type` is given by opening `<wrap>`~~
     - ...
-- Convert to "one sentence per line" convention where possible
+- Convert to "one sentence per line" convention where possible (This partially implemented, but turned out to complex with a simple minded approach)
 - Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken.
 Don't know how to fix them...
 - Make un-mangling of filenames an option
+- Handle media, which is a completely unchartered territory since I don't know how to import media into wiki.js...
 
 # Notes
 
