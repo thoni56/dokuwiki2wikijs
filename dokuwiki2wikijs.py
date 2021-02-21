@@ -92,11 +92,18 @@ def unwrap_sentences(lines):
 
 def convert_links(lines):
     for i, line in enumerate(lines):
-        line = re.sub(
-            r'(\[\[|\{\{)([^\|]+)\|(.+)(\]\]|\}\})', lambda x: '['+x.group(3)+']('+x.group(2).replace(':', '/')+')', line)
-        line = re.sub(
-            r'(\[\[|\{\{)([^\|]+)\|?(\]\]|\}\})', lambda x: '['+x.group(2)+']('+x.group(2).replace(':', '/')+')', line)
-        lines[i] = line
+        pattern = r'(\[\[|\{\{)(?P<uri>[^\|]+)(\|(?P<text>.+)?)?(\]\]|\}\})'
+        match = re.search(pattern, line)
+        # Assume at most one link per line for now
+        if match:
+            text = match.group('text')
+            uri = match.group('uri').rstrip('|')
+            if not uri.startswith('http'):
+                uri = uri.replace(':', '/')
+            if not text:
+                text = uri
+            link = '[%s](%s)' % (text, uri)
+            lines[i] = re.sub(pattern, link, line)
     return lines
 
 

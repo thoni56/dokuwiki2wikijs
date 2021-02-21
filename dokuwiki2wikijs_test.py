@@ -112,6 +112,11 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
                          ["  [alttext](mediafile) ", "[mediafile](mediafile)  "])
 
     def test_should_convert_colons_to_slash_in_link(self):
-        lines = ["[[path:path:path|text]]"]
+        lines = ["[[:path:path:path|text]]"]
         self.assertEqual(convert_links(lines),
-                         ["[text](path/path/path)"])
+                         ["[text](/path/path/path)"])
+
+    def test_should_not_convert_colons_to_slash_in_http_links(self):
+        lines = ["[[https://some.domain|text]]"]
+        self.assertEqual(convert_links(lines),
+                         ["[text](https://some.domain)"])
