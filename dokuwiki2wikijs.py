@@ -32,17 +32,6 @@ def get_metadata(lines, pagename):
     }
 
 
-def wrap_kind(tag):
-    words = tag.split(' ')
-    if 'info' in words or 'notice' in words:
-        return "info"
-    if 'important' in words or 'warning' in words or 'caution' in words:
-        return "warning"
-    if 'alert' in words or 'danger' in words:
-        return "danger"
-    return "info"
-
-
 def starts_with_text(line):
     # Empty line -> no
     if len(line.strip()) == 0:
@@ -107,18 +96,35 @@ def convert_links(lines):
     return lines
 
 
+def wrap_kind(tag):
+    words = tag.split(' ')
+    if 'info' in words or 'notice' in words:
+        return "info"
+    if 'important' in words or 'warning' in words or 'caution' in words:
+        return "warning"
+    if 'alert' in words or 'danger' in words:
+        return "danger"
+    return "info"
+
+
 def convert_wrap(lines):
     kind = "info"
+    wrapping = False
     for i, line in enumerate(lines):
         # This might be a pandoc'ed markdown in which case tags are escaped
         if line.startswith("<WRAP") or line.startswith("\<WRAP"):
             tag, line = line.split('>', 1)
             kind = wrap_kind(tag)
             lines[i] = "> " + line
+            wrapping = True
         if "</WRAP>" in line:
             lines[i] = lines[i].replace("</WRAP>", "{.is-"+kind+"}")
+            wrapping = False
         if "\</WRAP\>" in line:
             lines[i] = lines[i].replace("\</WRAP\>", "{.is-"+kind+"}")
+            wrapping = False
+        if wrapping:
+            lines[i] = "> "+line
     return lines
 
 

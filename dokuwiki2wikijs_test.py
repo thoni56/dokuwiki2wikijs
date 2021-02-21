@@ -41,13 +41,19 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         lines = ["", "<WRAP alert>", "</WRAP>"]
         self.assertEqual(convert_wrap(lines), ["", "> ", "{.is-danger}"])
 
+    def test_convert_wrap_on_separate_line(self):
+        lines = ["<WRAP>", "two line wrap", "</WRAP>"]
+        self.assertEqual(convert_wrap(lines), [
+                         "> ", "> two line wrap", "{.is-info}"])
+
     def test_convert_wrap_on_one_line(self):
         lines = ["<WRAP>one line wrap</WRAP>"]
         self.assertEqual(convert_wrap(lines), ["> one line wrap{.is-info}"])
 
     def test_convert_escaped_wrap(self):
         lines = ["\<WRAP\>", "one line", "\</WRAP\>"]
-        self.assertEqual(convert_wrap(lines), ["> ", "one line", "{.is-info}"])
+        self.assertEqual(convert_wrap(lines), [
+                         "> ", "> one line", "{.is-info}"])
 
     def test_unwrap_single_line(self):
         lines = ["A single line."]
