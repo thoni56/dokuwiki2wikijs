@@ -43,6 +43,19 @@ def wrap_kind(tag):
     return "info"
 
 
+def starts_with_text(line):
+    # Empty line -> no
+    if len(line.strip()) == 0:
+        return False
+    # Letters and quote -> yes
+    if line[0].isalpha() or line[0] == '"':
+        return True
+    # Numeric list marker -> no
+    if re.match(r'^[0-9]+\. ', line):
+        return False
+    return False
+
+
 def unwrap_sentences(lines):
     # pandoc wraps markdown paragraphs however the input was formatted,
     # so unwrap it according to markdown/asciidoc conventions (one sentence
@@ -60,7 +73,7 @@ def unwrap_sentences(lines):
             else:
                 compacted_lines.append(line)
         else:
-            if len(line) > 0 and (line[0].isalnum() or line[0] == '"'):
+            if starts_with_text(line):
                 compacted_line = compacted_line + ' ' + line
             else:
                 compacted_lines.append(compacted_line)
@@ -75,6 +88,16 @@ def unwrap_sentences(lines):
             result.append(line1 + '.')
         result.append(line)
     return result
+
+
+def convert_links(lines):
+    for i, line in enumerate(lines):
+        line = re.sub(
+            r'(\[\[|\{\{)([^\|]+)\|(.+)(\]\]|\}\})', r'[\3](\2)', line)
+        line = re.sub(
+            r'(\[\[|\{\{)([^\|]+)\|?(\]\]|\}\})', r'[\2](\2)', line)
+        lines[i] = line
+    return lines
 
 
 def convert_wrap(lines):
@@ -152,7 +175,8 @@ def convert_file(txtfile):
         lines = str(pandoc(txtfile)).split('\n')
     lines = remove_useless_tags(lines)
     lines = convert_wrap(lines)
-    lines = unwrap_sentences(lines)
+    lines = convert_links(lines)
+    #lines = unwrap_sentences(lines)
     metadata = get_metadata(lines, basename)
     add_metadata(lines, metadata)
 

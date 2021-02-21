@@ -1,6 +1,6 @@
 import unittest
 
-from dokuwiki2wikijs import first_heading_or_filename, convert_filename_to_unicode, convert_wrap, unwrap_sentences
+from dokuwiki2wikijs import first_heading_or_filename, convert_filename_to_unicode, convert_wrap, unwrap_sentences, convert_links
 
 
 class Dokuwiki2WikijsTest(unittest.TestCase):
@@ -84,3 +84,29 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         self.assertEqual(unwrap_sentences(lines), [
             '', 'Notera att du behöver ha en Samba-användare och att lösenordet behöver ändras med `smbpasswd` (och som sedan synkas till ditt "vanliga" Linux-användarkonto.',
             "(Se [[it:server_users|]])", ''])
+
+    def disabled_test_should_not_wrap_consequtive_lines_with_lists(self):
+        lines = ["1. a list", "1. second bullet"]
+        self.assertEqual(unwrap_sentences(lines),
+                         ["1. a list", "1. second bullet"])
+
+    def test_should_convert_dokuwiki_link_with_text(self):
+        lines = ["  [[somepage|text]] "]
+        self.assertEqual(convert_links(lines),
+                         ["  [text](somepage) "])
+
+    def test_should_convert_multiple_dokuwiki_links_with_text(self):
+        lines = ["  [[somepage|text]] ",
+                 "line with normal text without links ...",  "  [[somepage2|text2]]"]
+        self.assertEqual(convert_links(lines),
+                         ["  [text](somepage) ", "line with normal text without links ...", "  [text2](somepage2)"])
+
+    def test_should_convert_dokuwiki_link_without_text(self):
+        lines = ["  [[somepage|]] ", "[[somepage]]  "]
+        self.assertEqual(convert_links(lines),
+                         ["  [somepage](somepage) ", "[somepage](somepage)  "])
+
+    def test_should_convert_media_link(self):
+        lines = ["  {{mediafile|alttext}} ", "{{mediafile}}  "]
+        self.assertEqual(convert_links(lines),
+                         ["  [alttext](mediafile) ", "[mediafile](mediafile)  "])

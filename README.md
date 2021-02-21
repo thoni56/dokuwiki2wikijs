@@ -8,6 +8,17 @@ This README might not be completely up-to-date and the code quality not up to st
 
 The current version will do the conversion and zip all markdown files for file storage import into Wiki.js.
 
+## Caveats
+
+We had the `markdowku` plugin activated, which seemed to be a good idea when editing pages.
+The problem when migrating became that the pages could contain a mix of Markdown and Dokuwiki syntax, e.g. markdown unordered lists (line starting with a dash) is not "legal" dokuwiki, and are thus considered text by `pandoc -f dokuwiki ...`.
+We decided to fix most of these on the source side by either reverting to pure Dokuwiki or ensuring the whole page was Markdown only.
+
+This script decides what to do based on the first character in the page.
+If it's a `#` the page is _not_ sent for `pandoc` conversion, but sent transparently through.
+A very common case was that internal links im Markdown pages were still in Dokuwiki format because of the built-in support in the editor.
+The conversion tries to convert those links in markdown-pages to markdown format to mimimize manual conversion work.
+
 # Features
 
 - Convert latest version of `dokuwiki` pages into markdown
