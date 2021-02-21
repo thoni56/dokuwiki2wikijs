@@ -93,9 +93,9 @@ def unwrap_sentences(lines):
 def convert_links(lines):
     for i, line in enumerate(lines):
         line = re.sub(
-            r'(\[\[|\{\{)([^\|]+)\|(.+)(\]\]|\}\})', r'[\3](\2)', line)
+            r'(\[\[|\{\{)([^\|]+)\|(.+)(\]\]|\}\})', lambda x: '['+x.group(3)+']('+x.group(2).replace(':', '/')+')', line)
         line = re.sub(
-            r'(\[\[|\{\{)([^\|]+)\|?(\]\]|\}\})', r'[\2](\2)', line)
+            r'(\[\[|\{\{)([^\|]+)\|?(\]\]|\}\})', lambda x: '['+x.group(2)+']('+x.group(2).replace(':', '/')+')', line)
         lines[i] = line
     return lines
 

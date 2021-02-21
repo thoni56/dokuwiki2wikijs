@@ -110,3 +110,8 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         lines = ["  {{mediafile|alttext}} ", "{{mediafile}}  "]
         self.assertEqual(convert_links(lines),
                          ["  [alttext](mediafile) ", "[mediafile](mediafile)  "])
+
+    def test_should_convert_colons_to_slash_in_link(self):
+        lines = ["[[path:path:path|text]]"]
+        self.assertEqual(convert_links(lines),
+                         ["[text](path/path/path)"])
