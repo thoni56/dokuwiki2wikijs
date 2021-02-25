@@ -4,7 +4,7 @@ import os
 import sys
 from zipfile import ZipFile
 from os.path import basename
-from shutil import copyfile, rmtree
+from shutil import rmtree
 import subprocess
 import re
 
@@ -228,7 +228,7 @@ if __name__ == "__main__":
         users = {}
         read_users(path)
 
-        rmtree(tmp_prefix)
+        rmtree(tmp_prefix, ignore_errors=True)
         os.makedirs(tmp_prefix)
 
         for folder, _, files in os.walk(os.path.join(path, "data", "pages")):
