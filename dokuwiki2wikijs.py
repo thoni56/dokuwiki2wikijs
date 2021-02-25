@@ -4,7 +4,7 @@ import os
 import sys
 from zipfile import ZipFile
 from os.path import basename
-from shutil import copyfile
+from shutil import copyfile, rmtree
 import subprocess
 import re
 
@@ -189,11 +189,20 @@ def convert_file(txtfile):
     lines = remove_useless_tags(lines)
     lines = convert_wrap(lines)
     lines = convert_links(lines)
-    #lines = unwrap_sentences(lines)
+    # lines = unwrap_sentences(lines)
     metadata = get_metadata(lines, basename)
     add_metadata(lines, metadata)
 
     return lines
+
+
+tmp_prefix = os.path.join('/tmp', 'dokuwiki2wikijs')
+
+
+def temporary_file_for(pathname):
+    parts = pathname.split(os.sep)
+    temporary = os.path.join(tmp_prefix, *parts[parts.index('data'):])
+    return temporary
 
 
 if __name__ == "__main__":
@@ -219,11 +228,15 @@ if __name__ == "__main__":
         users = {}
         read_users(path)
 
+        rmtree(tmp_prefix)
+        os.makedirs(tmp_prefix)
+
         for folder, _, files in os.walk(os.path.join(path, "data", "pages")):
             txt_files = (file for file in files if file.endswith(".txt"))
             for f in txt_files:
                 filename_with_txt = os.path.join(folder, f)
-                filename = convert_filename_to_unicode(filename_with_txt[:-4])
+                filename = temporary_file_for(
+                    convert_filename_to_unicode(filename_with_txt[:-4]))
                 basename = os.path.basename(filename)
                 ensure_path_exists(filename)
 
@@ -234,7 +247,7 @@ if __name__ == "__main__":
 
                 lines = convert_file(filename_with_txt)
 
-                filename_with_md = filename+".md"
+                filename_with_md = os.path.join(tmp_prefix, filename+".md")
                 if basename == 'start':
                     filename_with_md = filename_with_md.replace(
                         'start.md', 'home.md')
@@ -246,7 +259,7 @@ if __name__ == "__main__":
         with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
             # Walk through the files in the data/pages subdir
             curdir = os.getcwd()
-            os.chdir(os.path.join(path, "data", "pages"))
+            os.chdir(os.path.join(tmp_prefix, "data", "pages"))
             for folder, folders, files in os.walk("."):
                 files = (file for file in files if file.endswith(".md"))
                 for file in files:
