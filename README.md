@@ -66,7 +66,7 @@ or
     - ~~`<sortable>` is done~~
     - ~~`<wrap>` could be converted to blockquote (`> `) and `</wrap>` to `{.is-<type>}` where `type` is given by opening `<wrap>`~~
     - ...
-- Convert to "one sentence per line" convention where possible (This partially implemented, but turned out to complex with a simple minded approach)
+- Convert to "one sentence per line" convention where possible (this is partially implemented, but turned out too complex with a simple minded approach, so we went with using `--wrap=none` for the pandoc conversions).
 - Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken.
 Don't know how to fix them...
 - Make un-mangling of filenames an option
@@ -74,7 +74,10 @@ Don't know how to fix them...
 
 # Notes
 
-- At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store. However it turned out that it would just import the latest version of every page anyway. Neither did it use the user info from the commits, all pages will be created by whoever does the import anyway. There was just no benefits over a simple file storage. So we went back to just handling the current version of the pages.
+- At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store.
+However it turned out that it would just import the latest version of every page anyway.
+Neither did it use the user info from the commits, all pages will be created by whoever does the import anyway.
+We could not find any benefits over a simple file storage, so we went back to just handling the current version of the pages.
 
 - Dokuwiki have multiple ways to find the page for a folder
 
