@@ -11,7 +11,7 @@ import re
 
 def pandoc(infile):
     result = subprocess.run(
-        ["pandoc", "-f", "dokuwiki", "-t", "markdown_mmd", infile], stdout=subprocess.PIPE)
+        ["pandoc", "-f", "dokuwiki", "-t", "markdown_mmd", "--wrap=none", infile], stdout=subprocess.PIPE)
     return result.stdout.decode('utf-8')
 
 
