@@ -184,11 +184,11 @@ def convert_file(txtfile):
     if is_markdown(txtfile):
         with open(txtfile) as file:
             lines = file.read().splitlines()
+        lines = convert_links(lines)
     else:
         lines = str(pandoc(txtfile)).split('\n')
     lines = remove_useless_tags(lines)
     lines = convert_wrap(lines)
-    lines = convert_links(lines)
     # lines = unwrap_sentences(lines)
     metadata = get_metadata(lines, basename)
     add_metadata(lines, metadata)
