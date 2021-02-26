@@ -29,13 +29,15 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         lines = ["no WRAP here"]
         self.assertEqual(convert_wrap(lines), ["no WRAP here"])
 
+    IS_INFO = "{.is-info}"
+
     def test_convert_simple_wrap_on_separate_first_lines(self):
         lines = ["<WRAP>", "</WRAP>"]
-        self.assertEqual(convert_wrap(lines), ["> ", "{.is-info}"])
+        self.assertEqual(convert_wrap(lines), ["> ", IS_INFO])
 
     def test_convert_simple_wrap_on_separate_lines(self):
         lines = ["", "<WRAP>", "</WRAP>"]
-        self.assertEqual(convert_wrap(lines), ["", "> ", "{.is-info}"])
+        self.assertEqual(convert_wrap(lines), ["", "> ", IS_INFO])
 
     def test_convert_simple_alert_wrap_on_separate_lines(self):
         lines = ["", "<WRAP alert>", "</WRAP>"]
@@ -44,11 +46,11 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
     def test_convert_wrap_on_separate_line(self):
         lines = ["<WRAP>", "two line wrap", "</WRAP>"]
         self.assertEqual(convert_wrap(lines), [
-                         "> ", "> two line wrap", "{.is-info}"])
+                         "> ", "> two line wrap", IS_INFO])
 
     def test_convert_wrap_on_one_line(self):
         lines = ["<WRAP>one line wrap</WRAP>"]
-        self.assertEqual(convert_wrap(lines), ["> one line wrap{.is-info}"])
+        self.assertEqual(convert_wrap(lines), ["> one line wrap"+IS_INFO])
 
     def test_convert_escaped_wrap(self):
         lines = ["\<WRAP\>", "one line", "\</WRAP\>"]
@@ -74,15 +76,15 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
             "A sentence which continues on the next line."])
 
     def test_unwrap_multiple_incomplete_sentences_to_same_line(self):
-        lines = ["A sentence",
+        lines = ["Another sentence",
                  "which continues. With another on the next", "line."]
         self.assertEqual(unwrap_sentences(lines), [
-            "A sentence which continues.", "With another on the next line."])
+            "Another sentence which continues.", "With another on the next line."])
 
     def test_does_not_unwrap_if_next_line_starts_with_non_alfa(self):
-        lines = ["A sentence", " which continues on the next line."]
+        lines = ["Yet another sentence", " which continues on the next line."]
         self.assertEqual(unwrap_sentences(lines), [
-            "A sentence", " which continues on the next line."])
+            "Yet another sentence", " which continues on the next line."])
 
     def test_should_wrap_network_disk_correctly(self):
         lines = ["", "Notera att du behöver ha en Samba-användare och att lösenordet behöver ändras med `smbpasswd` (och som sedan synkas till ditt",
