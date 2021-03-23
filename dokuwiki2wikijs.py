@@ -100,32 +100,17 @@ class Converter:
                 email = self.users[user]['email']
                 user = self.users[user]['name']
             author = '%s <%s>' % (user, email)
-            cmds = []
             if c[2] in ('C', 'E', 'e', 'R'):  # create, edit, minor edit, restore
                 dirname = os.path.dirname(txtfile)
                 if len(dirname) > 0:
                     creator.create_dir(dirname)
-                    cmds.append('mkdir -p "%s"' % dirname)
-
                 creator.decompress(filename, txtfile)
-                cmds.append('gunzip -c "%s" > "%s"' % (filename, txtfile))
-
                 creator.convert(txtfile, mdfile)
-                cmds.append('dokuwiki2md "%s" > "%s"' %
-                            (txtfile, mdfile))
                 creator.add(mdfile)
-                cmds.append('git add "%s"' % mdfile)
-
                 creator.clean(txtfile)
-                cmds.append('rm "%s"' % txtfile)
             elif c[2] == 'D':  # delete
                 creator.delete(mdfile)
-                cmds.append('git rm --quiet "%s"' % mdfile)
-
             creator.commit(author, timestamp, message)
-            cmds.append('git commit --quiet --allow-empty --allow-empty-message --author="%s" --date="%s +0000" -m "%s"' %
-                        (author, timestamp, message.replace('"', '\\"')))
-            self.commands.extend(cmds)
 
         # check that all pages in attic have a matching changelog entry
         for path, dirs, files in os.walk(self.atticdir):
@@ -138,7 +123,6 @@ class Converter:
 
     def read_data(self):
         creator.init()
-        self.commands.append('git init --quiet')
         # find user Real Name and email
         self.read_user_data()
         # go through data/meta
@@ -148,7 +132,6 @@ class Converter:
         # go through data/attic, importing pages referenced by .changes in meta
         self.read_attic()
         self.read_media()
-        creator.finish()
 
     def read_media(self):
         log.info('Reading media')
@@ -157,18 +140,8 @@ class Converter:
                 fullfile = os.path.join(path, f)
                 filename = os.path.relpath(fullfile, self.datadir)
                 dirname = os.path.dirname(filename)
-                cmds = [
-                    'mkdir -p "%s"' % dirname,
-                    'cp "%s" "%s"' % (fullfile, filename),
-                    'git add "%s"' % filename
-                ]
-
                 creator.add_media(dirname, fullfile, filename)
-                self.commands.extend(cmds)
-
         creator.commit_media()
-        self.commands.append(
-            'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Import media files"')
 
     def read_meta(self):
         log.info('Reading meta')
@@ -255,10 +228,13 @@ class Converter:
             parser.print_help()
             log.error('Dokuwiki data directory is a required argument')
             sys.exit(1)
+
         self.set_datadir(args[0])
         self.read_data()
         log.info('%d commands queued to be executed' % len(self.commands))
-        self.create_git_repository()
+
+        creator.finish(self.gitdir)
+
         time_end = time.time()
         time_took = time_end - time_start
         log.info('Finished converting dokuwiki data dir "%s" into a git repository "%s", took %.2f seconds' % (
