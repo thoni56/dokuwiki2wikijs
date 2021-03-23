@@ -5,7 +5,7 @@
 
 class WikiCreator:
 
-    def __init__(self, converter):
+    def __init__(self, converter, log):
         pass
 
     def init(self):

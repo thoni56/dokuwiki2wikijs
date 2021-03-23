@@ -1,11 +1,15 @@
 # The git wiki "creator" - actually it doesn't create a wiki only a git repo of the pages
 #
 
+import os
+import subprocess
+
 class WikiCreator:
 
-    def __init__(self, converter):
+    def __init__(self, converter, log):
         self.commands = []
         self.converter = converter
+        self.log = log
 
     # Actual API
     def init(self):
@@ -44,10 +48,21 @@ class WikiCreator:
         self.commands.append(
             'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Import media files"')
 
-    def finish(self):
+    def finish(self, gitdir="gitdir"):
         self.commands.append(
             'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Dokuwiki data imported by dokuwiki2git"')
+        self.create_git_repository(gitdir)
 
-    # Utilities necessary during extraction from main program
-    def get_commands(self):
-        return self.commands
+    # Utilities
+    def create_git_repository(self, gitdir):
+        self.log.info('Creating git repository')
+        origdir = os.getcwd()
+        os.mkdir(gitdir)
+        os.chdir(gitdir)
+        # run all commands
+        for c in self.commands:
+            self.log.debug('CMD: %s' % c)
+            ret = subprocess.call(c, shell=True)
+            if ret != 0:
+                raise RuntimeError('Command "%s" failed' % c)
+        os.chdir(origdir)

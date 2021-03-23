@@ -7,7 +7,6 @@ import fnmatch
 import logging
 import optparse
 import os
-import subprocess
 import sys
 import time
 
@@ -46,19 +45,6 @@ class Converter:
         self.commands = []  # commands to run to create the git repository
         self.gitdir = 'gitdir'
         self.users = {}
-
-    def create_git_repository(self):
-        log.info('Creating git repository')
-        origdir = os.getcwd()
-        os.mkdir(self.gitdir)
-        os.chdir(self.gitdir)
-        # run all commands
-        for c in self.commands:
-            log.debug('CMD: %s' % c)
-            ret = subprocess.call(c, shell=True)
-            if ret != 0:
-                raise RuntimeError('Command "%s" failed' % c)
-        os.chdir(origdir)
 
     def get_pagepath_and_timestamp(self, filename):
         filename = os.path.relpath(filename, self.atticdir)
