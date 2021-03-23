@@ -27,6 +27,13 @@ logging.basicConfig(level=logging.DEBUG, format='%(levelname)s - %(message)s')
 log = logging.getLogger()
 
 
+def dokuwiki2md(input, output):
+    # Function to convert an input file (name) in dokuwiki format to an output file in MarkDown
+    pass
+
+creator = wc.WikiCreator(dokuwiki2md, log)
+
+
 class Converter:
     def __init__(self):
         self.datadir = None
@@ -287,12 +294,7 @@ def isdir(dir, dir_subpath):
 def isfile(dir, file_subpath):
     return os.path.isfile(os.path.abspath(os.path.join(dir, file_subpath)))
 
-def dokuwiki2md(input, output):
-    # Function to convert an input file (name) in dokuwiki format to an output file in MarkDown
-    pass
-
 
 if __name__ == '__main__':
-    creator = wc.WikiCreator(dokuwiki2md)
     c = Converter()
     c.run(sys.argv[1:])
