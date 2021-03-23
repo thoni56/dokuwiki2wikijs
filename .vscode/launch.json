@@ -12,7 +12,7 @@
             "cwd": "${workspaceFolder}",
             "console": "integratedTerminal",
             "args": [
-                "testdata/data"
+                "testdata"
             ]
         }
     ]
