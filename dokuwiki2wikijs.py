@@ -12,8 +12,7 @@ import sys
 import time
 
 # Use one wiki creator backend
-import git_wiki_creator
-creator = git_wiki_creator.GitWikiCreator()
+import git_wiki_creator as wc
 
 USAGE = """
 NOTE: Experimental and non-complete...
@@ -98,14 +97,25 @@ class Converter:
             if c[2] in ('C', 'E', 'e', 'R'):  # create, edit, minor edit, restore
                 dirname = os.path.dirname(txtfile)
                 if len(dirname) > 0:
+                    creator.create_dir(dirname)
                     cmds.append('mkdir -p "%s"' % dirname)
+
+                creator.decompress(filename, txtfile)
                 cmds.append('gunzip -c "%s" > "%s"' % (filename, txtfile))
+
+                creator.convert(txtfile, mdfile)
                 cmds.append('dokuwiki2md "%s" > "%s"' %
                             (txtfile, mdfile))
+                creator.add(mdfile)
                 cmds.append('git add "%s"' % mdfile)
+
+                creator.clean(txtfile)
                 cmds.append('rm "%s"' % txtfile)
             elif c[2] == 'D':  # delete
+                creator.delete(mdfile)
                 cmds.append('git rm --quiet "%s"' % mdfile)
+
+            creator.commit(author, timestamp, message)
             cmds.append('git commit --quiet --allow-empty --allow-empty-message --author="%s" --date="%s +0000" -m "%s"' %
                         (author, timestamp, message.replace('"', '\\"')))
             self.commands.extend(cmds)
@@ -134,7 +144,13 @@ class Converter:
         creator.finish()
         self.commands.append(
             'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Dokuwiki data imported by dokuwiki2git"')
-        #assert(self.commands == creator.get_commands())
+        with open("self.commands.txt", "w") as f:
+            for c in self.commands:
+                print(c, file=f)
+        with open("creator.commands.txt", "w") as f:
+            for c in creator.get_commands():
+                print(c, file=f)
+        sys.exit(0)
 
     def read_media(self):
         log.info('Reading media')
@@ -148,7 +164,11 @@ class Converter:
                     'cp "%s" "%s"' % (fullfile, filename),
                     'git add "%s"' % filename
                 ]
+
+                creator.add_media(dirname, fullfile, filename)
                 self.commands.extend(cmds)
+
+        creator.commit_media()
         self.commands.append(
             'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Import media files"')
 
@@ -267,7 +287,12 @@ def isdir(dir, dir_subpath):
 def isfile(dir, file_subpath):
     return os.path.isfile(os.path.abspath(os.path.join(dir, file_subpath)))
 
+def dokuwiki2md(input, output):
+    # Function to convert an input file (name) in dokuwiki format to an output file in MarkDown
+    pass
+
 
 if __name__ == '__main__':
+    creator = wc.WikiCreator(dokuwiki2md)
     c = Converter()
     c.run(sys.argv[1:])
