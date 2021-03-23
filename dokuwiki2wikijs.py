@@ -149,15 +149,6 @@ class Converter:
         self.read_attic()
         self.read_media()
         creator.finish()
-        self.commands.append(
-            'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Dokuwiki data imported by dokuwiki2git"')
-        with open("self.commands.txt", "w") as f:
-            for c in self.commands:
-                print(c, file=f)
-        with open("creator.commands.txt", "w") as f:
-            for c in creator.get_commands():
-                print(c, file=f)
-        sys.exit(0)
 
     def read_media(self):
         log.info('Reading media')
