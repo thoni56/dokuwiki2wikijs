@@ -13,16 +13,16 @@ import time
 
 # Use one wiki creator backend
 import git_wiki_creator
-wiki_creator = GitWikiCreator()
+creator = git_wiki_creator.GitWikiCreator()
 
 USAGE = """
 NOTE: Experimental and non-complete...
 
-dokuwiki2wikijs converts a dokuwiki data directory into a git repository containing
+dokuwiki2wikijs converts a dokuwiki installation into a git repository containing
 the wiki pages, with proper history, in markdown format, to be used as input data for
 a Wiki.js site.
 
-$ dokuwiki2wikijs [options] /path/to/dokuwiki/data"""
+$ dokuwiki2wikijs [options] /path/to/dokuwiki"""
 
 logging.basicConfig(level=logging.DEBUG, format='%(levelname)s - %(message)s')
 log = logging.getLogger()
@@ -34,6 +34,7 @@ class Converter:
         self.atticdir = None
         self.mediadir = None
         self.metadir = None
+        self.confdir = None
         # (timestamp, ip, changetype, pagename, author, comment)
         self.changelog = []
         self.commands = []  # commands to run to create the git repository
@@ -133,7 +134,7 @@ class Converter:
         creator.finish()
         self.commands.append(
             'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Dokuwiki data imported by dokuwiki2git"')
-        assert(self.commands == creator.get_commands())
+        #assert(self.commands == creator.get_commands())
 
     def read_media(self):
         log.info('Reading media')
@@ -204,8 +205,7 @@ class Converter:
 
     def read_user_data(self):
         log.info('Reading users.auth.php')
-        parentdir = os.path.abspath(os.path.join(self.datadir, os.pardir))
-        users_file = os.path.join(parentdir, 'conf', 'users.auth.php')
+        users_file = os.path.join(self.confdir, 'users.auth.php')
         with open(users_file, 'r') as f:
             for line in f:
                 if not line.startswith("#") and len(line) > 1:
@@ -246,15 +246,26 @@ class Converter:
         log.info('Finished converting dokuwiki data dir "%s" into a git repository "%s", took %.2f seconds' % (
             self.datadir, self.gitdir, time_took))
 
-    def set_datadir(self, datadir):
-        if not os.path.isfile(os.path.join(datadir, '_dummy')):
+    def set_datadir(self, dir):
+        if not is_dokuwiki_dir(dir):
             raise RuntimeError(
-                'Directory "%s" does not look like a dokuwiki datadir' % datadir)
-        self.datadir = os.path.abspath(datadir)
+                'Directory "%s" does not look like a dokuwiki installation' % dir)
+        self.datadir = os.path.abspath(os.path.join(dir, 'data'))
         self.metadir = os.path.join(self.datadir, 'meta')
         self.atticdir = os.path.join(self.datadir, 'attic')
         self.mediadir = os.path.join(self.datadir, 'media')
+        self.confdir = os.path.join(dir, 'conf')
         log.info('Using datadir: %s' % self.datadir)
+
+
+def is_dokuwiki_dir(dir):
+    return isdir(dir, 'data') and isdir(dir, 'conf') and isdir(dir, 'data/pages') and isfile(dir, 'data/_dummy')
+
+def isdir(dir, dir_subpath):
+    return os.path.isdir(os.path.abspath(os.path.join(dir, dir_subpath)))
+
+def isfile(dir, file_subpath):
+    return os.path.isfile(os.path.abspath(os.path.join(dir, file_subpath)))
 
 
 if __name__ == '__main__':

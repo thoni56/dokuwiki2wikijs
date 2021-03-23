@@ -2,6 +2,8 @@
 #
 
 class GitWikiCreator:
+    def __init__(self):
+        self.commands = []
 
     # Actual API
     def init(self):
