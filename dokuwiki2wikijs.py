@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 #
-# This script uses 
-# Copyright (c) 2011-2014 Heikki Hokkanen <hoxu at users.sf.net>
-# License: AGPLv3
+# This script is built on the dokuwiki2git script by Heikki Hokkanen <hoxu at users.sf.net>
+# as specified by its license: AGPLv3
+
 import fnmatch
 import logging
 import optparse
@@ -10,6 +10,10 @@ import os
 import subprocess
 import sys
 import time
+
+# Use one wiki creator backend
+import git_wiki_creator
+wiki_creator = GitWikiCreator()
 
 USAGE = """
 NOTE: Experimental and non-complete...
@@ -115,6 +119,7 @@ class Converter:
                     self.has_changelog_entry(pagepath, timestamp)
 
     def read_data(self):
+        creator.init()
         self.commands.append('git init --quiet')
         # find user Real Name and email
         self.read_user_data()
@@ -125,8 +130,10 @@ class Converter:
         # go through data/attic, importing pages referenced by .changes in meta
         self.read_attic()
         self.read_media()
+        creator.finish()
         self.commands.append(
             'git commit --quiet --allow-empty --author="dokuwiki2git <dokuwiki2git@hoxu.github.com>" -m "Dokuwiki data imported by dokuwiki2git"')
+        assert(self.commands == creator.get_commands())
 
     def read_media(self):
         log.info('Reading media')
