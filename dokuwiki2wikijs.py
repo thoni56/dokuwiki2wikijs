@@ -241,13 +241,13 @@ class Converter:
         parser.add_option('-o', '--output', dest='outputdir',
                           help='Create git directory at outputdir. Default is "gitdir"', default='gitdir')
         parser.add_option('-q', '--quiet', action='store_const', const=0,
-                          dest='verbose', help='Show only warnings and errors')
+                          dest='verbose', help='Show only errors')
         parser.add_option('-v', '--verbose', action='store_const', const=2,
                           dest='verbose', help='Show debug messages', default=1)
         (options, args) = parser.parse_args(params)
-        level = logging.WARN
+        level = logging.ERROR
         if options.verbose:
-            level = (logging.WARN, logging.INFO,
+            level = (logging.WARNING, logging.INFO,
                      logging.DEBUG)[options.verbose]
         log.setLevel(level)
         self.gitdir = options.outputdir
