@@ -217,7 +217,6 @@ class Converter:
 
         self.set_datadir(args[0])
         self.read_data()
-        log.info('%d commands queued to be executed' % len(self.commands))
 
         creator.finish(self.gitdir)
 
