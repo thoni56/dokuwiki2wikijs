@@ -3,6 +3,7 @@
 
 import os
 import subprocess
+import shutil
 
 class WikiCreator:
 
@@ -57,6 +58,7 @@ class WikiCreator:
     def create_git_repository(self, gitdir):
         self.log.info('Creating git repository')
         origdir = os.getcwd()
+        shutil.rmtree(gitdir)
         os.mkdir(gitdir)
         os.chdir(gitdir)
         # run all commands
