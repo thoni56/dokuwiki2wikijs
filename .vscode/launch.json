@@ -14,6 +14,17 @@
             "args": [
                 "testdata"
             ]
+        },
+        {
+            "name": "dokuwiki2wikijs: /var/www/dokuwiki",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dokuwiki2wikijs.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "/var/www/dokuwiki"
+            ]
         }
     ]
 }
