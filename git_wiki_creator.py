@@ -5,6 +5,7 @@ import os
 import subprocess
 import shutil
 
+
 class WikiCreator:
 
     def __init__(self, converter, log):
@@ -64,7 +65,11 @@ class WikiCreator:
         # run all commands
         for c in self.commands:
             self.log.debug('CMD: %s' % c)
-            ret = subprocess.call(c, shell=True)
+            if c.startswith("dokuwiki2md"):
+                _, infile, _, outfile = c.split()
+                self.converter(infile.strip("\""), outfile.strip("\""))
+            else:
+                ret = subprocess.call(c, shell=True)
             if ret != 0:
                 raise RuntimeError('Command "%s" failed' % c)
         os.chdir(origdir)
