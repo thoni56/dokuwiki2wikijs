@@ -30,6 +30,7 @@ def dokuwiki2md(input, output):
     # Function to convert an input file (name) in dokuwiki format to an output file in MarkDown
     pass
 
+
 creator = wc.WikiCreator(dokuwiki2md, log)
 
 
@@ -107,18 +108,6 @@ class Converter:
                         filename)
                     self.has_changelog_entry(pagepath, timestamp)
 
-    def read_data(self):
-        creator.init()
-        # find user Real Name and email
-        self.read_user_data()
-        # go through data/meta
-        self.read_meta()
-        # sort history
-        self.changelog.sort()
-        # go through data/attic, importing pages referenced by .changes in meta
-        self.read_attic()
-        self.read_media()
-
     def read_media(self):
         log.info('Reading media')
         for path, dirs, files in os.walk(self.mediadir):
@@ -142,6 +131,18 @@ class Converter:
                     pages += 1
         log.info('%d changelog entries for %d pages found' %
                  (len(self.changelog), pages))
+
+    def read_data(self):
+        creator.init()
+        # find user Real Name and email
+        self.read_user_data()
+        # go through data/meta
+        self.read_meta()
+        # sort history
+        self.changelog.sort()
+        # go through data/attic, importing pages referenced by .changes in meta
+        self.read_attic()
+        self.read_media()
 
     def demangle(self, pagename):
         # TODO for now only convert cases that we have in our wiki
@@ -173,8 +174,8 @@ class Converter:
                 if changeparts[3] != pagename:
                     # Might be a page that has been moved with PageMove because history with old name is retained in .changes
                     log.warning("Pagename mismatch in metadata for " +
-                            pagepath + " (vs. " + changeparts[3] + ") on line " + str(l))
-                #else:
+                                pagepath + " (vs. " + changeparts[3] + ") on line " + str(l))
+                # else:
                 # create, delete, edit, minor edit, restore
                 assert(changeparts[2] in ('C', 'D', 'E', 'e', 'R'))
                 changeparts[6] = pagepath
@@ -240,8 +241,10 @@ class Converter:
 def is_dokuwiki_dir(dir):
     return isdir(dir, 'data') and isdir(dir, 'conf') and isdir(dir, 'data/pages') and isfile(dir, 'data/_dummy')
 
+
 def isdir(dir, dir_subpath):
     return os.path.isdir(os.path.abspath(os.path.join(dir, dir_subpath)))
+
 
 def isfile(dir, file_subpath):
     return os.path.isfile(os.path.abspath(os.path.join(dir, file_subpath)))
