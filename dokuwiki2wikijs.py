@@ -9,6 +9,7 @@ import optparse
 import os
 import sys
 import time
+from dokuwiki2md import convert_dokuwiki_file_to_md
 
 # Use one wiki creator backend
 import git_wiki_creator as wc
@@ -26,12 +27,13 @@ logging.basicConfig(level=logging.DEBUG, format='%(levelname)s - %(message)s')
 log = logging.getLogger()
 
 
-def dokuwiki2md(input, output):
-    # Function to convert an input file (name) in dokuwiki format to an output file in MarkDown
-    pass
+def convert_to_md(infile, outfile):
+    lines = convert_dokuwiki_file_to_md(infile)
+    with open(outfile, "w") as f:
+        f.writelines(lines)
 
 
-creator = wc.WikiCreator(dokuwiki2md, log)
+creator = wc.WikiCreator(convert_to_md, log)
 
 
 class Converter:
