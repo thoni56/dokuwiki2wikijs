@@ -43,7 +43,7 @@ class Converter:
         self.mediadir = None
         self.metadir = None
         self.confdir = None
-        # (timestamp, ip, changetype, pagename, author, comment)
+        # (timestamp, ip, changetype, pagename, author, currentpagepath
         self.changelog = []
         self.commands = []  # commands to run to create the git repository
         self.gitdir = 'gitdir'
@@ -60,7 +60,7 @@ class Converter:
             pagename = c[3]
             if timestamp == ts and pagepath == pagename.replace(':', '/'):
                 return
-        log.warning('Attic contains "%s" timestamp %s, but is not referenced by any changelog, skipping. Please report this!' % (
+        log.warning('Attic contains "%s" timestamp %s, but it is not referenced by any changelog, skipping. Please report this!' % (
             pagepath, timestamp))
 
     def read_attic(self):
@@ -175,8 +175,8 @@ class Converter:
                 changeparts[3].replace('\\x', '%')
                 if changeparts[3] != pagename:
                     # Might be a page that has been moved with PageMove because history with old name is retained in .changes
-                    log.warning("Pagename mismatch in metadata for " +
-                                pagepath + " (vs. " + changeparts[3] + ") on line " + str(l))
+                    log.debug("Pagename mismatch in metadata for " +
+                              pagepath + " (vs. " + changeparts[3] + ") on line " + str(l) + " in " + fullpath)
                 # else:
                 # create, delete, edit, minor edit, restore
                 assert(changeparts[2] in ('C', 'D', 'E', 'e', 'R'))
