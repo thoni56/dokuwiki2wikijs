@@ -1,0 +1,71 @@
+====== Diskussionsämnen ======
+
+Här finns en lista på områden eller aspekter på utveckling som vi kan diskutera, förklara och resonera kring för att visa hur vi på Responsive resonerar. Detta kan användas t.ex som ämnen för frukostseminarier eller fika-ämnen för medveten introduktion av nyanställda.
+
+<WRAP center round tip 60%>
+Se också våra [[kompetens:agila_arenor]].
+</WRAP>
+
+===== Teamarbete =====
+
+===== Ståupp =====
+
+===== Planering =====
+
+===== Projekt =====
+
+===== Arkitektur =====
+
+===== Automattestning =====
+
+===== Pararbete =====
+
+===== Att förbättra sig själv =====
+
+Bok: Pragmatic Programmer
+
+===== Att förbättra sitt team =====
+
+===== Att förbättra sin organisation =====
+
+===== Att bli en bättre programutvecklare =====
+
+===== Nedbrytning av krav i stora system =====
+
+===== Produktägare vs. Projektledare =====
+
+===== Story points =====
+
+===== Varför kodkvalité, vilka argument ska använda  =====
+
+  * Jag måste förstå, även i morgon
+  * Teamet måste förstå
+  * PO måste förstå
+
+Mäta mer än bara features. Använd sonar som grund.
+
+Sätt lite mer långsiktiga mål. "Om 3 månader ska vi ner på denna nivå" Istället för att avsätta
+flera sprintar för enbart refaktoreringar.
+
+  * Vilka ROI finns det? Visa.
+  * Feedback från kunder. Har kunderna märkt något? Antal tickets.
+  * Kostnad att utveckla nya features om koden är inte hanterbar. Visa mättal.
+  * Kostnad vs Alternativkostnad (inkludera riskberäkning)
+  * Börja där man gör mycket ändringar.
+
+===== Sätta upp utvecklingsmiljö (För nya anställda)  =====
+
+När kan en nyanställd börja leverera features till kodbasen.
+
+  * Sätt upp en acceptanstest vad en utvecklingsmiljö är. Olika för olika team.
+  * Mätningar för att visa vinst.
+  * En wiki som visar var man ska leta efter saker. (Jenkins/bitbucket/sonar servrar)
+  * Developer portal.
+  * Ingår AD-grupper?
+
+===== För mycket nytt =====
+
+  * En wiki med länkar till ställen med rekommenderade resurser för att lära sig.
+  * Mobutveckling
+  * Lyfta microdemos inom teamet
+  * Hur ändra inställningen hos folk?

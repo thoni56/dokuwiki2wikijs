@@ -1,0 +1,11 @@
+====== Force Field Analysis ======
+
+En teknik för att diskutera strategier och åtgärder är att böra med en skiss på den krafter som verkar på initiativet i positiv och negativ riktning.
+
+En workshop kan börja med att lista dessa för att sedan övergå i att diskutera deras storlekar. Det kan ge en graf som kan se ut t.ex så här:
+
+{{:kompetens:agila_arenor:workshops:force-field-analysis-example-1.jpg?400|}}
+
+En avslutning kan sedan vara att hitta åtgärder som verkar stärkande (positiva) eller neutraliserande (negativa). En rekommendation är att fokusera på stärkande åtgärder i högre grad än neutraliserande.
+
+Ref: [[https://workshopbank.com/force-field-analysis|Workshopbank]]

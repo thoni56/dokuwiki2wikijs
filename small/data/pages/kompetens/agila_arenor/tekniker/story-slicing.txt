@@ -1,0 +1,10 @@
+====== Story Slicing ======
+
+För att få lite hastighet, flöde och snabb återkoppling vill vi att User Stories/PBI:s skall vara små men ändå ge något slags värde. Det värdet är inte alltid kundvärde utan vi kan själva behöva återkopplingen som en liten del av en större kundvärde ger.
+
+Därför kan det vara bra att kunna tekniker för att dela User Stories i mindre delar. Här är några intressanta artiklar på det temat:
+
+  * [[http://us2.campaign-archive1.com/?u=abe09ce689751513abf6f095f&id=539db6053b&e=2cc77f7b21|To slice stories, first make sure they are
+TOO BIG - Gojiko Adzic]]
+  * [[https://www.dkrimmer.de/2014/12/04/6-brilliant-ways-to-slice-user-stories/|6 Brilliant Ways To Slice User Stories - Dominic Krimmer]]
+  * [[http://agileforall.com/resources/how-to-split-a-user-story/|How to Split a User Story - Richard Lawrence]]

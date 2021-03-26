@@ -1,0 +1,40 @@
+====== Öredev 2012 ======
+
+Öredev 2012 hade temat "Vive la rebellion" vilket jag var lite tveksam till innan jag kom dit. Men jag måste säga att den var klockren! Temat genomsyrade hela konferensen och all keynotes plockade upp temat och baserade sina presentationer runt det.
+
+Vad menade de med "leve upproret" då?
+
+De ville att alla mjukvaruutvecklare skulle lyfta näsan från sitt dagliga jobb och inse att vi har väldigt stot makt att påverka samhället som vi lever i. Då i stort sett allt styrs av mjukvara i någon form. De ville också att vi skulle se oss som medlemmar i en global mjukvarucommunity som kunde åstadkomma stordåd om vi samarbetade.
+
+====== Insikter ======
+
+Dela med sig av kunskap. Detta var något som flera talare tog upp och som jag håller med. Det är väldigt lätt att hamna i ett läge där man vill skydda sin "unika" kunskap för att man kan tjäna på det som individ. Men insikten är att man borde tänka precis tvärtom. Sprid all din kunskap till så många som möjligt så kan vi åstadkomma mycket mer tillsammans.
+
+Lisa Crispin pratade om parjobb. Vilket slog mig att man sällan gör. Utan man är oftast väldigt fokuserad på parprogrammering. Vad skulle hindra oss från att parjobba på fler saker än just kodning?
+
+Att jag använder refaktorering i terapi syfte. Katrina Owen höll en presentation som hon kallade "Therpeutic Refactoring" där hon berättade om att hon ibland använde refaktorering för att må lite bättre som utvecklare i helhet. Dvs om man jobbar i en kodbas som ser ut som skräp så mår man mycket bättre om man får refaktorera den lite då och då.
+
+====== Föreläsningar ======
+
+  * Software won - so what now? - David Rowan - Keynote
+  * Managing Agile Teams - Diana Larsen
+  * How pairing adds value - Lisa Crispin
+  * Software in the Age of Sampling - Brian Foote
+  * Kotlin: Making the Java Platform a Better Place - Hadi Hariri
+  * Ugly Code - Alex Papadimoulis
+  * It's Not You, It's Them: Why Programming Languages Are Hard To Teach - Zed A. Shaw
+  * Culture hacking and the coming era of magnificence - Jim McCarty - Keynote
+  * The Rebellion Imperative - Reginald Braithwaite - Keynote
+  * Lean from the Trenches - Henrik Kniberg
+  * Agile Team Structures - Catherine Powell
+  * Therapeutic Refactoring - Katrina Owen
+  * Less - The Path to Better Design - Sandi Metz
+  * Dialogue Sheets - Allan Kelly - Workshop
+  * The Rebels Come Out Online - What if the Internet is something much bigger than we think? - Alexander Bard - Keynote
+  * Tailwind/Headwind in the pursuit of the Fibre to All - Jonas Birgersson - Keynote
+  * Programmer Anarchy - Fred George
+  * Disciplined Creativity - Denise Jacobs
+  * Test Driven Android - Jeff "Cheezy" Morgan
+  * How to Argue About Code - Andrew Dupont
+  * From Collective Intelligence to Collaborative Creation - Hojun Song - Keynote
+  

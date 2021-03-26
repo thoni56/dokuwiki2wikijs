@@ -1,0 +1,58 @@
+# Förändring (& Förbättring!)
+
+På den agila arenan förändring pratar vi om hur man kan initiera och driva igenom förändring i en organisation.
+
+## Tekniker
+
+ * Identifiera movers och moveables, vänta med immovables (Thanks Jason Little!)
+
+## Retrospektiv
+
+Huvudsyftet med ett retrospektiv är ju att få deltagarna att inspireras till förändring, så lite resurser om bra retrospektiv:
+
+- [[https://plans-for-retrospectives.com|Retromat]]
+- [[http://retrospectivewiki.org|Retrospective Wiki]]
+- [[https://www.linkedin.com/pulse/one-minute-retrospective-tristan-kromer/|The One Minute Retrospective]] - ett utmärkt sätt att få igång retrospektiv, eller få team som tycker att de inte är värdefulla att komma igång igen
+- [[https://blog.scatterspoke.com/seeing-the-system/|The Wade Matrix]]
+
+Boken [[https://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649?SubscriptionId=AKIAILSHYYTFIVPWUY6Q&tag=ad-backfill-amzn-no-or-one-good-20&linkCode=xm2&camp=2025&creative=165953&creativeASIN=0977616649|Agile Retrospectives]] är förstås standardlitteratur.
+
+## Lämpliga aktiviteter och övningar
+
+* Brainwriting(för möjliga åtgärder, kan användas i kombination med att personen som identifierat problemet sitter vänd från gruppen och gruppen ropar ut förslagen). Kan senare kombineras med dotvoting för förslagen.
+
+## Verktyg
+
+* Change canvas(Jasons dropboxmapp, alternativt http://leanchange.org/resources/canvases/)
+* SATIR Change model: Vi har status quo, introducerar ett nytt element(foreign element), vilket möts av motstånd, får kaos och identitetskriser, det nya begreppet integreras för att sedan leda till ett nytt status quo. Det kan vara nyttigt att titta på modellen och fråga sig vart en grupp befinner sig. 
+
+## Rekommenderade resurser
+
+### Litteraturlista från Jason Littles workshop DevLin2017
+
+Alla är inte kvalitetsgranskade, även deltagare fick bidra.
+
+* Becoming a Change artist - Gerald M (Jerry) Weinberg
+* 99 ways to influence change - Heather Stagl
+* Paradox of Choice - Barry Schwartz
+* Organize for complexity - Niels Pflaeging
+* The Organized mind - Daniel Levitin
+* Lean Change Management - Jason Little
+* Your Brain at work - David Rock
+* Obliquity - John Kay
+* Talk to me - Sue Johnston
+* [[https://boardgamegeek.com/boardgame/15542/orangino|Orangino]] (Boardgame)
+* Leancoffeetable.com
+* The Phoenix Project - Gene Kim, Kevin Behr, George Spafford
+
+Och några intressanta företag
+
+* [[http://www.keyhubs.com|Keyhubs]] - kommunikationsmönster, organisation och grupperingar
+* [[http://bikablo.kommunikationslotsen.de/en/|Bikablo]] - visualisering
+
+## Kurser
+
+## Möjliga nästa arenor
+
+* [[kompetens:agila_arenor:arenor:organisation]]
+* [[kompetens:agila_arenor:arenor:team]]

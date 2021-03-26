@@ -1,0 +1,7 @@
+====== Workshops ======
+
+Ett av de viktigaste redskapen i vår verktygslåda är olika former av workshops. I detta delträd samlar vi beskrivningar av workshops som dels kan verka som stimulans för det dagliga arbetet, komponenter i vår kunskapsstruktur utgående från [[kompetens:agila_arenor]], men som också kan vara säljbara element i vår [[försäljning:säljstruktur]]
+
+Det finns en hel drös av förslag på workshops där ute. Här är början till en lista:
+  * [[https://workshopbank.com/change-management-activities|WorkshopBank]] - är förstås en site full av workshops som alla är applicerbara på olika förändringsscenarior. Notera att i menyn (Free Tools) finns indelningar efter syfte, storlek på grupp och längd.
+  * ...

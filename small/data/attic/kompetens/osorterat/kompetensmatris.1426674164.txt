@@ -1,0 +1,28 @@
+===== Kompetensmatris =====
+
+Den 10/12 2013 diskuterade vi fram följande kompetensområden. 
+
+==== Metodik & Ramverk ====
+
+  * Scrum XP RUP hur de fungerar och samverkar
+  * erfarenheter från användning och arbeta med
+  * bolla med hur team använder olika delar
+  * hur man kan införa och hur man kan arbeta för att förbättra innehåll och användning
+
+Detta utgör bara exempel på metoder och ramverk de kan t.ex. också ligga inom planering, ekonomi och på en sammankopplad helhet.
+
+==== Programmeringstekniker ====
+
+==== "Försäljning" ====
+
+Här är bilderna från vårt första försäljningskurs med Per Henningsohn.
+{{:sälj_bilder_to_responsive_från_1_april-14.pdf|}}
+
+
+==== Ledarskap, Coaching ====
+
+==== Styrning, plannering, ledning ====
+
+==== Behov, krav, nedbrytning ====
+
+==== Organisationsanalys & optimering ====

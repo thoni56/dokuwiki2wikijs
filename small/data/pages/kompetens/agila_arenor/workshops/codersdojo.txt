@@ -1,0 +1,13 @@
+====== Coder's Dojo ======
+
+I en Coder's Dojo (Coding Dojo) tränar man på programmeringstekniker i grupp. Ofta TDD, men förstås även andra tekniker.
+
+Det finns några olika former, den vanligaste är den s.k. Randori ("ett par på golvet i taget"), dvs. ett par arbetar och med jämna intervall roterar man antingen par eller en person.
+
+[[https://codingdojo.org/]] är en bra site att starta med.
+
+===== Innehåll =====
+
+===== Genomförande =====
+
+===== Tips & Tricks =====

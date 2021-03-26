@@ -1,0 +1,27 @@
+====== Team ======
+
+På den agila arenan "Team" pratar vi om team, samarbete, grupputveckling, gemensamt ansvar och kultur. Vi förutsätter att [[http://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-us.pdf|The Scrum Guide]] är underförstått och tekniker och värderingar ska förstås användas.
+
+===== Tekniker =====
+
+  * Dialogue sheet retrospectives
+  * Scrum
+  * ...
+
+===== Verktyg =====
+
+  * ...
+
+===== Rekommenderad litteratur =====
+
+  * ...
+
+===== Kurser =====
+
+  * ...
+
+===== Nästa arena =====
+
+  * [[kompetens:agila_arenor:projekthantering]]
+  * [[programmering]]
+  * [[kompetens:agila_arenor:testning]]

@@ -1,0 +1,26 @@
+====== Team ======
+
+På den agila arenan "Team" pratar vi om team, samarbete, grupputveckling, gemensamt ansvar och kultur.
+
+===== Tekniker =====
+
+  * Dialogue sheet retrospectives
+  * ...
+
+===== Verktyg =====
+
+  * ...
+
+===== Rekommenderad litteratur =====
+
+  * ...
+
+===== Kurser =====
+
+  * ...
+
+===== Nästa arena =====
+
+  * [[kompetens:agila_arenor:projekthantering]]
+  * [[programmering]]
+  * [[kompetens:agila_arenor:testning]]

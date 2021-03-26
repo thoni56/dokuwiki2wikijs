@@ -1,0 +1,5 @@
+====== Cheat Sheets ======
+
+Cheat Sheets är ett koncept för små kort med klokskap på något ämne som kan hjälpa våra kunder, deras medarbetare, och oss själva, att komma ihåg viktiga aspekter av ärendet.
+
+Under denna nod lägger vi varje konkretiserat Cheat Sheet. Dessa kan sedan länkas in i relevanta agila arenor.

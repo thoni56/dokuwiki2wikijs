@@ -1,0 +1,47 @@
+====== Agila Arenor ====== 
+
+===== Vad är en agil arena? =====
+En agil arena är ett begrepp uppfunnet av Responsive.
+Det är ett imaginärt område inom utveckling som innehåller en massa bra information som vi kan använda oss av när vi träffar potentiella och befintliga kunder.
+Vi ska alla hjälpas åt att samla på oss information per agil arena och vi hjälps åt att dokumentera allt här på wikin.
+Man kan se det som att vi tillsammans bygger upp en sorts kunskapsbank som man senare kan använda som checklista när man jobbar med sina kunder. 
+
+Det är viktigt att förstå att en agil arena är ett begrepp som vi på Responsive använder internt.
+Det är alltså inget begrepp som vi ska diskutera med eller kommunicera till våra kunder.
+Det är en hjälp för oss själva i alla situationer när vi träffar kunder.
+Alltså när vi är ute och säljer och när vi är ute och jobbar operativt. 
+
+Det här innebär att om en agil arena ska tjäna sitt syfte, behöver man så snabbt man kan försöka förstå på vilken arena man befinner sig.
+Så fort man identifierat arenan, kan man utnyttja kunskapsbanken här på wikin.
+Då kan man använda de tekniker som föreslås, man kan läsa in sig på den litteraturen som rekommenderas och man kan erbjuda kunden lämpliga kurser från Responsives kursutbud.
+
+Notera att arenan också kan användas för vår interna kompetensutveckling. Alltså, om man vet att man ofta befinner sig på en viss arena innebär det att man behöver ha god kunskap inom det området.
+
+Vi delar in en arena i fem olika områden (kan bli fler i framtiden):
+
+  * Tekniker: Konkreta och erkända tekniker inom området, t ex TDD
+  * Verktyg: Erkända verktyg/applikationer som kan användas på arenan, t ex JIRA
+  * Rekommenderad litteratur: Böcker, white papers, bloggar som vi själva har läst och kan rekommendera
+  * Kurser & Workshops: Responsives utbud av kurser (utbildningar, workshops)
+  * Nästa arena: Förslag på vilka arenor som kan vara bra att attackera från den befintliga arenan
+
+===== Vilka agila arenor finns? =====
+
+Eftersom begreppet är vårt interna bestämmer vi själva vilka som är lämpliga.
+Vi kan lägga till och ta bort eller refaktorera.
+En del arenor kanske kommer att överlappa varandra, men vi får prova oss fram.
+Här är några förslag som kan ge en idé om vilka som kan vara lämpliga:
+
+  * Ekonomi
+  * Flödesorientering
+  * Förbättring
+  * [[kompetens:agila_arenor:arenor:kravhantering]]
+  * Organisation
+  * [[kompetens:agila_arenor:arenor:portföljhantering]]
+  * Produktplanering
+  * Produktägarskap
+  * [[kompetens:agila_arenor:arenor:programmering]]
+  * [[kompetens:agila_arenor:arenor:projekthantering]]
+  * [[kompetens:agila_arenor:arenor:team]]
+  * [[kompetens:agila_arenor:arenor:testning]]
+  * ..

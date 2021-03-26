@@ -1,0 +1,83 @@
+====== Kund-personas, användare, behov och funktion ======
+
+===== Om "personas" =====
+
+
+Inom UX är det vanligt att arbeta med "Personas", en form av stiliserad, förenklad beskrivning av en eller flera användar-kategorier. En persona beskrivs så konkret att den kunde vara en verklig person, t.ex med namn, egenskaper, preferenser men mer viktigt deras behov och mål. Ger man dem dessutom ett ansikte så blir det lätt att betrakta dom som riktiga personer och man kan säga "vad tror vi att Roberto skulle vilja/tycka..."
+
+Ett exempel på en enkel persona är [[marknadsföring:robin_-_responsives_persona|Responsives persona Robin]] som är tänkt att spegla den person som Responsive (företaget) vore om det vore just en person i stället för ett företag.
+
+===== Bakgrund och syfte =====
+
+Det är ibland svårt att prata om behov och prioritera dessa när man säljer som produkt till (många) företag. Man måste då göra starka förenklingar och generaliseringar. Ett sätt att göra det är via personas på kundföretagen.
+
+Men det räcker inte. Man måste också bygga en bild av sina användare/intressenter. En workshop som försöker göra detta är den som beskrivs här.
+
+===== Genomförande =====
+
+  - Intro - berätta om tidigare arbeten på området, t.ex marknadsanalyser eller segmenteringar, eller bara insikter om hur kunder typiskt ser ut
+  - Introducera Proto-Persona
+  - Skapa ett antal Proto-Personas för några typiska kundföretag
+  - Definiera/välj ett antal dimensioner/skalor för att karaktärisera företags-persona
+  - Skapa en mängd Proto-Personas för olika roller inom företaget
+
+==== 1. Intro ====
+
+Låt gärna VD, marknadschef eller annan representant göra den dragningen.
+
+==== 2. Proto-Persona ====
+
+En "riktig" persona är välunderbyggd med utförliga användarstudier. En proto-persona är "påhittad" ur perspektivet att vi inte har data att vila beskrivningen på. Samtidigt kan man ju också säga att de flesta har en hyfsad bild av sina kundföretag utan sådan ingående analys.
+
+En persona, och i ännu högre grad, en proto-persona, är en starkt förenkling. Man kan ordna dom gentemot varandra för att hitta fokusområden eller vägledning för prioritering. Men man behöver inte *veta* vilken som är mest värd utan vi kan bestämma det på vilket sätt som helst, och när vi gjort det så vet vi det. På sätt kan vi låta en urvald proto-persona vara huvudsakliga målgruppen för funktion eller marknadsföringskampanjer mm.
+
+Man kan också skapa "non-persona", dvs. beskrivningar av icke önskade företag/kunder.
+
+Jeff Gothelf har [[http://uxmag.com/articles/using-proto-personas-for-executive-alignment|beskrivit en flerdags-workshop på detta tema]] där en modell för personas som är tillräckligt bra finns.
+
+Modellen innehåller fyra fält: identification, demographics, behaviours & needs. På svenska Identifikation (namn, bild, roll/befattning, ...), Demografi (kön, bostads- och familjeförhållanden, ...), Beteenden (vad gör personen ofta, hur reagerar hen, preferenser, egenskaper, hobbyer, ...) och Behov/Mål.
+
+Gör detta i en fyrfältare:
+<ditaa>
++----------------+-----------+
+| Identifikation | Beteenden |
++----------------+-----------+
+| Demografi      | Behov/Mål |
++----------------+-----------+
+</ditaa>
+{{http://uxmag.com/sites/default/files/uploads/gothelf-execprotopersonas/03adhocpersona.png}}
+
+En bra intro-övning är att tillsammans skapa en proto-persona, t.ex på en gammal tant. "Vad heter hon?", ... Det brukar fungera även med ingenjörer...
+
+==== 3. Proto-persona för några företag ====
+
+Låt deltagarna indelade i grupper skapa ett par proto-personas för företag. OBS att vi ännu bara håller på med *företag*!
+
+10-15 minuter är lagom tid. Samla och återkoppla, diskutera.
+
+==== Dimensioner ====
+
+... eller "Spectrums", som Jeff Gothelf kallar dom. Egenskaper i kundorganisationen som karakteriserar deras användning/nytta av produkten eller dom som företag. De ska vara skalor och inte binära 0/1, ja/nej.
+
+Generera förslag tillsammans, välj några (3-5). Diskutera var "längst till höger" resp. "längst till vänster" betyder för varje spektra.
+
+Placera in kund-proto-persona-företagen på dessa skalor och diskutera. Kan man dra några slutsatser? Är det skillnader som vi inte redan visste? Vilken skala är viktigast att värdera först? ...
+
+Välj ett av företagen.
+
+==== 4. Proto-personas för användarkategorier ====
+
+Gör proto-personas, 3-5 per grupp.
+
+Samla ihop, presentera, snygga till, sätt upp på väggen.
+
+===== Summering och fortsättning =====
+
+Ett viktigt syfte med övningen är att skapa samsyn om vilka grupper som finns och att påminnas om den diskussion som varit genom att dessa personas finns närvarande "hela tiden".
+
+Vi kan använda dessa personas i (minst) två fortsatta arbetsområden:
+
+- kampanjer och marknadsföringsbudskap kan riktas till kund-personas för att bli tydligare i vem vi riktar oss till
+- funktionsmappning - genom att arbeta vidare med "funktionsområden" och "funktioner" utifrån de användar-proto-personas, eller ett urval av dem, kan vi se om vår produkt har luckor, eller om det går att identifiera nya funktioner som förtjusar just dem
+
+Vi kan förenkla för oss genom att säga saker som "Nu fokuserar vi på funktionalitet som förtjusar Roberto på Mañana Trucks!" eller "Vad skulle Bob på Olympus Analytics Institute tycka om det där?"

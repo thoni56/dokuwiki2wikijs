@@ -1,0 +1,9 @@
+====== Osorterat ======
+
+Repetition är kunskapens moder.
+
+Här under kan man skriva vad som helst, och hur som helst, som handlar om våra tekniker, frågeställningar och annat. Se det som en area att anteckna och tipsa i, tills det formaliserats så mycket att det går att föra in i en eller flera [[kompetens:agila_arenor|Agila Arenor]], som tekniker, litteratur, workshops etc. eller kanske i [[kompetens:kompetensträd|kompetensträdet]].
+
+<WRAP center round important 60%>
+Glöm inte att refaktorisera denna information då och då så att vi följer [[http://en.wikipedia.org/wiki/Don%27t_repeat_yourself|DRY]]!
+</WRAP>

@@ -1,0 +1,5 @@
+====== Cheat Sheet : Story Splitting ======
+Finns mer material [[kompetens:agila_arenor:tekniker:story-slicing|här]]
+===== Syfte =====
+
+Ibland vill man dela stories i mindre delar för att t.ex få plats i en sprint eller få synlig progress. [[http://blog.agilistic.nl/8-useful-strategies-for-splitting-large-user-stories-and-a-cheatsheet/|Här är en intressant beskrivning]] av detta.

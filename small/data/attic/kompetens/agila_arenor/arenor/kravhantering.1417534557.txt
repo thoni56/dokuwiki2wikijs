@@ -1,0 +1,62 @@
+
+====== Krav ======
+
+På den agila arenan "Krav" pratar vi om olika typer av kravinsamling, beskrivning av krav, hur man prioriterar krav och produktägaransvar vad avser kravhantering.
+
+==== Tekniker ====
+
+== Behaviour Driven Development (BDD) ==
+<skriv bra text här>
+== Impact mapping ==
+<skriv bra text här, [[http://www.impactmapping.org/|http://www.impactmapping.org/]] kan säkert vara en bra referens>
+== Evolutionary prototyping och exploratory prototyping ==
+Det finns en mängd olika strategier för hur man gör prototyper. Två av dessa är evolutionary prototyping och exploratory/throwaway prototyping. De skiljer sig i grunden i form av att evolutionary prototyping handlar om att prototypen man konstruerar kommer att utvecklas till det färdiga systemet. Exploratory/throwaway prototyping är precis som den senare varianten av namnet låter, dvs det man producerat kommer här aldrig att ingå som en del av det riktiga systemet. 
+
+== Minimum Viable Product ==
+"The minimum viable product is that version of a new product which allows a team to collect the maximum amount of validated learning about customers with the least effort." Mer info på [[http://www.startuplessonslearned.com/2009/08/minimum-viable-product-guide.html|Startup Lessons Learned]] från Eric Ries.
+
+== System Anatomy ==
+Jack Järkvik på Ericsson hittade på det här ursprungligen. Ett exempel och en kort introduktion finns på [[http://en.wikipedia.org/wiki/System_anatomy|Wikipedia]]
+
+== Backlog Grooming/Refinement == 
+Backlog Grooming döptes om till Backlog Refinement i 2013 års utgåva av The Scrum Guide. 
+
+Från The Scrum Guide:
+Product Backlog refinement is the act of adding detail, estimates, and order to items in the Product Backlog. This is an ongoing process in which the Product Owner and the Development Team collaborate on the details of Product Backlog items. During Product Backlog refinement, items are reviewed and revised. The Scrum Team decides how and when refinement is done. Refinement usually consumes no more than 10% of the capacity of the Development Team. However, Product Backlog items can be updated at any time by the Product Owner or at the Product Owner’s discretion.
+
+
+== Asteroids Planning ==
+Om du skjuter ett skott på varje stor asteroid kommer du att få en hel drös hyfsat stora. Om du skjuter ett skott på varje sådan kommer du få en ohanterlig mängd halvstora asteroider. En bättre strategi är att skjuta flera skott på samma asteroid för att dela ner den i mindre asteroider och till slut skjuta bort ett gäng asteroider när de blivit tillräckligt små. Det här handlar ursprungligen om spelet [[http://en.wikipedia.org/wiki/Asteroids_(video_game)|Asteroids]].
+
+Byt ut asteroider mot stories/epics och du har en strategi för hur du kan hantera dina stories och din backlog.
+
+==== Lämpliga aktiviteter och övningar ====
+
+  * "Rita stol" - sitt på varsin sida om en skärm, kravställaren berättar vilka streck som skall dras, den andra drar strecken, försök att rita en stol
+  * Legoövningen - sitt på varsin sida om en skärm, kravställaren berättar vilka bita som skall sättas var, den andra bygger, försök att bygga enligt byggsatsen
+  * Par-krav-skrivning
+
+==== Verktyg ====
+
+  * Doors
+  * MindMup
+  * Jasmine
+  * Cucumber
+  * Rspec
+  * ...
+
+==== Rekommenderad litteratur ====
+  * The RSpec Book av David Chelimsky et al. 
+  * Impact Mapping av Gojko Adzic, lite mer info [[http://gojko.net/effect-map/|här]].
+  * 50 Quick Ideas to Improve your User Stories av Gojko Adzic och David Evans
+  * ...
+==== Kurser ====
+
+  * Hur skriver jag fantastiska user stories?
+  * Så här blir du en bättre produktägare
+  * Tekniker för produktägare
+  * ...
+
+==== Nästa arena ====
+
+  * ...

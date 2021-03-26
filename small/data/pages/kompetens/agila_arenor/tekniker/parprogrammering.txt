@@ -1,0 +1,14 @@
+====== Parprogrammering ======
+
+Parprogrammering är en teknik där två personer sitter vid samma dator/tangentbord och tillsammans skapar den kod som behövs för att lösa deras uppgift. När det fungerar får man både högre kvalité på resultatet, granskning behövs oftast inte eftersom den redan setts av flera personer och det ger också energi och fokus.
+
+===== Införande =====
+Tips för att införa parprogrammering i ett team. Lyft fördelar.
+  * TDD-utbildning
+  * Movers
+  * Föreslå att prova i teamet
+  * Själv pararbeta med någon
+  * Story telling / show & tell -> Känsla
+  * Sanktionerat från ledning. "Ni har tillåtelse att prova"
+  * Kompetensinventering
+  * Onboarding

@@ -25,6 +25,28 @@
             "args": [
                 "/var/www/dokuwiki"
             ]
+        },
+        {
+            "name": "dokuwiki2wikijs: small",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dokuwiki2wikijs.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "small"
+            ]
+        },
+        {
+            "name": "dokuwiki2wikijs: moved",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dokuwiki2wikijs.py",
+            "cwd": "${workspaceFolder}",
+            "console": "integratedTerminal",
+            "args": [
+                "moved"
+            ]
         }
     ]
 }

@@ -1,0 +1,3 @@
+====== Verktyg ======
+
+Vi på Responsive borde ha hyfsad koll på verktyg också. En insats som vi gjort är att lista några planerings- och uppföljningsverktyg av typen Jira.

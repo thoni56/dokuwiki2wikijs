@@ -1,0 +1,22 @@
+====== Practices for Scaling Lean & Agile Development ======
+
+=== Large, Mulisite, and Offshore Product Development with Large-Scale Scrum ===
+
+Författare: Craig Larman, Bas Vodde
+
+Recensent: Kajsa
+
+Boken beskriver ett arbetssätt med Feature Teams för att det ska fungera att skala SCRUM. Boken rekommenderar att man bryter ner produkten i requirement areas om produkten är för stor att hanteras av en produktägare. Varje kapitel innehåller ett antal experiment som man antingen ska Try/Avoid. 
+
+Boken är ganska pratig och jag tycker att det som står gäller både i stor och liten skala om man vill använda SCRUM, inte speciellt för stor skala. Sedan gäller det kanske speciellt för storskalig utveckling. 
+
+Ofta är boken bra på en molnfri-höjd nivå. Det är svårt att argumentera mot det som står men det står inte så mycket om hur man faktiskt ska göra för att få det till att bli på det viset som det är beskrivet. T ex hur skapar man ett bra feature team när man har systemet blir så stort att det är svårt att få till, eller exempel på bra Requirement Areas. Ofta refererar man till Scaling Lean & Agile Development: Thinking and Organizational Tools for Large-Scale Scrum, för mer information, vilket känns lite konstigt. Jag har inte läst denna bok, så jag kan inte säga om denna är tydligare.
+
+Jag hade stora förväntningar på Legacy Code kapitlet. Råd 1 i boken är: Skapa **inte** legacy code. Detta råd kan jag hålla med om men om jag nu har en massa Legacy code hur gör jag då. Lösningen enligt boken är att "fixa till" kod som är dålig när man ändå rättar men i ett lagom format. Det är ett bra råd och funkar säkert i de flesta organisationer, men på Saab får man inte göra så pga luftvärdighet. Ett annat problem som dyker upp är att detta kommer inte att hända när man har någon typ av tidspress.
+
+Det finns en del bra saker runt bland annat systemarkitektur och faran att systemarkitekter blir "astronaut-arkitekter".
+
+Jag läste med stort intresse avsnittet om CMMI och agila metoder. Detta eftersom CMMI ofta poppar upp på Saab, eftersom det är en försvarsindustri. 
+
+Jag tycker inte att boken lever upp till sin titel om hur man ska skala Lean och Agile utveckling, men det står en del kloka saker i den. Det är bara det att man måste läsa många sidor för få kloka saker.
+

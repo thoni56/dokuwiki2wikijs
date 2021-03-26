@@ -1,0 +1,37 @@
+====== <template> ======
+
+På den agila arenan ...
+
+===== Hur ser det ut när det fungerar bra? =====
+
+===== Typiska fenomen att vara observant på =====
+
+  * ...
+
+===== Tekniker =====
+
+  * ...
+
+===== Lämpliga aktiviteter och övningar =====
+
+  * ...
+
+===== Verktyg =====
+
+  * ...
+
+===== Rekommenderad litteratur =====
+
+  * ...
+
+===== Våra erbjudanden =====
+
+  * ...
+
+===== Vad saknas =====
+
+  * ...
+
+===== Nästa arena =====
+
+  * ..

@@ -1,0 +1,133 @@
+# Kompetensträdskuvösen
+
+Här antecknar vi material, övningar och annat som kan tänkas passa i något område och nivå i Responsives kompetensträd.
+När vi konstaterat var ett element passar flyttar vi det dit.
+I den här strukturen spelar layout, format mm. ingen roll, en rå URL i textformat, eller "han som pratade om mikrotjänster på DevLin för några år sedan", är helt ok.
+Det viktiga är att vi sen kan förädla det fröet till något tydligare i rätt nod i trädet.
+
+Här under finns avdelningar för varje område och på slutet sådant som behöver diskuteras var det passar bäst.
+Den diskussionen kan också leda till en bättre definition av området, uppdatera i så fall områdets beskrivning i trädet
+.
+## Agile
+[Definition](kompetens:kompetensträd:agile)
+
+- The Goal, Eliyahu Goldratt - Bok som ger en bra introduktion till Theory of Constraints, och en grund till Lean och Agile.
+- The New Economics, W. Edwards Deming - Bok om vikten av kontinuerligt lärande, waste reduction, m.m. Viktig grund till Lean och Agile.
+- Scrum and XP from the trenches, Henrik Kniberg - Bok med bra, korta och enkla beskrivningar av de viktigaste sakerna i agilt. (Finns gratis här: https://www.infoq.com/minibooks/scrum-xp-from-the-trenches-2/)
+- https://www.martinfowler.com/articles/newMethodology.html
+
+## Coaching
+[Definition](kompetens:kompetensträd:coaching)
+
+
+- [[https://www.viktorcessan.com/the-holistic-observations-of-teams/]]
+- Toyota Kata, Mike Rother
+
+## Programmering
+[Definition](kompetens:kompetensträd:programmering)
+
+- Särskilt kapitel 4 "Motivation" i Implementation Patterns - Kent Beck, men förstås hela boken som lär vara en mer "filosofisk" version av materialet i hans "Smalltalk Best Practice Patterns"
+- Code Complete - Steve McConnell
+- The Pragmatic Programmer - 
+- Guilded Rose solution by Sandi Metz - https://youtu.be/8bZh5LMaSmE (eller nästan vad som helst med henne)
+- Refactoring - Martin Fowler
+- Working Effectively with Legacy Code - Michael Feathers
+- https://michaelfeathers.silvrback.com/characterization-testing
+- SOLID, men läs även https://dannorth.net/2021/03/16/cupid-the-back-story/
+- Structured Design - Edward Yourdon & Larry Constantine 1979
+
+
+## Embeddedutveckling
+[Definition](kompetens:kompetensträd:embeddedutveckling)
+
+## Webbutveckling
+[Definition](kompetens:kompetensträd:webbutveckling)
+
+- REST vs. GraphQL
+- Kanske lite mer meta: [Are jQuery and Bootstrap outdated](https://www.quora.com/Are-jQuery-and-Bootstrap-outdated-I-have-read-that-they-are-now-being-replaced-by-React-and-CSS-grid-but-I-keep-seeing-them-in-the-tutorials-for-web-developers-Is-it-worth-for-a-beginner-to-invest-his-time-in)
+
+
+## Arkitektur
+[Definition](kompetens:kompetensträd:arkitektur)
+
+- C4-modellen
+- CQRS
+- Hexagonal Architecture, t.ex Aslak Hellesøy's presentation på DevLin eller [[https://web.archive.org/web/20170925184018/http://alistair.cockburn.us/Hexagonal+Architecture+FAQ|Alistair Cockburns Hexagonal Architecture FAQ]]
+
+- https://medium.com/swlh/everything-aboutsoftware-architecture-dfd2b9351ef4
+- https://betterprogramming.pub/solutions-architect-tips-the-5-types-of-architecture-diagrams-eb0c11996f9e
+- [The Clean Architecture Model](https://qph.fs.quoracdn.net/main-qimg-82811c47bd011165493787c8881e9719-c)
+- [Sustainable Software Architecture - Carola Lilienthal](https://sustainable-software-architecture.com)
+
+## Testning
+[Definition](kompetens:kompetensträd:testning)
+
+- https://www.industriallogic.com/blog/why-are-my-tests-flakey/
+- [[https://www.satisfice.com/download/how-to-talk-about-testing|How to talk about testing, by James Bach]]
+
+## DevOps
+[Definition](kompetens:kompetensträd:devops)
+
+- The DevOps Handbook
+- The Phoenix Project
+
+## Team
+[Definition](kompetens:kompetensträd:team)
+
+## Organisation
+[Definition](kompetens:kompetensträd:organisation)
+
+- Good to Great, Jim Collins
+- Measure What Matters, John Doerr
+- Start With Why, Simon Sinek
+- Sociocracy 3.0 (eller Holocracy)
+
+## Processer
+[Defintion](kompetens:kompetensträd:processer)
+
+- https://www.bokus.com/bok/9780201699470/crystal-clear/
+- https://www.scrum.org/resources/scrum-guide
+- eXtreme Programming
+
+## Projekt
+[Definition](kompetens:kompetensträd:projekt)
+
+## Människor
+[Definition](kompetens:kompetensträd:människor)
+
+- Skinner - Human Behaviour
+- Thinking Fast and Slow
+- Drive, Daniel Pink - Om motivation
+- Trust Factor, Paul Zak - Om tillit
+- Big Potential, Shawn Achor - Om positiv psykologi
+- https://www.infoq.com/minibooks/conversation-patterns/
+- https://www.youtube.com/watch?v=npOGOmkxuio - Runt 20:00 in börjar Sandi Metz prata om människors beteende i grupp avseende regler, mycket intressant
+- The Cooperative Culture Handbook - https://www.amazon.com/Cooperative-Culture-Handbook-Dismantle-Connection/dp/0999588508
+
+## Problemlösning
+[Definition](kompetens:kompetensträd:problemlösning)
+
+- System Design Heuristics av Gerald M. Weinberg innehåller mycket problemlösning och idégenerering
+
+## Lärande
+[Definition](kompetens:kompetensträd:lärande)
+
+## Oklart
+
+Potentiella områden som kanske ska vara egna eller hör hemma någon annanstans...
+Några saker som kan vara intressant att ha med är "Ledning" och "Beslutsfattande".
+Någon som har någon idé om de passar in någonstans eller om dom helt enkelt inte ska vara med?
+
+### Förändring 
+
+- Leading Change, John Kotter - Om förändringsledning
+
+### Ledning (eller mätning?)
+
+- [Dan North om OKRs](https://dannorth.net/2017/05/01/applying-okrs/)
+- https://pbs.twimg.com/media/EwnNBS7XIAQw7mC?format=png&name=900x900
+
+### Beslutsfattande
+
+- [Better Decision Making with Solution Focused Coaching](https://www.academia.edu/31116229/Better_Decision_Making_with_Solution_Focused_Coaching)
+- [Skilled Decision-Making ... is hard to come by](https://ezc.partners/2020/06/19/decision-making-under-complex-conditions/)

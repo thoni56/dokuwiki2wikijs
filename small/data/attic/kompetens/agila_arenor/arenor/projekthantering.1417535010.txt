@@ -1,0 +1,55 @@
+====== Projekthantering ======
+
+På den agila arenan "Projekthantering" fokuserar vi på hanteringen av initiativ av olika slag, varav projekt är en.
+
+I vår modell har projekt en tydlig innebörd som har en intressant skillnad mot den "klassiska", nämligen att själva innehållet, genomförandet och personerna som gör det, inte ingår. I stället får projekt och andra initiativ en andel av den utvecklingskapacitet som finns. Detta är den ram, budget, som initiativet har att röra sig med.
+
+Projekthantering är därmed den arena som genom resonemang med intressenter, särskilt kunder, fyller kapaciteten man fått med rätt saker, följer upp hastighet och planerar för leveranser och andra viktiga milstolpar. En särskilt viktig aspekt är att ständigt ha kontroll på vilka argument, och andra behov, som styr önskemål om olika datum, t.ex leveranser. Ett datum kan vara viktigt att hålla för att det finns hårda bakomliggande datum, andra är flexibla, men kanske önskvärda. Dessa måste hanteras helt olika.
+
+===== Tekniker =====
+
+  * Project burnup/burndown graphs
+  * Estimering
+  * Relativ epicestimering
+  * T-shirt sizing
+  * Kanban for Product Owners
+  * ...
+
+===== Lämpliga aktiviteter och övningar =====
+
+  * The Burndown Game
+  * Tredjedelar - workshop för att dela behov/storys/krav i tre högar om en tredjedel vardera (essentiell, kritisk och viktig, eller MoSCoW)
+
+===== Verktyg =====
+
+  * Excel
+  * JIRA
+  * ...
+
+===== Rekommenderad litteratur =====
+
+  * Software Economics
+  * Agil Projektledning
+  * The Phoenix Project
+  * Pust
+  * Detta är Lean - Niklas Modig
+  * ...
+
+===== Kurser =====
+
+  * Kick-starta ditt projekt
+  * Agile - Ledning, planering och styrning
+  * Rädda ditt projekt
+  * Agile för chefer och ledare
+  * ...
+
+===== Nästa arena =====
+
+  * ...
+
+===== Backlog =====
+
+  * Någon teknik för nerbrytning och kopplingar av feature areas/epics/stories?
+  * Någon teknik för estimering med osäkra data och på hög nivå?
+  * Någon teknik för att fördela projektets arbete på team?
+  * Någon teknik för releaseplanering?

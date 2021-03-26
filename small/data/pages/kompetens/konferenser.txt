@@ -1,0 +1,39 @@
+====== Konferenser ======
+
+Här är en kalender över (mest) kommande konferenser. Hjälp till att hålla den uppdaterad! Plocka gärna bort gamla när ni lägger till nya, eller uppdatera gamla konferenser med nya datum (och orter).
+
+Man kan också söka i tjänsten [[http://lanyrd.com/|Lanyrd]].
+
+(sorterbar, klicka på rubrik):
+
+<sortable>
+^ Datum ^ Namn ^ Stad ^ Call for papers ^ Länk ^
+| 2013-10-31/11-01 | Modern Management Methods: Lean Kanban United Kingdom 2013 | London   |            | http://lkuk.leankanban.com/ |
+| 2013-11-08/09 | Brewing Agile                           | Göteborg   |            | http://brewingagile.org/ |
+| 2013-11-08/09 | Software craftmanship 2013              | Chicago, IL   |            | http://scna.softwarecraftsmanship.org/ |
+| 2013-10-26/31 | SPLASH 2013                             | Indianapolis  |            | http://splashcon.org/2013/ |
+| 2014-07-28/01 | ECOOP 2014                              | Uppsala       |            | http://ecoop14.it.uu.se/ |
+| 2014-07-28/01 | Agile2014                               | Florida       |            | http://agile2014.agilealliance.org/ |
+| 2014-05-26/30 | XP2014                                  | Rom           |            | http://xp2014.org/ |
+| 2013-08-05/09 | Agile 2013                              | Nashville     |            | http://agile2013.agilealliance.org |
+| 2012-03-19/20 | Software Passion Summit                 |               |            | http://www.softwarepassion.se |
+| 2012-05-21/23 | Goto;                                   | Köpenhamn     |            | http://gotocon.com/ |
+| 2013-09-30/10-04 | Goto;                                | Aarhus        |            | http://gotocon.com/ |
+| 2013-10-15/18 | Goto;                                   | Berlin        |            | http://gotocon.com/ |
+| 2014-05-20/23 | Goto;                                   | Chicago       |            | http://gotocon.com/ |
+| 2014-06-18/20 | Goto;                                   | Amsterdam     |            | http://gotocon.com/ |
+| 2012-03-08    | Scandinavian Agile Conference           | Helsinki      |            | http://scan-agile.org/             |
+| 2013-03-16    | DevLin Utvecklarkonferens i Linköping   | Linköping     |            | http://events.responsive.se/events |
+| 2012-02-12    | AGILE, LEAN & KANBAN EXCHANGE           | London        |            | http://skillsmatter.com/event/agile-testing/agile-lean-kanban-exchange-2012|
+| 2012-11-05/09 | Öredev                                  | Malmö         |            | http://oredev.se/                  |
+| 2013-06-12/14 | NDC (Norwegian Developer Conference)    | Oslo          |            | http://www.ndcoslo.com/             |
+| 2012-04-16/19 | SDC (Scandinavian Developer Conference) | Götebörj      |            | http://www.scandevconf.se          |
+| 2014-05-??    | Agila Sverige                           | Stockholm     |            | http://www.agilasverige.se |
+| 2012-11-??    | Smidig                                  | Oslo          |            |                                    |
+| 2012-02-13/15 | JFokus                                  | Stockholm     |            | http://www.jfokus.se               | 
+| 2013-10-09/10 | Agile Business Conference               | London        |            | http://www.agileconference.org/ |
+| 2013-09-23/25   | Scrum Gathering                       | Paris         |            | http://www.scrumalliance.org/courses-events/events/global-gatherings |
+| 2014-05-05/07   | Scrum Gathering                       | New Orleans   |            | http://www.scrumalliance.org/courses-events/events/global-gatherings |
+| 2014-09-2/24   | Scrum Gathering                        | Berlin        |            | http://www.scrumalliance.org/courses-events/events/global-gatherings |
+| 2013-03-07    | QCON                                    | London        |            | http://www.qconferences.com/  |
+</sortable>

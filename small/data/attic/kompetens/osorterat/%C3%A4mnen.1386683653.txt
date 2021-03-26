@@ -1,0 +1,32 @@
+====== Ämnen ======
+
+Här listar vi de områden eller aspekter på utveckling som vi kan diskutera, förklara och resonera kring för att visa hur vi på Responsive resonerar. Detta kan användas t.ex som ämnen för frukostseminarier eller fika-ämnen för medveten introduktion av nyanställda.
+
+==== Teamarbete ====
+
+==== Ståupp ====
+
+==== Planering ====
+
+==== Projekt ====
+
+==== Arkitektur ====
+
+==== Automattestning ====
+
+==== Pararbete ====
+
+==== Att förbättra sig själv ====
+
+Bok: Pragmatic Programmer
+==== Att förbättra sitt team ====
+
+==== Att förbättra sin organisation ====
+
+==== Att bli en bättre programutvecklare ====
+
+==== Nedbrytning av krav i stora system ====
+
+==== Produktägare vs. Projektledare ====
+
+==== Story points ====

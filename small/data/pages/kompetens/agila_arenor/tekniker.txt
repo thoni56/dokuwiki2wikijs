@@ -1,0 +1,5 @@
+====== Tekniker ======
+
+Vad menar vi med tekniker? Det är förstås lite fluffigt men om vi känner att en teknik behöver en egen sida där vi kan anteckna tips så finns dom här.
+
+De refereras från våra [[kompetens:agila_arenor|Agila Arenor]] och om någon teknik behöver förklaras extra eller man behöver få referenser eller beskriva egna erfarenheter så kan man skapa en sida här under.

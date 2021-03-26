@@ -1,0 +1,39 @@
+====== Organisation & Ledning ======
+
+Denna arena beskriver och samlar erfarenheter, tankar, metoder och modeller som kanske riktar sig främst till ledningar och personer i ledande roller. Den mesta informationen här är förstås relaterad till hur man beskriver modern utveckling, vad som är avgörande för en friktionsfri och verkansfull utvecklingsorganisation. Men en del handlar också om organisationsutveckling, ledarstilar och organisationers kulturer och transitioner.
+
+===== Modeller =====
+
+==== Principer för agila organisationer ====
+
+Agile For All har en mycket intressant redogörelse för några grundläggande [principer för agila organisationer](http://agileforall.com/agile-organizations/).
+
+Corporate Rebels är en organisation som verkar just med att förändra organisationer, på deras hemsida finns mycket intressant material. T.ex finns där en intressant artikel om [nätverk av team](https://corporate-rebels.com/rebel-trends-2-network-of-teams/)
+
+==== Laloux Organizational Culture Model ====
+
+Laloux beskriver i "Reinventing Organizations" en modell för att tänka och beskriva organisationers kultur och hur de har utvecklats genom tiderna. I en [video gjord av "Agile for All"](https://vimeo.com/121517508) beskrivs denna väldigt bra, speciellt ur perspektivet införande och adoption av Agile och Lean.
+
+==== Cynefin ("knevin") ====
+
+[Cynefin är en modell för komplexitet](https://www.youtube.com/watch?v=N7oz366X0-8) skapad av Dave Snowden. Poängen med modellen är att beroende på komplexitetsgrad fungerar olika typer av angreppssätt, ledarstil mm. olika bra. Modellen har i princip fyra nivåer
+
+  - obvious - lösning och orsak/verkan är uppenbar och här finns ofta en "best practice"
+  - complicated - analys och grupparbete kan förklara orsak och verkan, "good practice" är tillräckligt
+  - complex - vi kan bara förstå orsak/verkan i efterhand, experimenterandet och lärandet är viktigast
+  - chaos - det enda som hjälper är att agera och hoppas
+
+
+===== Tekniker =====
+
+===== Lämpliga aktiviteter, övningar och workshops =====
+
+===== Verktyg =====
+
+===== Rekommenderad litteratur =====
+
+En väldigt bra blogpost om Lean, Agile och DevOPs som innehåller beskrivningar som passar för ledningar är [[https://aws.amazon.com/blogs/enterprise-strategy/cfo-series-an-executive-view-of-lean-and-agile-it/|den här]].
+
+===== Kurser =====
+
+===== Möjliga nästa arenor =====

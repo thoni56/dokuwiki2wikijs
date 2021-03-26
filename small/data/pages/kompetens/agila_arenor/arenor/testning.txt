@@ -1,0 +1,50 @@
+====== Testning ======
+
+På den agila arenan "Testning" pratar vi om både verifiering och validering, dvs. både att det vi byggt fungerar //och// att det levererar värde.
+
+James Bach höll keynote på DevLin2018 och pratade mycket om bra saker inom testning, men är kanske främst känd som en stark förespråkare av distinktionen mellan "checking" och "testing", där "testing" kräver mänsklig intelligens, medan "checking" är det vi kan göra med automatik, dvs. att programatiskt kunna verifiera att systemet under test gör det vi, när vi skrev testerna, trodde att det skulle göra.
+
+===== Träning =====
+
+Ett sätt att bli bättre på "testing", "träna på testning", är att genomföra "[[http://testingchallenges.thetestingmap.org/index.php|Testing Challenges]]", en websida där man skall genomföra olika tester för att se om man täckt de fall som websidans författare anser att man borde. (Jag kom bara på 11 testfall av 18 möjliga på första testet.)
+
+===== Tekniker =====
+
+  * Acceptanstest
+  * Unit Testing
+  * Mocle - Vad är detta, förtydliga?
+  * Specifikation by Example
+  * ATDD
+  * Automatiska tester; Page Object
+  * Utforskande test
+  * Mocka - Vad är detta, förtydliga?
+  * Positiva och negativa testfall
+  * A&B testning
+  * ...
+
+===== Verktyg =====
+
+Uj, här finns ju hur mycket som helst, men om vi pratar om End2End/Acceptance Testing så finns
+
+  * Selenium
+  * Cypress
+
+
+
+===== Rekommenderad litteratur =====
+
+  * Agile Testing - Crispin et al.
+  * [[http://www.satisfice.com/articles/what_is_et.shtml|Utforskande test]]
+  * [[https://www.udemy.com/selenium-framework-design-pageobjecttestngmavenjenkins/|Testa websidor med selenium (Page Objects)]]
+  * ...
+
+===== Våra erbjudanden =====
+
+  * Cucumber (Coder's Dojo)
+  * Jenkins
+  * ...
+
+
+===== Nästa arena =====
+
+  * ...

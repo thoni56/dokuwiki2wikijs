@@ -70,8 +70,10 @@ class Converter:
         for c in self.changelog:
             pagepath = c[3].replace(':', '/')
             filename = os.path.join(
-                self.atticdir, pagepath + '.%s.txt.gz' % c[0])
-            if not os.path.exists(filename):
+                self.atticdir, c[6] + '.%s.txt' % c[0])
+            filename_gz = os.path.join(
+                self.atticdir, c[6] + '.%s.txt.gz' % c[0])
+            if c[2] != 'D' and not os.path.exists(filename) and not os.path.exists(filename_gz):
                 log.warning(
                     'File "%s" does not exist, despite being in changelog (%s), skipping' % (filename, c[6]))
                 continue

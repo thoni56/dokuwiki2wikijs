@@ -1,0 +1,4 @@
+# Agile
+
+Detta område handlar om det "genuina" agila tänkandet, värderingar och principer. För olika tekniker eller metoder se respektive områden, t.ex [[kompetens:kompetensträd:processer|Processer]], [[kompetens:kompetensträd:team|Team]], [[kompetens:kompetensträd:programmering|Programmering]] eller [[kompetens:kompetensträd:projekt|Projekt]].
+

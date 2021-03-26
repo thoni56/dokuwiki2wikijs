@@ -1,0 +1,41 @@
+====== Team ======
+
+På den agila arenan "Team" pratar vi om team, samarbete, grupputveckling, gemensamt ansvar och kultur.
+
+[[http://www.scrumguides.org/docs/scrumguide/v1/scrum-guide-us.pdf|The Scrum Guide]] är underförstått och tekniker och värderingar därifrån är förstås alltid värdefulla och ska förstås användas där så är möjligt. Vi kan ha våra egna (eller andras) tvistar på vissa av dom, och i så fall kan de beskrivas på den här agila arenan.
+
+
+===== Tekniker =====
+
+  * Dialogue sheet retrospectives
+  * Scrum (som ju egentligen bara adresserar ett utvecklingsteam och deras krav på omgivningen)
+  * Team Inception
+  * ...
+
+===== Lämpliga aktiviteter och övningar =====
+
+  * Team Inception
+
+===== Verktyg =====
+
+  * ...
+
+===== Rekommenderad litteratur =====
+
+  * Agile Retrospectives - Esther Derby, Diana Larsen, Ken Schwaber
+  * 
+
+===== Kurser =====
+
+  * ...
+
+===== Backlog =====
+
+  * Tekniker eller annat när man behöver eller teamet vill delas
+  * ...
+
+===== Nästa arena =====
+
+  * [[kompetens:agila_arenor:projekthantering]]
+  * [[programmering]]
+  * [[kompetens:agila_arenor:testning]]

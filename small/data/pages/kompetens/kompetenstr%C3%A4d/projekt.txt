@@ -1,0 +1,4 @@
+# Projekt
+
+Även om projekt i sin traditionella form inte passar så bra i en modern agil utveckling så finns det aspekter ur "projekttänket" som är väsentliga att förstå.
+Det finns också ofta någon form av projekt-tänk i våra kundorganisationer och då är det viktigt att förstå var den kommer ifrån och vad man försöker uppnå med det.

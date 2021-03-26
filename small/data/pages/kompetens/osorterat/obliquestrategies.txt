@@ -1,0 +1,38 @@
+==== Oblique Strategies ====
+
+Brian Eno och Peter Schmidt använde kort med inspirationsmeningar för att få inspiration under sina studiosessioner. 
+
+Jimmy Janlén på Crisp har också Jimmy Cards och Jurgen Appelo använder kort med frågor för att driva medarbetarsamtal(kopia finns inne på kontoret på svenska)
+
+  * Skriv ett test
+  * Byt editor
+  * Ta ett glas vatten
+  * git stash
+  * fråga din granne
+  * låt någon annan ta beslutet
+  * ta bort alla tomma rader
+  * Lös det med copy-paste
+  * Lär dig något nytt
+  * Skriv en arg lapp
+  * whitespace
+  * Gör den mest komplicerade lösningen
+  * Andas
+  * Gör det så enkelt så att du bara nästan löser problemet
+  * Var destruktiv
+  * Behöver du verkligen inspiration?
+  * Nej
+  * Du är användaren
+  * Gör inte som...
+  * Gör det inte!
+  * Vad hade McGuyver gjort?
+  * Låtsas att du jobbar
+  * Minsta gemensamma nämnaren
+  * Gör en utförlig lista, ta det sista alternativet
+  * Gå utomhus
+  * En bildskärm räcker
+  * FLER, STÖRRE BILDSKÄRMAR!
+  * Lyssna på musik
+  * Var mindre kritisk
+  * 古池や　蛙飛び込む　水の音
+  * Il suono dell'acqua e dello stagno
+  * ..

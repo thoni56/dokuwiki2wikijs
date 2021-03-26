@@ -1,0 +1,25 @@
+====== Cheat Sheet : Sprintplanering ======
+
+===== Syfte =====
+
+Att PO och utvecklingsteam kommer överens om det funktionella scopet för vad de tror kan levereras vid sprintslut och att teamet gör en grovplanering för hur det ska uppnås (SBL). 
+
+===== Tid =====
+
+Mötet hålls inför varje nytt sprint. Timebox = 2 tim * antal sprintveckor.
+
+===== Agenda - del 1 =====
+
+  * PO går igenom funktion, syfte och acceptanskriterier för de PBI som hen anser realiserar sprintmålet
+  * Teamet ställer frågor vid oklarheter och bedömer komplexiteten hos varje PBI
+  * Teamet ger ett första förslag på vilka PBI de tror de kan leverera i detta sprint
+
+===== Agenda - del 2 =====
+
+  * Teamet gör en första design och bryter ned varje PBI i konkreta uppgifter
+  * Slutresultatet är teamets SBL (scoopet kan behöva justeras beroende på vad som kommer fram i nedbrytningen)
+
+===== Tänk på =====
+
+  * Att PBI som ska behandlas på mötet uppfyller Definition of Ready
+  * Design och nedbrytning kan också göras när man startar arbetet på PBI:n

@@ -1,0 +1,31 @@
+====== Cheat Sheet : Retrospektiv ======
+
+Denna fusklapp skapade vi på internmöte 2015-12-15.
+
+En ingång för fusklappen om retrospektiv är att det inte egentligen är retrospektivet i sig som är poängen, utan att den är en del i organisationens kultur av ständig förbättring och att teamet/gruppen har en viktig roll i detta.
+
+===== Retrospektiv =====
+
+==== Syfte ====
+
+kaizen, ständigt förverkligade förbättringar
+
+==== Agenda ====
+
+insamling, urval, rot-orsaksanalys, åtgärdsförslag och -beslut
+
+==== Tänk på ====
+
+Prime Directive, lokal, material, facilitering
+
+<ditaa>
++----------------+    +---------+
+|    Nuläge      |<---+  Åtgärd | 
++-------+--------+    +----+----+
+        |                  ^
+        V                  |
++----------------+   +-----+-----+
+|  Retrospektiv  +-->|  Resultat |
++----------------+   +-----------+
+</ditaa>
+Alla steg är lika viktiga!

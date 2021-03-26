@@ -1,0 +1,43 @@
+====== Programmering ======
+
+På den agila arenan "Programmering" pratar vi om hur man skapar bra kod.
+
+===== Tekniker =====
+
+  * Test Driven Development (TDD) inklusive mockning, med varning för [[https://www.thoughtworks.com/insights/blog/mockists-are-dead-long-live-classicists|TTDD]] (Tautological TDD)
+  * Unit Testing
+  * Automatiska tester
+  * Behaviour Driven Development, kodnära (BDD)
+  * Refactoring
+  * Design Patterns
+  * Refactoring to Patterns
+  * Dependency Injection
+  * ABC-programmering ("Assert-first, Backwards-directed, Completion-assisted")
+  * Approval Testing
+  * Teknisk skuld ([[https://www.infoq.com/articles/tech-debt-quantification|Technical Debt Quantification]])
+  * Kodgranskning (automatisk och "manuell")
+  * [[https://sourcemaking.com/refactoring/smells|Code Smells]]
+  * ...
+
+===== Verktyg =====
+
+  * [[http://cyber-dojo.org|Cyber-Dojo]]
+
+===== Rekommenderad litteratur =====
+
+  * Refactoring - Fowler
+  * Refactoring to Patterns - Kieriewsky
+  * Mikadometoden - Ellnestam & Brolund
+  * Clean Code - Robert C. Martin ("Uncle Bob")
+  * Working Effectively With Legacy Code - Michael Feathers
+  * ...
+
+===== Kurser =====
+
+  * [[kompetens:agila_arenor:workshops:codersdojo|Coder's Dojo]]
+  * ...
+
+===== Möjliga nästa arenor =====
+
+  * [[kompetens:agila_arenor:arenor:projekthantering]]
+  * [[kompetens:agila_arenor:arenor:team]]

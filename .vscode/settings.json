@@ -12,5 +12,6 @@
     "python.testing.pytestArgs": [
         "."
     ],
-    "python.testing.promptToConfigure": false
+    "python.testing.promptToConfigure": false,
+    "python.pythonPath": "/usr/bin/python"
 }

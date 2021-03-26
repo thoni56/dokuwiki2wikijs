@@ -1,0 +1,15 @@
+# Initiala diagnostikfrågor
+
+Under ett internmöte diskuterade vi vilka frågor man kan ställa sig rörande sitt kundföretags arbetssätt.
+Detta är frågorna som kom upp när Thomas pratade om sitt uppdrag på Cendio, som ett exempel på initiala frågor
+som kan vara bra att ställa sig tidigt.
+
+- Vad får dom lägga ner mest tid på?
+- När blir dom "upprörda"?
+- Vilken är planeringshorisonten?
+- Cykeltid till klart?
+- Grooming? (Har man en metod för grooming?)
+- Scrum(iteration) eller kanban(flöde)?
+
+{{:kompetens:tavla_diagnostik.png?400|}}
+ 

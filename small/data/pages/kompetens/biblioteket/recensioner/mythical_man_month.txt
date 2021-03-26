@@ -1,0 +1,15 @@
+====== The Mythical Man-Month ======
+
+Författare: Fredrick P. Brooks, Jr
+
+Recensent: Kajsa
+
+Boken är skriven 1975 och utgiven igen till 20-årsjubileet 1995. Den består av ett antal essäer med olika infallsvinklar på programmering och SW-utvecklingsprojekt och tankar runt detta. De första 17 kapitlen är exakt de som gavs ut 1975 och de sista är författarens tankar runt en del av dem idag.
+
+De flesta essäerna är, i mitt tycke, ganska omoderna. Författaren trycker mycket på dokumentation, uppdelning av arbete för arkitekter, programmerare etc. Visst finns det fortfarande en del bra tankar men det är svårt att hitta dem eftersom mycket känns omodernt. 
+
+En intressant grej är att det författaren skriver om Written specification är att man ska fokusera på Användarmanualen och beskriva det som användaren ser och kan göra. Det kändes modernt!
+
+De senare kapitlen som är tillagda på 80-talet och 90-talet är roliga att läsa eftersom författaren funderar över sina egna slutsatser. Han erkänner att han själv har haft fel i vissa fall.
+
+Boken är väldigt praktisk och det finns många praktiska exempel. Är man intresserad av projekt runt tidiga operativsystem, information om hur man såg på hög-nivåspråk på 70-talet och liknande så är det en intressant läsning.

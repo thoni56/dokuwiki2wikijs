@@ -1,0 +1,67 @@
+# Det Agila företaget – Fiskstim eller supertankers i en dynamisk värld
+
+Författare: Lennart Francke och Göran Nilsson
+
+År: 2017
+
+Färdigläst: 2019-03-20
+
+## Varför läste jag boken?
+
+Responsive hade köpt in boken nyligen, så jag katalogiserade den, sen tänkte jag att det kunde vara kul att läsa en bok på svenska, som omväxling.
+
+## Vad handlar boken om?
+
+Boken handlar om traditionella och mer moderna sätt att driva företag på. Man försöker knyta an till agile genom att, för några kapitel, ha några undertitlar som påminner om det agila manifestet.
+Vissa, som t.ex. Planering – Anpassning är ganska smidiga mappningar mot det agila manifestet, medans andra är lite mer otydliga.
+
+Boken är en exempeldriven jämförelse mellan företags processer, primärt industrier, men också några tjänsteföretag, som t.ex. Handelsbanken.
+Jag skulle säga att man fokuserar på företags flexibilitet, långsiktighet och de anställdas ansvar.
+Det som jag tycker är lite intressant med boken är att den nog snarast är skriven för ledning, plus att det är intressant att läsa någon som försöker applicera agile på en industriell kontext.
+
+## Kritik
+
+Jag upplever att den är skrivet på ett något oprofessionellt och något subjektivt sätt.
+Visst, den är populärvetenskaplig, men man använder sig lite väl ofta av sarkasm och “det är klart att det är så” argument för vissa idéer.
+
+## Vem är författaren?
+
+Lennart Francke är rådgivare och styrelseledamot, har erfarenhet primärt från Handelsbanken.
+
+Göran Nilsson är forskare på uppsala universitet, har tidigare jobbat som controller.
+
+## Vad lärde jag mig från boken?
+
+Det som var mest intressant för min del var de olika exemplen som togs upp.
+Brasilianska Semco verkar exempelvis vara ett ganska speciellt företag.
+De har gått från att vara väldigt strikt byråkratiskt till ett väldigt medarbetarorienterat företag.
+Det är också trevligt att få insyn i några svenska företag, bland annat Atlas Copco i Tierp och Handelsbanken.
+Ibland känns det lite tillrättalagt, exemplen om Handelsbanken känns t.ex. ganska snälla.
+
+Jag hade heller inte hört någonting om rullande budgetar tidigare, men det är iallafall att man inte budgeterar för ett år utan ser till att man vid alla tidpunkter har en budget minst x månader framåt, kanske tre till exempel.
+Då gör man en sexmånadersbudget var tredje månad med mål och uppföljning.
+
+En till observation som boken gör (Referens till Likers The Toyota Way) är att många västerländska företag gjorde en för kraftig svängning m.a.p. byråkrati när man började implementera japanska produktionsfilosofier.
+Då lean enligt Liker absolut är byråkratiskt, fast en möjliggörande istället för en begränsande byråkrati.
+
+Tycker att Atlas Copco i Tierp också var ett speciellt intressant case, speciellt de bitar som handlade om medarbetarmotivation. De hanterade det, som jag förstår det, sina medarbetare på ett annorlunda, men mänskligt sätt.
+
+## Coola citat från boken?
+
+“Det är ingen match att köpa dyra fina maskiner, det kan man göra hur lätt som helst egentligen, men det gäller ju då att ha en motiverad personal”
+
+Produktionstekniker, Atlas Copco, Tierp, ca 1985
+
+## Att läsa vidare om
+
+Atlas Copco har fortfarande kvar sin fabrik i Tierp. De verkar ha rekryterat folk ganska nyligen.
+
+## Literaturlista
+
+The Machine that Changed the world
+
+## Betygsättning och rekommendationer
+
+Jag rekommenderar boken till någon som är intresserad av exempel, primärt i svensk industri där man haft agila/flexibla/lean approacher till saker och det fungerat.
+
+Det är inte någon personlig favorit, men den får två av fem brinnande servrar.

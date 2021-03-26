@@ -1,0 +1,36 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto&display=swap');
+
+.dokuwiki .dTreeNode > a.navSel,
+.dokuwiki .dTreeNode > a.navSel:hover,
+.dokuwiki .dTreeNode > a.nodeFdUrl,
+.dokuwiki .dTreeNode > a.nodeFdUrl:hover,
+.dokuwiki .dTreeNode > a.nodeUrl,
+.dokuwiki .dTreeNode > a.nodeUrl:hover,
+.dokuwiki .dTreeNode > a.nodeSel,
+.dokuwiki .dTreeNode > a.nodeSel:hover,
+.dokuwiki .dTreeNode > a.node,
+.dokuwiki .dTreeNode > a.node:hover,
+.dokuwiki .dTreeNode > a.node {
+    color: #224068;
+    font-size: 1.1em;
+}
+
+#dw__title,
+#dw__tools > li > a,
+#dw__user_menu > li > a {
+    color: #9d9d9d !important;
+}
+
+a {
+    color: #224068 !important;
+}
+
+a.wikilink2 {
+    color: #9E1535 !important;
+}
+
+
+.dokuwiki {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}

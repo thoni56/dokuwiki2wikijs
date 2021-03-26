@@ -1,0 +1,78 @@
+====== Team ======
+
+På den agila arenan "Team" pratar vi om team, samarbete, grupputveckling, gemensamt ansvar och kultur.
+
+[[https://www.scrumguides.org/docs/scrumguide/v2017/2017-Scrum-Guide-US.pdf#zoom=100|The Scrum Guide]] är underförstått och tekniker och värderingar därifrån är förstås alltid värdefulla och ska förstås användas där så är möjligt. Vi kan ha våra egna (eller andras) tvistar på vissa av dom, och i så fall kan de beskrivas på den här agila arenan.
+
+Vad är ett team? Se wikipedia! Och vi tror ju också på självorganisering! Läs gärna [[https://changingwinds.wordpress.com/2017/12/10/the-five-levels-of-teams-where-are-you-on-the-team-performance-curve/|The Five Levels of Teams]].
+
+En viktig del av att utveckla sig som team är ju förstås retrospektiven, se gärna [[kompetens:agila_arenor:arenor:förändring]] för tips om dom, särskilt "The One Minute Retrospective" för att få igång rutinen överhuvudtaget.
+
+
+===== Hur ser det ut när det fungerar bra? =====
+
+Gemensamt mål, hjälper varandra för att komma vidare varje dag, litar på och har respekt för varandra och är öppna och transparanta och ärliga. Strävar efter att förbättra sig. Alla är trygga med varandra och att man inte är ensam. Det är ingens fel när det inte blir rätt. Återutnyttja det som är eller känns bra.
+
+Fokus på, och tar gemensamt ansvar för, att bli klar. Hög nivå på kommunikation och hög bandbredd. Arbetar nära utan kommunikationsbegränsningar. Tar hand om det som inte blev rätt utan bortförklaringar eller urskuldande. Planerar ständigt om baserat på omständigheterna.
+
+En del team fastnar i låg "team-mognad", dvs. deras vardag och framsteg blockeras av att de t.ex inte samarbetar så bra, eller hela tiden missförstår mm. Här finns t.ex [[https://en.wikipedia.org/wiki/Tuckman%27s_stages_of_group_development|Tuckmans modell]] (med utvidgningar, t.ex Heidi Helflands femte tillstånd, "stagnating", som hon pratar om i sin Dynamic Re-teaming), och [[https://changingwinds.wordpress.com/2017/12/10/the-five-levels-of-teams-where-are-you-on-the-team-performance-curve/|"The Five Levels of Teams"]]. Hur man utvärderar och kommer vidare i detta är inte så uppenbart, men en (proprietär) modell är [[http://www.grove.com/methodology_drexlerSibbetTeamPerformanceModel.php|Drextler/Sibbet]].
+
+När det gäller teams "tekniska" färdigheter är [[http://www.agilefluency.org/|Agile Fluency Project]] intressant, med en genomtänkt diagnostik andra tekniker för att komma framåt i en fortsatt "agilisering". Thomas är licensierad diagnostikfacilitator.
+
+===== Typiska fenomen att vara observant på =====
+
+  * CYA - Cover Your Ass
+  * [[https://www.tablegroup.com/books/dysfunctions|Five Dysfunctions of a Team]]
+  * En "teamlead" som gör saker åt teammedlemmarna, allt från att boka "deras" möten till att flytta deras lappar
+
+===== Tekniker =====
+
+  * Dialogue sheet retrospectives
+  * Scrum (som ju egentligen bara adresserar ett utvecklingsteam och deras krav på omgivningen)
+  * Team Inception - initiera ett team och skapa deras målbild och identitet
+  * God dialog ("Thomas presentation på Cendio")
+  * ...
+
+===== Små tricks =====
+
+  * Avbrottshink: samla störningar som retrolappar i en hink(ritad på tavla eller äkta?) inför nästa retro
+  * Retroruta: samla retrolappar som kommer upp under sprint i ett hörn på scrumboard
+  * Burnup: Följ oplanerat arbete som kommer in genom en burnup i burndownen.
+  * Utlåning av resurser: Följ utlåning av medlemmar till andra team/projekt genom att dokumentera när och hur mycket i burndown
+  * Tasks vs Stories: Roligare att ha en burndown som mäter tasks eftersom det händer mer.
+  * ... 
+
+
+
+===== Lämpliga aktiviteter och övningar =====
+
+  * [[https://agilewarrior.wordpress.com/2010/11/06/the-agile-inception-deck/|Team Inception]]
+  * Myself in seven words (varje person skriver sju ord som beskriver en själv på en post-it och presenterar sedan)
+  * Mina erfarenheter (lista tre saker som du varit med om som kan vara nýttiga för ditt team och planera för att berätta om dom)
+  * [[https://www.toolshero.com/communication-skills/core-quadrant-ofman/|Core Quadrant/Kärnkvaliteter]] av Daniel Ofman, när man kommit så långt att man törs prata om sig själv, kan man försöka att för sina team-kamrater beskriva sin styrka/kärnkompetens (Core Quality), när den slår över och blir för mycket av det goda/fallgropar (Pitfall), vad man borde tänka på för att balansera sin fallgrop/utmaning (Challenge) samt vad som bara är för mycket av ens utmaning/allergi (Allergy). Funkar som självkännedom också.
+  * [[https://www.agendashift.com/featureban|Featurekanban]]
+  * Huddle.com har [[https://www.huddle.com/blog/team-building-activities/|en bra lista med team-övningar]] för att öka sin "team-ighet", Thomas har använt både "Categorisation" och "Sneek-a-peek", den sistnämnda med förbättringen att göra två omgångar med ett retrospektiv och förbättringsresonemang emellan.
+
+===== Verktyg =====
+
+  * [[http://mobprogramming.org | Mob programming]]
+
+===== Rekommenderad litteratur =====
+
+  * [[https://www.amazon.com/Agile-Retrospectives-Making-Teams-Great/dp/0977616649|Agile Retrospectives - Esther Derby, Diana Larsen]]
+  * [[https://www.amazon.com/s?k=Wheelan+Creating+Effective+Teams&i=stripbooks-intl-ship&ref=nb_sb_noss_2|Creating Effective Teams - Susan A. Wheelan]]
+
+===== Våra erbjudanden =====
+
+  * ...
+
+===== Vad saknas =====
+
+  * Tekniker eller annat när man behöver eller teamet vill delas(celldelning och seeding har nämnts)
+  * ...
+
+===== Nästa arena =====
+
+  * [[kompetens:agila_arenor:arenor:projekthantering]]
+  * [[programmering]]
+  * [[kompetens:agila_arenor:arenor:testning]]

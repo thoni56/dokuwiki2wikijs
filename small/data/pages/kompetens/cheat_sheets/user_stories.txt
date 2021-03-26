@@ -1,0 +1,45 @@
+====== Cheat Sheet : User Stories ======
+
+Detta Cheat Sheet skapades på ett internmöte 2015-12-15, parallellt med det Cheat Sheet som handlar om Retrospektiv.
+
+===== Syfte =====
+
+En User Story är ett diskussionsunderlag för en funktionalitet som skall implementeras. En user story bör vara
+
+  * Fristående
+  * Förhandlingsbar
+  * Värdefull
+  * Estimerbar
+  * Liten
+  * Testbar
+
+(=INVEST, Independent, Negotiable, Valuable, Estimatable, Small, Testable).
+
+Den beskriver vem, vad och varför, t.ex på klassisk form:
+
+> Som [Vem], vill jag [Vad], så att [Varför]
+
+eller på "David Evans-format":
+
+> För att [mål] för [intressent] tänker vi införa [funktionalitet] 
+
+Skall alltid innehålla minst titel, sammanfattning och acceptanskriteria. För att hålla sig till en kortfattad beskrivning skrivs den ofta ner på en liten papperslapp, som t.ex. en post-it.
+
+<ditaa noedgesep>
++----------------------------------+
+|Titel                             |
+|Sparfunktion                      |
+|                                  |
+|Beskrivning                       |
+|Som användare så vill jag kunna   | 
+|spara mitt arbete så att jag kan  |
+|fortsätta senare                  |
+|                                  |
+|Acceptanskriteria                 |
+|Det går att spara och ladda       |
+|projekt                           |
++----------------------------------+
+</ditaa>
+
+
+> If your story card is too small to fit everything you want to write down, get a smaller card...

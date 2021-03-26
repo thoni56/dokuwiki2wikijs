@@ -1,0 +1,42 @@
+====== Produktägande ======
+
+Produktägande betyder det ansvar som hanterar "produkten", oavsett dess materiella manifestation, dess funktion, nyttor och egenskaper över tid. Typiskt ligger detta på t.ex Produktägaren i Scrum, Produktledningen i en klassisk, större organisation, men det finns i alla typer av organisationer.
+
+I rollen bör också ligga kontinuerlig "Product Discovery" och alldeles särskilt i tidigt skede bör [[https://en.wikipedia.org/wiki/Lean_startup|LeanStartup]], [[https://www.jeffgothelf.com/lean-ux-book/|LeanUX]] mm. vara principer och modeller som används för att planera rätt saker.
+
+===== Tekniker =====
+
+  * [[https://cucumber.io/blog/2015/12/08/example-mapping-introduction|Example Mapping]] - enkelt sätt att strukturerat konversera och definiera User Stories/Product Backlog Items
+  * [[http://www.velocitypartners.net/blog/2014/02/11/the-3-amigos-in-agile-teams/|Three Amigos Meeting]] - backlog refinement-möte med representanter för flera aspekter
+  * Produktägarteam - även om åsikterna går isär (som vanligt) om det är bra eller dåligt kan det vara ett sätt att täcka en större produkt eller göra en "single point of truth"-PO:n som jämt är upptagen på annat håll lite mer åtkomlig
+  * [[kompetens:agila_arenor:arenor:kravhantering#impact_mapping|Impact Mapping]] - Gojko Adžić
+  * Story Mapping - Jeff Patton
+
+==== Backlog och hantering av den ====
+
+En ordnad lista av funktioner/nyttor/behov som skall implementeras/adresseras/uppfyllas är en väsentlig del av ett välordnat produktägande. Det finns några olika metoder att hantera denna:
+
+ - Product Backlog: Simplistic
+ - Work Item List: Disciplined Agile
+ - Option Pool: Lean
+
+Se [[http://agilemodeling.com/essays/prioritizedRequirements.htm|Scott Amblers beskrivning]] på [[http://www.agilemodeling.com]] för en bra genomgång.
+
+
+==== Prioritering över initiativ ====
+
+Om man har flera featureteam och dessa har resurser som behöver delas mellan team kan man låta teamen låna resurser från varandra enligt den prioritetsordning deras features har.
+
+{{:kompetens:agila_arenor:arenor:modell.png?400|}}
+
+===== Lämpliga aktiviteter och övningar =====
+
+  * [[https://www.agendashift.com/changeban|Changeban]]
+
+===== Verktyg =====
+
+===== Rekommenderad litteratur =====
+
+===== Kurser =====
+
+===== Möjliga nästa arenor =====

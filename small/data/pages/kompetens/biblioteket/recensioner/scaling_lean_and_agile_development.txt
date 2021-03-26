@@ -1,0 +1,114 @@
+===== Scaling Lean & Agile Development =====
+==== Thinking and organizational Tools for Large-Scale Scrum ====
+
+Författare: Craig Larman, Bas Vodde
+
+År: 2008
+
+Skrivet: 2019-03-22
+
+**Varför läste jag boken?**
+
+Jag har uppskattat de andra böckerna av Larman och Vodde och tänkte ge denna en chans. Dessutom fick jag den rekommenderad av en kollega.
+
+**Vem är författaren?**
+
+Craig Larman är mest känd för att vara en av skaparna av LeSS. Han och Bas Vodde lärde känna varandra på Nokia när de arbetade med deras scrum-arbete.
+
+**Vad handlar boken om?**
+
+Boken handlar om hur man kan bedriva agil utveckling, med en viss fokus på större organisationer, men det finns egentligen inget som säger att man inte skulle kunna använda vissa av idéerna på mindre organisationer också. Det är ungefär den relationen som jag känner att boken har till LeSS också. Boken är tveklöst ett bra stöd till en LeSS-implementation, men man skulle kunna köra LeSS utan att använda denna bok och man kan absolut använda denna bok utan att köra LeSS.
+
+Den är uppdelad I kapitel som handlar om olika fokusområden, t.ex. Systems thinking, Lean, Queue theory, team, organisation med mera. I varje kapitel rekommenderas läsaren prova och avrådes från olika sätt att hantera problem på. Ett exempel är Avoid… Fake ScrumMasters, samt Try… Self-organized team creation, där författaren förklarar fördelarna och nackdelarna med respektive sätt.
+Denna typ av experiment känner jag är givande och får mig att fundera på hur olika saker skulle fungera I olika situationer, hur jag skulle reagera I dem och ett och annat, ja, just det, det borde vi ha provat.
+
+Boken är engagerande och jag hade svårt att lägga ifrån mig den. Jag var lite orolig över att jag skulle uppfatta den som utdaterad, den är ju trots allt tio år gammal. 
+
+Det är svårt, men om jag skall välja ett favoritkapitel är det nog kapitel tre, som behandlar lean thinking. Jag har läst lite, kanske inte jättemycket om ämnet tidigare, men Craigs och Bas resonerande kring ämnet gör att kapitlet känns fräscht och lite utmanande. 
+
+**Vad lärde jag mig från boken?**
+
+Här listar jag olika saker jag snappat upp, I och med att listan är lång har jag försökt att gruppera innehållet I ämnen.
+
+//Lean thinking//
+Man kan använda så kallade Ishikawa eller fiskbensdiagram som ett komplement till fem varför I sin rotorsaksanalys. För att ta fram ishikawadiagram kan man också använda brainstorming I kombination med affinity mapping, där varje grupp blir ett ben på diagrammet.
+Toyota gör distinktioner mellan point kaizen och system kaizen. Punktförbättringar är ofta inte så dramatiska och kan existera inom den nuvarande paradigmen, men systemkaizen ifrågasätter grunderna på vilka den nuvarande paradigmen vilar. Point kaizen gör ofta några förbättringar, men har kvar t.ex. Köer, överlämningar och underutnyttjad talang.
+
+Fundera på om man tjänar någonting på att eliminera det upptäckta wastet. Som exempel gavs ett fall där en ny point kaizen gjorde att management behövde vara mindre involverade I en process. Om tanken är att management skall coacha verksamheten är det inte säkert att detta är så bra.
+
+//Method Weight//
+
+Method Weight är ett begrepp från Crystal, där det fanns olika nivåer av process beroende på vad man utvecklade. I scrum behöver man anpassa detta till det man utvecklar. Det låter nästan lite relaterat till Agile Fluency och nivåanpassningen efter affärsbehov.
+
+//Feature teams//
+
+I kapitlet som handlade om feature teams tog boken upp ett viktigt förtydligande. Feature teams innehåller all kompetens som behövs för att lösa de uppgifter de har. Scrum stipulerar att alla teammedlemmar är just teammedlemmar, inte arkitekter, testare, projektledare. Det finns dock inget hinder emot att vissa personer är experter på t.ex. arkitektur eller test, tvärt om kan det vara någonting som möjliggör teamet att lösa problem man annars inte kunnat lösa. Man framhåller också vikten av kunskapsspridning, speciellt om man har en expert. Däremot uppmuntras att medlemmar hjälper till även inom områden som inte är deras specialistområde.
+En brist med komponentteam är att de skapar överlämningar och ett mer gammaldags arbettssätt, där man behöver testa summan av uppgraderingarna till komponenterna på ett mer ingående sätt.
+
+Man gör också en distinktion mellan feature teams och cross-functional teams och påstår att ett idealt feature team är långlivat, cross-functional, cross-component, co-located, arbetar med kompletta kundfokuserade features alla komponenter och discipliner, samt består av generaliserande specialister.
+
+//Komponentväktare//
+
+Ett annat intressant koncept som introduceras är komponentväktare, som inte äger en komponent, men som säkerställer att de som arbetar med komponenten har tillräcklig kunskap om den, och förbättrar den med sina ändringar. Rekommenderas för extra känsliga komponenter.
+
+Man tar upp requirement areas som ett möjligt sätt att dela upp en produkt. Jag tolkar det som att det är lite det tänket man har på t.ex. Spotify där man delar upp arbetet per kundområde, t.ex. Streaming, subscriptions osv.
+
+//Personer och kunskap//
+
+Om en omstrukturering gör att en person måste få nya arbetsuppsgifter, se då till att de dem en annan titel. Om en projektledare har kvar sin titel men förväntas arbeta som scrum master så kommer förvirringen bli stor. På samma sätt är det farligt om man man förväntar sig att en person skall arbeta I en ny roll med en ny titel, men arbetar kvar med samma uppgifter. En Projektledare som blivit rebrandad som scrum master, men som fortfarande arbetar med projektledaruppgifter och håller kvar vid gamla mönster.
+
+Boken rekommenderar Communities of Practice(CoP) som ett sätt att sprida kunskap. De hjälper personer som är engagerade I samma område träffas och utbyta idéer. 
+
+Boken rekommenderar att man undviker jobtitlar, dels för att de får oss att fokusera på specialiserade områden, men också för att de kan förhindra god dialog genom att vissa idéer inte accepteras för sin merit, utan för personen som har föreslagit dens status. De föreslår också att man kan ha olika titlar utåt och inåt, så att man inte hämmas I karriären för att man har varit en team member och inte senior manager eller liknande. Man kan också låta folk komma på egna titlar. Får jag välja min titel så skulle det vara Joakim, kanske Principal Joakim till och med.
+
+Joakim Särehag
+Principal Joakim
+Responsive Development Technologies
+
+Man föreslår Team-based incentives istället för individuella incentives och även team-based targets utan belöningar. 
+
+//Övrigt//
+
+Beyond Budgeting verkar ha startat på Handelsbanken I Sverige på 1970-talet. Vill man få fler exempel från handelsbanken kan man läsa Det Agila Företaget, som ger några fler exempel från Handelsbankens transformation.
+
+**Coola citat från boken?**
+
+In 2001, Toyota created an internal Toyota Way booklet summarizing the lean principles. On hearing the proposed title, chairman Toyoda suggested renaming the booklet Toyota Way 2001. Why? To emphasize that there are no final process in Toyota (which would stifle kaizen), but rather, continuous improvement and change
+
+“The root of the Toyota Way is to be dissatisfied with the status quo; you have to ask constantly, “Why are we doing this?””
+
+//Toyota CEO
+
+Traditional methodologies provide answers to all problems, and this is why they don’t work—they assume a simplistic rather than a complex problems
+
+//Ken Swaber [2007]
+
+Computer people are so binary and discrete
+
+Be agile rather than do agile
+
+Better to teach people and risk they leave, than not and risk they stay.
+
+//Anonymous
+
+Assessment data revealed that as long as teams had mangers, they simply did not become self-organizing. This company eliminated two-thirds of the management structure and found that self-management emerged quickly.
+
+//Mohrman, Cohen, Mohrman, 1995, Designing team-based organizations
+
+The person who learned something novel or improved a practice is responsible for sharing this.
+
+**Att läsa vidare om**
+
+https://en.wikipedia.org/wiki/Ishikawa_diagram
+
+Beyond Budgeting
+
+**Literaturlista**
+
+Boken innehåller en diger lista med rekommenderad litteratur. Jag rekommenderar att bläddra igenom slutet på varje kapitel och se själv om något verkar vettigt.
+
+**Rekommenderar jag boken? Till vem, och hur många brinnande servrar av fem ger jag den?**
+
+Ja. Jag rekommenderar boken skarpt. Jag skall omgående köpa ett ex själv.
+
+Frågan är om jag inte måste ge den fem av fem brinnande servrar. Det är inte många böcker jag ger det till.

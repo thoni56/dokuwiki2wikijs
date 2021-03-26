@@ -1,0 +1,26 @@
+# Cheat Sheet : Dagliga möten
+
+Fokusera på stafettpinnen, inte på löparna!
+
+## Syfte
+
+Teamets möte för gemensam planering och synkronisering kring vad som står på tur att göra så att de får så stor verkan av sin insats fram till nästa dagliga möte som möjligt. Samarbete, fokus på att bli klar med något så snart som möjligt och sikte på sprintmålet.
+
+## Tid & plats
+
+Varje arbetsdag på samma tid och plats, max 15 minuter.
+
+Hela teamet deltar, alla är välkomna att lyssna.
+
+## Agenda
+
+  * ”Walk the board” - Låt innehållet på tavlan styra i vilken ordning teammedlemmarna berättar
+  * Utgå från flödet - Hur kan vi samarbeta för att få dessa stories till Done?
+  * Använd frågorna om <del>igår, idag och hinder</del> vad vi åstadkommit, vad nästa sak att göra är och om det finns något mer som någon kan hugga in på
+  * Fråga om eller erbjud hjälp när det behövs 
+
+## Tänk på
+
+  * Stå nära tavlan
+  * Gå fram till tavlan när det är din tur
+  * Lyssna på den som talar

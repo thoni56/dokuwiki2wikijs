@@ -1,0 +1,3 @@
+====== Arenor ======
+
+Under denna flik beskriver vi arenorna. Dessa har sedan kopplingar och referenser till [[kompetens:agila_arenor:tekniker|tekniker]] och [[kompetens:agila_arenor:workshops|workshops]] som man kan använda inom de olika arenorna.

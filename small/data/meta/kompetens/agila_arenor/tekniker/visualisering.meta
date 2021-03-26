@@ -1,0 +1,11 @@
+a:2:{s:7:"current";a:10:{s:4:"date";a:2:{s:7:"created";i:1447319915;s:8:"modified";i:1614958010;}s:7:"creator";s:14:"Thomas Nilsson";s:4:"user";s:5:"thoni";s:11:"last_change";a:8:{s:4:"date";i:1614958010;s:2:"ip";s:12:"192.168.34.1";s:4:"type";s:1:"E";s:2:"id";s:45:"kompetens:agila_arenor:tekniker:visualisering";s:4:"user";s:5:"thoni";s:3:"sum";s:10:"[Verktyg] ";s:5:"extra";s:0:"";s:10:"sizechange";i:-2;}s:11:"plugin_move";a:0:{}s:11:"contributor";a:1:{s:5:"thoni";s:15:"Thomas Nilefalk";}s:5:"title";s:13:"Visualisering";s:11:"description";a:2:{s:15:"tableofcontents";a:4:{i:0;a:4:{s:3:"hid";s:13:"visualisering";s:5:"title";s:13:"Visualisering";s:4:"type";s:2:"ul";s:5:"level";i:1;}i:1;a:4:{s:3:"hid";s:8:"tekniker";s:5:"title";s:8:"Tekniker";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:2;a:4:{s:3:"hid";s:7:"verktyg";s:5:"title";s:7:"Verktyg";s:4:"type";s:2:"ul";s:5:"level";i:2;}i:3;a:4:{s:3:"hid";s:10:"litteratur";s:5:"title";s:10:"Litteratur";s:4:"type";s:2:"ul";s:5:"level";i:2;}}s:8:"abstract";s:261:"Visualisering
+
+I alla Agila Arenor är det viktigt att visualisera saker så det kan finnas en poäng att samla våra erfarenheter, idéer, tekniker och verktyg här.
+
+Tekniker
+
+Hmm, vad är tekniker för synliggörande?
+
+Några saker att tänka på kanske:
+
+	*";}s:8:"relation";a:2:{s:10:"references";a:2:{s:22:"kompetens:agila_arenor";b:1;s:17:"itsystem:printers";b:1;}s:10:"firstimage";s:0:"";}s:8:"internal";a:2:{s:5:"cache";b:1;s:3:"toc";b:1;}}s:10:"persistent";a:6:{s:4:"date";a:2:{s:7:"created";i:1447319915;s:8:"modified";i:1614958010;}s:7:"creator";s:14:"Thomas Nilsson";s:4:"user";s:5:"thoni";s:11:"last_change";a:8:{s:4:"date";i:1614958010;s:2:"ip";s:12:"192.168.34.1";s:4:"type";s:1:"E";s:2:"id";s:45:"kompetens:agila_arenor:tekniker:visualisering";s:4:"user";s:5:"thoni";s:3:"sum";s:10:"[Verktyg] ";s:5:"extra";s:0:"";s:10:"sizechange";i:-2;}s:11:"plugin_move";a:0:{}s:11:"contributor";a:1:{s:5:"thoni";s:15:"Thomas Nilefalk";}}}

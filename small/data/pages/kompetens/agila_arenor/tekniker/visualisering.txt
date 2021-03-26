@@ -1,0 +1,25 @@
+====== Visualisering ======
+
+I alla [[kompetens:agila_arenor|Agila Arenor]] är det viktigt att visualisera saker så det kan finnas en poäng att samla våra erfarenheter, idéer, tekniker och verktyg här.
+
+===== Tekniker =====
+
+Hmm, vad är tekniker för synliggörande?
+
+Några saker att tänka på kanske:
+
+  * Det måste vara enkelt
+  * Det måste vara synligt ("information radiators", dvs. informationen skall stråla ut, inte behöva hämtas)
+  * Det får gärna vara in-exakt (t.ex "hur mår jag idag? -> Glad/Ledsen gubbe")
+  * Färger är bra
+  * Man kan synliggöra nästan vad som helst, velocity, teknisk skuld, förbättringsprogress, ...
+
+===== Verktyg =====
+
+   * Whiteboard på rulle (finns i förrådet på HQ)
+   * Utskrift av snygga(re) PostIT kan man göra med [[itsystem:printers|beskrivningen på sidan om våra skrivare]].
+
+===== Litteratur =====
+
+En helt oumbärlig bok är Jimmy Janléns lilla bok med 69 tips. Han hinner med 40 på tio minuter på [[https://agilasverige.solidtango.com/search?query=Visualiserings+Bonanza|Agila Sverige 2015]].
+

@@ -1,0 +1,26 @@
+====== Portföljhantering ======
+
+På den agila arenan "Portföljhantering" pratar vi om att i ett större sammanhang allokera utvecklingskapacitet till flera projekt eller initiativ som alla är värdefulla så att vi med stor sannolikhet kan göra prognoser om framtiden.
+
+===== Tekniker =====
+
+  * Resurs- och tidsboxning
+  * Kapacitetsallokeringsspelet
+  * Tidsestimeringssannolikhetskalkyl
+  * ...
+
+===== Verktyg =====
+
+  * ...
+
+===== Rekommenderad litteratur =====
+
+  * ...
+
+===== Kurser =====
+
+  * ...
+
+===== Möjliga nästa arenor =====
+
+  * ...

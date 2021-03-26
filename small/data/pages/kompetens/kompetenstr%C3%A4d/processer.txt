@@ -1,0 +1,3 @@
+# Processer
+
+Här finns förstsås generellt material om processer och processmodeller men det mesta materialet är beskrivningar av praktiska och agila processer och ramverk, t.ex Scrum, XP mm.

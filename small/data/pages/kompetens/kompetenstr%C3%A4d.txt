@@ -1,0 +1,55 @@
+# Kompetensträd
+
+På Responsive odlar vi en struktur för hur vi metodiskt kan utveckla vår kompetens och hjälpa varandra att finna ny kunskap.
+Det finns förstås en viss koppling till våra [[kompetens:agila_arenor:arenor|agila arenor]], men de är att betrakta mer ur ett kundperspektiv och kanske även ett strikt "agilseringsperspektiv" och är tänkt att innehålla saker man kan prova.
+
+Tanken med kompetensträdet är alltså kompetensutveckling, inte bara ur det agila perspektivet, utan både "modern systemutveckling och organisation" men också "kunskap man behöver för att förstå kundorganisationer och deras resonemang".
+Därför kan det i trädet finnas "gammal" kunskap, men den behövs ofta för att förstå varför en organisation gör på ett visst sätt och utifrån detta avgöra vad nästa steg kan vara.
+
+Det material som finns på varje nivå är inte heller komplett, fullödigt eller tvingande.
+Det är istället tänkt som förslag, utgångspunkter och indikatorer av nivån.
+Har man egna idéer kan man ta upp det med sin mentor inom området.
+
+I trädet finns förstås många "hårda" tekniska områden, men även mjukare passar in här, t.ex [Människor](kompetens:kompetensträd:människor), [Problemlösning](kompetens:kompetensträd:problemlösning) och [Lärande](kompetens:kompetensträd:lärande).
+
+Som komplement har vi också de lite mjukare och personbundna [[personal:formagor|förmågorna]].
+
+## Struktur
+Kompetensträdet är strukturerat i områden (Programmering, Arkitektur, DevOPs, Test, Organisation, ... enligt undersidor i denna del av vår wiki) och inom varje område finns följande nivåer:
+
+- Shu - "följ reglerna", att ha grundläggande kunskaper och kunna använda och beskriva dessa 
+- Ha - "bryt reglerna", att se när ett undantag eller alternativ är befogat
+- Ri - "skapa nya regler", hitta nya ingångar, blanda tekniker modeller, varians, nyanser
+- Kokoro - "hjärta/själ", att utan tänka på det byta/växla/glida mellan många olika perspektiv för att hitta till kärnan och därifrån återgå till grundläggande tekniker och tankar som man tillämpar med hög expertis och förmåga
+
+## Innehåll
+Varje nod i kompetensträdet innehåller tre, eller där det är tillämpligt, fyra, komponenter:
+
+- Material - material för studier, artiklar, webblänkar, böcker, kurser, osv.
+- Träning - övningar och andra sätt att träna sig så att materialet etablerar sig som kunskap
+- Kvalificering - hur man "kvalificerar" sig för nivån, ofta genom att genomföra någon övning, presentation eller dialog med en kollega som har "högre nivå" inom området
+- (Roller - i vissa fall kan kunskapsnivån krävas för att kunna ta en viss roll i ett kundprojekt
+
+## Roller
+
+En tänkbar utveckling på sikt är att vi definierar roller som ofta dyker upp hos kunder eller i förfrågningar och kopplar kompetensnivåer inom olika områden till dessa.
+Just nu är det onödigt komplicerat men kan vara bra på sikt för att förtydliga vid rekrytering eller personalutveckling vilka kompetenser som önskas/krävs/förväntas och därmed underlätta "karriärplanering".
+
+## Badges
+
+En cool idé vore att ha "knappar" för nivåer och uppnådd kompetens.
+Många ikoner behöver man hitta på då ;-).
+
+[BadgeCert](https://badgecert.com) heter ett företag som hjälper personer att hålla reda på sina "badges", har inte kollat hur man ansluter sig. Här är ett exempel på hur Scrum Alliance har gjort
+
+{{:kompetens:scrum_alliance_badges.png?400|}}
+
+## Vidareutveckling
+
+Genom att vi har en ["kuvös"](kompetens:kompetensträd:kuvösen) där vi samlar material som kan passa så bygger vi kunskapsträdet från denna information stegvis.
+Parallellt gör vi alltså flera saker för att bygga upp trädet:
+
+- samla material och träningar för området i "kuvösen"
+- flytta material och träningar till lämplig nivå
+- förtydliga beskrivningarna av områdena
+- refaktorera områden genom att diskutera gränsdragningar och ev. nya områden

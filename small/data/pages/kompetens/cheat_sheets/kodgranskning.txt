@@ -1,0 +1,16 @@
+====== Cheat Sheet : Kodgranskning ======
+
+===== Syfte =====
+
+Har vi kodgranskning för
+
+ - uppfyllande av kodningsregler
+ - kontroll av att koden ska göra rätt
+ - för att lära oss av varandra
+ - skapa samsyn om bra kod
+
+<ditaa>
++--------------+ +------------------+ +------------------+ +-------------------+
+|Kodningsregler| | Korrekt funktion | | Lära av varandra | | Samsyn om bra kod |
++--------------+ +------------------+ +------------------+ +-------------------+
+</ditaa>

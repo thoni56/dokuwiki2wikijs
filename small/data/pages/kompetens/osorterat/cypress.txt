@@ -1,0 +1,55 @@
+====== Cypress ======
+
+Jag fick Cypress rekommenderat som ett alternativ till Selenium. Läser man på cypress.io så säger de själva att de försöker just, att inte vara selenium. En teknisk skillnad är att man kör javascript i webbläsaren man startar.
+
+Man skriver testerna i javascript i mochas describe…it syntax. Assertions kommer från chai och spies från Sinon, så det är en bekant miljö för de som skrivit enhetstester i de biblioteken.
+
+Man startar cypress genom att sätta upp ett skript i package.json eller bara köra npx cypress open. Detta startar själva testköraren, där man kan välja vilka specar man skall testa. När man valt, så körs testerna och resultatet syns till vänster i fönstret. 
+
+Har inte testat, men det skall finnas möjlighet att ta videos och screenshots också.
+
+===== Negativt =====
+
+- blev lite irriterad på att den är beroende av var man står när man kör npx cypress open, den skapade upp exempelfiler flera gånger för mig.
+
+- Har inte alla selectorer som selenium har, har t.ex. Inte get by link text. Ofta klarar man sig på css selectorer, här har man inte val.
+
+- Har inte stöd för alla browsers som selenium har, just nu har de bara stöd för chromium och dess derivat, som canary, chrome och electron. De säger sig högprioriterat jobba på stöd för firefox, edge och IE iallafall. Finns fler funktioner som de själva uppger saknas: https://docs.cypress.io/guides/references/trade-offs.html#Temporary-trade-offs
+
+- vissa chai chains fungerade inte som förväntat. Testade att skriva should(‘be’, true), vilket tolkades som sant oavsett om uttrycket stämde eller inte. Sen är det fel att skriva så, eftersom det inte be är en riktig assertion i chai.
+
+- webgränssnittet känns lite fattigt. Saknar bland annat funktionalitet att kunna köra om failing tests
+
+- i selenium får man viss cleanup i och med att man laddar om browserfönstret, men det får man inte här, så om man inte är försiktig kan tidigare tester påverka efterkommande tester. Går naturligtvis att fixa genom att ha cleanup som körs efter varje test, men det är en skillnad.
+
+===== Positivt =====
+
++ Installeras som ett npm-paket. De flesta applikationer man vill testa med cypress har troligtvis pakethantering, så detta är smidigt. Bara npm install cypress –save-dev så är man redo.
+
++ Ser tester och testresultat tydligare, möjligt att spela igenom om någonting går fel, eftersom cypress sparar DOM data för respektive aktion den utför.
+
++ är också gratis precis som selenium. 
+
++ Ursprunglig längd på testkoden 4258 tecken, blev 2196 i cypress, alltså en reducering med 48.5%.
+
+Exempel
+
+  string valueAfterReload = driver.FindElement(By.CssSelector("input[name='description']")).GetAttribute("value");
+  Assert.AreEqual(testValue, valueAfterReload);
+
+blir 
+
+  cy.get("input[name='description']").should('have.value', testValue);
+
+Man kan naturligtvis argumentera för att jag inte hade behövt variabeldeklarationen i seleniumexemplet, men jag kände att jag behövde det för läsbarhet. Kan också hända att selenium är mindre pratigt i andra språk än C#.
+
++ exekveringstid 9~ sekunder, selenium med chromedriver 10~ sek
++ Högst personligt, men är på lite bättre humör när jag skriver cypresstester än när jag skriver seleniumtester, tror det kan ha med att API:et känns mer naturligt för mig.
+
+===== Slutsats =====
+
+I de fall jag inte behöver testa över fler browsers är cypress helt klart ett attraktivt alternativ. De stora fördelarna för min del är stegningen, integrationen med pakethanteringen och den kortare koden.
+
+===== Läs mer =====
+
+[[https://www.cypress.io/]]

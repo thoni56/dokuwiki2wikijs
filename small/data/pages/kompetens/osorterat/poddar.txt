@@ -1,0 +1,38 @@
+# Poddar
+
+En listning av rekommenderade poddar.
+
+## Svenska
+
+**Kodsnack**: [[https://kodsnack.se/]]
+
+"av kodare för kodare"
+
+
+**Väg 74**: [[https://agical.se/pod/]]
+
+"Din guide till att bli en bättre utvecklare"
+
+
+**Agilpodden**: [[http://www.agilpodden.se/]]
+
+"En podcast om agil kultur och arbetsätt"
+
+
+**Q-podden**: [[http://www.frontit.se/aktuellt/q-poddenbatman-och-buggtak/]]
+
+"Q-podden är Frontits podcast som fokuserar på test, behov och kvalitetsfrågor med Ulrika Park och Lars Linderoth."
+
+## Engelska
+
+**Legacy code Rocks**: [[https://www.legacycode.rocks/]]
+
+"Menders love fixing bugs, refactoring, and testing code to make software applications more stable, scalable and secure. "
+
+**Agile Uprising**: [[http://podcast.agileuprising.com/]]
+
+"Agile Uprising is a purpose-built network that focuses on the advancement of the agile mindset and global professional networking between leading agilists"
+
+**Agile for humans**: [[https://ryanripley.com/agile-for-humans/]]
+
+"Agile for Humans™ is a weekly podcast dedicated to the individuals and interactions that make agile work."
