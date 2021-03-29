@@ -99,16 +99,20 @@ def convert_links(lines):
 def wrap_kind(tag):
     words = tag.split(' ')
     if 'info' in words or 'notice' in words:
-        return "info"
+        return "{.is-info}"
     if 'important' in words or 'warning' in words or 'caution' in words:
-        return "warning"
+        return "{.is-warning}"
     if 'alert' in words or 'danger' in words:
-        return "danger"
-    return "info"
+        return "{.is-danger}"
+    if 'tip' in words or 'help' in words or 'todo' in words:
+        return "{.is-danger}"
+    if 'safety' in words or 'danger' in words:
+        return "{.is-danger}"
+    return ""
 
 
 def convert_wrap(lines):
-    kind = "info"
+    kind = "{.is-info}"
     wrapping = False
     for i, line in enumerate(lines):
         # This might be a pandoc'ed markdown in which case tags are escaped
@@ -118,10 +122,10 @@ def convert_wrap(lines):
             lines[i] = "> " + line
             wrapping = True
         if "</WRAP>" in line:
-            lines[i] = lines[i].replace("</WRAP>", "{.is-"+kind+"}")
+            lines[i] = lines[i].replace("</WRAP>", kind)
             wrapping = False
         if "\</WRAP\>" in line:
-            lines[i] = lines[i].replace("\</WRAP\>", "{.is-"+kind+"}")
+            lines[i] = lines[i].replace("\</WRAP\>", kind)
             wrapping = False
         if wrapping:
             lines[i] = "> "+line
