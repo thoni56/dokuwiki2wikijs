@@ -3,3 +3,4 @@ testdata
 .vscode/.ropeproject
 *.zip
 responsive-dokuwiki.tgz
+*~
