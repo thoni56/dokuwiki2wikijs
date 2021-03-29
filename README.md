@@ -70,14 +70,9 @@ or
 - Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will be broken.
 Don't know how to fix them...
 - Make un-mangling of filenames an option
-- Handle media, which is a completely unchartered territory since I don't know how to import media into wiki.js...
+- Handle media, which is a completely unchartered territory since I don't know how to import media into wiki.js... Will probably have to go through the API
 
 # Notes
-
-- At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store.
-However it turned out that it would just import the latest version of every page anyway.
-Neither did it use the user info from the commits, all pages will be created by whoever does the import anyway.
-We could not find any benefits over a simple file storage, so we went back to just handling the current version of the pages.
 
 - Dokuwiki have multiple ways to find the page for a folder
 
@@ -87,4 +82,23 @@ We could not find any benefits over a simple file storage, so we went back to ju
 
     We were thinking about automatically fixing this in the script. But there might actually be conflicts here, so we decided on manually adjust the original structure so that all the occurences used a consistent, and also the (upcoming) Wiki.js, way, namely 'folder.txt' parallel to 'folder'.
 
-- Page titles with just numbers don't work. We decided to fix this at the source too.
+- Page titles with only numbers don't work. We decided to fix this at the source too.
+
+- Importing pages through the file storage will set author to the person logged in when doing the import.
+
+# dokuwiki2git - some comments
+
+At one point we tried to build upon [dokuwiki2git](https://github.com/hoxu/dokuwiki2git) since Wiki.js has an option to use git as a backing store.
+However it turned out that if you just hook up the repo it would just import the latest version of every page anyway.
+Neither did it use the user info from the commits, all pages will be created by whoever does the import anyway.
+We could not find any benefits over a simple file storage, so we went back to just handling the current version of the pages.
+
+To do a real conversion, with history and author information, you need to go through the API.
+It's a GraphQL API and doesn't look to hard.
+
+The problem with using `dokuwiki2git` as the base is that it did not handle page moves.
+Instead it gets confused about (older) files that are no longer available.
+To do this correctly you need to unwind the history of a page in the same way as `dokuwiki`s own history function does.
+
+So we just scrapped that idea for our migration attempt and was satisfied with importing the last version.
+There is a branch `use_docuwiki2git` that holds that code.
