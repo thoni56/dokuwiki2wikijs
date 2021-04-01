@@ -4,9 +4,12 @@ import os
 import sys
 from zipfile import ZipFile
 from os.path import basename
-from shutil import rmtree
+from shutil import rmtree, copyfile
 import subprocess
 import re
+
+
+tmp_prefix = os.path.join('/tmp', 'dokuwiki2wikijs')
 
 
 def pandoc(infile):
@@ -184,7 +187,7 @@ def remove_useless_tags(lines):
     return new_lines
 
 
-def convert_file(txtfile):
+def convert_file(txtfile, title):
     if is_markdown(txtfile):
         with open(txtfile) as file:
             lines = file.read().splitlines()
@@ -194,19 +197,56 @@ def convert_file(txtfile):
     lines = remove_useless_tags(lines)
     lines = convert_wrap(lines)
     # lines = unwrap_sentences(lines)
-    metadata = get_metadata(lines, basename)
+    metadata = get_metadata(lines, title)
     add_metadata(lines, metadata)
 
     return lines
-
-
-tmp_prefix = os.path.join('/tmp', 'dokuwiki2wikijs')
 
 
 def temporary_file_for(pathname):
     parts = pathname.split(os.sep)
     temporary = os.path.join(tmp_prefix, *parts[parts.index('data'):])
     return temporary
+
+
+def collect_and_convert_all_pages():
+    for folder, _, files in os.walk(os.path.join(path, "data", "pages")):
+        txt_files = (file for file in files if file.endswith(".txt"))
+        for f in txt_files:
+            filename_with_txt = os.path.join(folder, f)
+            filename = temporary_file_for(
+                convert_filename_to_unicode(filename_with_txt[:-4]))
+            basename = os.path.basename(filename)
+            ensure_path_exists(filename)
+
+            if basename == 'sidebar':
+                continue
+
+            print(filename_with_txt+"("+basename+"):", end="")
+
+            lines = convert_file(filename_with_txt, basename)
+
+            filename_with_md = os.path.join(tmp_prefix, filename+".md")
+            if basename == 'start':
+                filename_with_md = filename_with_md.replace(
+                    'start.md', 'home.md')
+
+            with open(filename_with_md, "w") as file:
+                file.writelines('\n'.join(lines))
+
+            print(len(lines))
+
+
+def collect_all_media():
+    for folder, _, media_files in os.walk(os.path.join(path, "data", "media")):
+        for f in media_files:
+            media_file = os.path.join(folder, f)
+            filename = temporary_file_for(
+                convert_filename_to_unicode(media_file))
+            filename = filename.replace('media', 'pages')
+            ensure_path_exists(filename)
+            print(media_file)
+            copyfile(media_file, filename)
 
 
 if __name__ == "__main__":
@@ -235,37 +275,14 @@ if __name__ == "__main__":
         rmtree(tmp_prefix, ignore_errors=True)
         os.makedirs(tmp_prefix)
 
-        for folder, _, files in os.walk(os.path.join(path, "data", "pages")):
-            txt_files = (file for file in files if file.endswith(".txt"))
-            for f in txt_files:
-                filename_with_txt = os.path.join(folder, f)
-                filename = temporary_file_for(
-                    convert_filename_to_unicode(filename_with_txt[:-4]))
-                basename = os.path.basename(filename)
-                ensure_path_exists(filename)
-
-                if basename == 'sidebar':
-                    continue
-
-                print(filename_with_txt+"("+basename+"):", end="")
-
-                lines = convert_file(filename_with_txt)
-
-                filename_with_md = os.path.join(tmp_prefix, filename+".md")
-                if basename == 'start':
-                    filename_with_md = filename_with_md.replace(
-                        'start.md', 'home.md')
-                with open(filename_with_md, "w") as file:
-                    file.writelines('\n'.join(lines))
-
-                print(len(lines))
+        collect_and_convert_all_pages()
+        collect_all_media()
 
         with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
             # Walk through the files in the data/pages subdir
             curdir = os.getcwd()
             os.chdir(os.path.join(tmp_prefix, "data", "pages"))
             for folder, folders, files in os.walk("."):
-                files = (file for file in files if file.endswith(".md"))
                 for file in files:
                     zipObj.write(os.path.join(folder, file))
         print("'dokuwiki2wikijs.zip' created\n")
