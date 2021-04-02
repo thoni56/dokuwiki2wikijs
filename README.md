@@ -11,9 +11,9 @@ It converts all current pages to Markdown using `pandoc`, stores them in the sam
 - Point to a single file and get the conversion of that on stdout to see if it needs manual adjustments
 - Transparent handling of any potention `markdowku` pages (an extension to `dokuwiki` which can render markdown "natively" so they are stored as markdown)
 - Converts Dokuwiki links in Markdown pages to Markdown format
-- Uses the first line, if it is a heading, for the title meta-data, if not the basename of the file is used instead
-- Un-mangle Unicode paths (`%C3B6` etc) back to genuine unicode
-- Convert basic WRAP tags to `> text{.is-<kind>}` (blockquote with CSS)
+- Uses the first line, if it is a heading, for the title meta-data, if not, the basename of the file is used instead
+- Un-mangle paths with (some) Unicode characters (`%C3%B6` etc) back to genuine unicode
+- Convert basic WRAP (plugin) tags to `> text{.is-<kind>}` (blockquote with CSS)
 - Removes some useless tags from plugins (for now just `<sortable>`)
 
 ## Conversion caveats
@@ -41,7 +41,7 @@ Thus, the script converts dokuwiki links in markdown-pages to markdown format to
 
 ### Folder page files
 
-Dokuwiki have multiple ways to find the page to show for a folder
+Dokuwiki have multiple ways to find the page to show for a folder "node":
 
 - page with the same name as the folder ('folder.txt' in the same directory as 'folder')
 - 'start.txt' in the folder ('folder/start.txt')
