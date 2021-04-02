@@ -86,7 +86,7 @@ To convert a complete installation run the script with the root of the installat
 
 You then get a zip-file with the converted pages and media in your current directory.
 
-Setup File Storage in your Wiki.js installation.
+Setup a Local File System storage in your Wiki.js installation.
 Unpack the zip in a Wiki.js file storage (which you need to have set up).
 If you are running Wiki.js in a Docker container these are the steps:
 
@@ -95,8 +95,8 @@ If you are running Wiki.js in a Docker container these are the steps:
     # cd <file storage folder>
     # unzip /tmp/dokuwiki2wikijs.zip
 
-- In your Wiki.js File Storage settings press "Import Everything" and wait.
-- Re-render all pages (Settings/Tools/Content/Re-render all pages) to ensure links are updated.
+- In your Wiki.js `Storage/Local File System` settings press "Import Everything" and wait.
+- Re-render all pages (`Settings/Tools/Content/Re-render all pages`) to ensure links are updated.
 - Done.
 
 # Wanted features
@@ -105,10 +105,11 @@ If you are running Wiki.js in a Docker container these are the steps:
   - ~~`<sortable>` should be removed. Done.~~
   - ~~`<wrap>` could be converted to blockquote (`>`) and `</wrap>` to `{.is-<type>}` where `type` is given by opening `<wrap>`. Done.~~
   - ...
+- Import date information.
 - Convert to "one sentence per line" convention where possible. This is partially implemented, but turned out too complex with a simple minded approach, so we went with using `--wrap=none` for the pandoc conversions. It also turned out that Wiki.js does not render pages with this convention correctly (it keeps the line breaks as hard breaks).
 - Flag wrong internal links since pandoc can only correctly convert internal links if the double square brackets contain an existing page path, if it is to the "titel" of a page the link will become broken.
-- Make un-mangling of filenames an option
-- Import only media which is actually referenced
+- Make un-mangling of filenames an option.
+- Import only media which is actually referenced.
 
 # Alternate approaches
 
