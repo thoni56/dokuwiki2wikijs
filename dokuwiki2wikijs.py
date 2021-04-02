@@ -261,7 +261,7 @@ if __name__ == "__main__":
         sys.exit(1)
 
     if os.path.isfile(path):
-        lines = convert_file(path)
+        lines = convert_file(path, path)
         print('\n'.join(lines))
     else:
         if not os.path.exists(os.path.join(path, "data", "pages")):
