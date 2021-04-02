@@ -78,6 +78,8 @@ To see the resulting conversion of a single page run the script with the page as
 
     > dokuwiki2wikijs /var/www/dokuwiki/data/pages/start.txt
 
+The rendered result will be output to standard output and can be piped to a file.
+
 ## Installation conversion
 
 To convert a complete installation run the script with the root of the installation as argument, e.g.
