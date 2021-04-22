@@ -60,6 +60,10 @@ We decided to fix this at the source too.
 Importing pages through the file storage will set author to the person logged in when doing the import.
 No author information will be transfered when using this script.
 
+### Links spanning multiple lines
+
+Although dokuwiki have no problem handling links that are broken over two lines, e.g between spaces in the text, this script cannot handle that.
+
 # Limitations
 
 - It does not handle mixed content (pages that contain both dokuwiki and markdown formatting).
@@ -132,7 +136,7 @@ To do this correctly you need to unwind the history of a page in the same way as
 So we just scrapped that idea for our migration attempt and was satisfied with importing the last version.
 There is a branch `use_docuwiki2git` that holds the code from that attempt.
 
-The major problem with the git approach, that we thought it might give us, was importing history and author information.
+The major benefit that we thought that we could get from git approach, was importing history and author information.
 It did not.
 
 ## Wiki.js GraphQL API
@@ -149,4 +153,4 @@ So the GraphQL API gave no extra benefits.
 ## Database import
 
 This seems to be the only real option if you want to keep author and revision information.
-We have not explored this since it requires detailed information about the database which does not seen available at this time.
+We have not explored this since it requires detailed information about the database which does not seem to be available at this time.
