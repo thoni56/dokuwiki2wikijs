@@ -236,7 +236,7 @@ def collect_and_convert_all_pages():
             if basename == 'sidebar':
                 continue
 
-            print(filename_with_txt+"("+basename+"):", end="")
+            print(filename_with_txt+"("+basename+")... ", end="", flush=True)
 
             lines = convert_file(filename_with_txt, basename)
 
@@ -248,20 +248,20 @@ def collect_and_convert_all_pages():
             with open(filename_with_md, "w") as file:
                 file.writelines('\n'.join(lines))
 
-            print(len(lines))
+            print(len(lines), "lines")
 
 
 def collect_all_media():
     for folder, _, media_files in os.walk(os.path.join(path, "data", "media")):
         for f in media_files:
             media_file = os.path.join(folder, f)
-            print(media_file, end="")
+            print(media_file, "...", end="", flush=True)
             filename = temporary_file_for(
                 convert_filename_to_unicode(media_file))
             filename = filename.replace('media', 'pages')
             ensure_path_exists(filename)
             copyfile(media_file, filename)
-            print(" Copied")
+            print(" copied")
 
 
 if __name__ == "__main__":
@@ -293,7 +293,7 @@ if __name__ == "__main__":
         collect_and_convert_all_pages()
         collect_all_media()
 
-        print("Compressing to 'dokuwiki2wikijs.zip'... ", end="")
+        print("Compressing to 'dokuwiki2wikijs.zip'... ", end="", flush=True)
         with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
             # Walk through the files in the data/pages subdir
             curdir = os.getcwd()
