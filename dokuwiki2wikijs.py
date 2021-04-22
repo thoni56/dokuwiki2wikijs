@@ -103,6 +103,9 @@ def convert_links(lines):
                     uri = uri.replace(':', '/')
                 if not text:
                     text = uri
+                # Ensure internal uri starts at the root
+                if not uri.startswith('http') and not uri.startswith('/'):
+                    uri = "/"+uri
                 link = '[%s](%s)' % (text, uri)
                 line = re.sub(pattern, link, line, count=1)
             pos = find_next_link_start(line, pos)
