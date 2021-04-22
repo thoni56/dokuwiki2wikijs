@@ -2,6 +2,8 @@ import unittest
 
 from dokuwiki2wikijs import first_heading_or_filename, convert_filename_to_unicode, convert_wrap, unwrap_sentences, convert_links
 
+IS_INFO = "{.is-info}"
+
 
 class Dokuwiki2WikijsTest(unittest.TestCase):
 
@@ -29,15 +31,17 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         lines = ["no WRAP here"]
         self.assertEqual(convert_wrap(lines), ["no WRAP here"])
 
-    IS_INFO = "{.is-info}"
-
     def test_convert_simple_wrap_on_separate_first_lines(self):
         lines = ["<WRAP>", "</WRAP>"]
+        self.assertEqual(convert_wrap(lines), ["> ", ""])
+
+    def test_converts_info_wrap_to_is_info(self):
+        lines = ["<WRAP info>", "</WRAP>"]
         self.assertEqual(convert_wrap(lines), ["> ", IS_INFO])
 
     def test_convert_simple_wrap_on_separate_lines(self):
         lines = ["", "<WRAP>", "</WRAP>"]
-        self.assertEqual(convert_wrap(lines), ["", "> ", IS_INFO])
+        self.assertEqual(convert_wrap(lines), ["", "> ", ""])
 
     def test_convert_simple_alert_wrap_on_separate_lines(self):
         lines = ["", "<WRAP alert>", "</WRAP>"]
@@ -46,16 +50,11 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
     def test_convert_wrap_on_separate_line(self):
         lines = ["<WRAP>", "two line wrap", "</WRAP>"]
         self.assertEqual(convert_wrap(lines), [
-                         "> ", "> two line wrap", IS_INFO])
+            "> ", "> two line wrap", ""])
 
     def test_convert_wrap_on_one_line(self):
         lines = ["<WRAP>one line wrap</WRAP>"]
-        self.assertEqual(convert_wrap(lines), ["> one line wrap"+IS_INFO])
-
-    def test_convert_escaped_wrap(self):
-        lines = ["\<WRAP\>", "one line", "\</WRAP\>"]
-        self.assertEqual(convert_wrap(lines), [
-                         "> ", "> one line", "{.is-info}"])
+        self.assertEqual(convert_wrap(lines), ["> one line wrap"])
 
     def test_unwrap_single_line(self):
         lines = ["A single line."]
@@ -68,7 +67,7 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
     def test_unwrap_two_sentences_on_same_line(self):
         lines = ["A sentence. And another."]
         self.assertEqual(unwrap_sentences(lines), [
-                         "A sentence.", "And another."])
+            "A sentence.", "And another."])
 
     def test_unwrap_incomplete_sentences_to_same_line(self):
         lines = ["A sentence", "which continues on the next line."]
@@ -82,7 +81,8 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
             "Another sentence which continues.", "With another on the next line."])
 
     def test_does_not_unwrap_if_next_line_starts_with_non_alfa(self):
-        lines = ["Yet another sentence", " which continues on the next line."]
+        lines = ["Yet another sentence",
+                 " which continues on the next line."]
         self.assertEqual(unwrap_sentences(lines), [
             "Yet another sentence", " which continues on the next line."])
 
@@ -98,21 +98,31 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
         self.assertEqual(unwrap_sentences(lines),
                          ["1. a list", "1. second bullet"])
 
+    def test_should_convert_dokuwiki_link_without_text(self):
+        lines = ["  [[somepage|]] ", "[[somepage]]  "]
+        self.assertEqual(convert_links(lines),
+                         ["  [somepage](somepage) ", "[somepage](somepage)  "])
+
     def test_should_convert_dokuwiki_link_with_text(self):
         lines = ["  [[somepage|text]] "]
         self.assertEqual(convert_links(lines),
                          ["  [text](somepage) "])
+
+    def test_should_convert_dokuwiki_link_with_non_ascii_text(self):
+        lines = ["  [[kompetens:kompetensträd:processer|Processer]] "]
+        self.assertEqual(convert_links(lines),
+                         ["  [Processer](kompetens/kompetensträd/processer) "])
+
+    def test_should_convert_multiple_dokuwiki_links_on_same_line(self):
+        lines = ["  t.ex [[kompetens:kompetensträd:processer|Processer]], [[kompetens:kompetensträd:team|Team]], [[kompetens:kompetensträd:programmering|Programmering]] eller [[kompetens:kompetensträd:projekt|Projekt]] "]
+        self.assertEqual(convert_links(lines),
+                         ["  t.ex [Processer](kompetens/kompetensträd/processer), [Team](kompetens/kompetensträd/team), [Programmering](kompetens/kompetensträd/programmering) eller [Projekt](kompetens/kompetensträd/projekt) "])
 
     def test_should_convert_multiple_dokuwiki_links_with_text(self):
         lines = ["  [[somepage|text]] ",
                  "line with normal text without links ...",  "  [[somepage2|text2]]"]
         self.assertEqual(convert_links(lines),
                          ["  [text](somepage) ", "line with normal text without links ...", "  [text2](somepage2)"])
-
-    def test_should_convert_dokuwiki_link_without_text(self):
-        lines = ["  [[somepage|]] ", "[[somepage]]  "]
-        self.assertEqual(convert_links(lines),
-                         ["  [somepage](somepage) ", "[somepage](somepage)  "])
 
     def test_should_convert_media_link(self):
         lines = ["  {{mediafile|alttext}} ", "{{mediafile}}  "]

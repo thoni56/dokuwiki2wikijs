@@ -82,20 +82,31 @@ def unwrap_sentences(lines):
     return result
 
 
+def find_next_link_start(line, pos):
+    match = re.search(r"(\[\[)|(\{\{)", line[pos:])
+    if match:
+        return match.start()
+    else:
+        return -1
+
+
 def convert_links(lines):
     for i, line in enumerate(lines):
-        pattern = r'(\[\[|\{\{)(?P<uri>[^\|]+)(\|(?P<text>.+)?)?(\]\]|\}\})'
-        match = re.search(pattern, line)
-        # Assume at most one link per line for now
-        if match:
-            text = match.group('text')
-            uri = match.group('uri').rstrip('|')
-            if not uri.startswith('http'):
-                uri = uri.replace(':', '/')
-            if not text:
-                text = uri
-            link = '[%s](%s)' % (text, uri)
-            lines[i] = re.sub(pattern, link, line)
+        pos = find_next_link_start(line, 0)
+        while pos != -1:
+            pattern = r'(\[\[|\{\{)(?P<uri>[^\|]+?)(\|(?P<text>.+?)?)?(\]\]|\}\})'
+            match = re.search(pattern, line[pos:])
+            if match:
+                text = match.group('text')
+                uri = match.group('uri').rstrip('|')
+                if not uri.startswith('http'):
+                    uri = uri.replace(':', '/')
+                if not text:
+                    text = uri
+                link = '[%s](%s)' % (text, uri)
+                line = re.sub(pattern, link, line, count=1)
+            pos = find_next_link_start(line, pos)
+        lines[i] = line
     return lines
 
 

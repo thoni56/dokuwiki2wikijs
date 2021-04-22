@@ -36,6 +36,17 @@
             "args": [
                 "data/pages/playground/playground.txt"
             ]
+        },
+        {
+            "name": "dokuwiki2wikijs: agile",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/dokuwiki2wikijs.py",
+            "cwd": "${workspaceFolder}/testdata",
+            "console": "integratedTerminal",
+            "args": [
+                "/var/www/dokuwiki/data/pages/kompetens/kompetenstr%C3%A4d/agile.txt"
+            ]
         }
     ]
 }
