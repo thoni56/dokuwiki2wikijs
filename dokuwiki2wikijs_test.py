@@ -101,33 +101,33 @@ class Dokuwiki2WikijsTest(unittest.TestCase):
     def test_should_convert_dokuwiki_link_without_text(self):
         lines = ["  [[somepage|]] ", "[[somepage]]  "]
         self.assertEqual(convert_links(lines),
-                         ["  [somepage](somepage) ", "[somepage](somepage)  "])
+                         ["  [somepage](/somepage) ", "[somepage](/somepage)  "])
 
     def test_should_convert_dokuwiki_link_with_text(self):
         lines = ["  [[somepage|text]] "]
         self.assertEqual(convert_links(lines),
-                         ["  [text](somepage) "])
+                         ["  [text](/somepage) "])
 
     def test_should_convert_dokuwiki_link_with_non_ascii_text(self):
         lines = ["  [[kompetens:kompetensträd:processer|Processer]] "]
         self.assertEqual(convert_links(lines),
-                         ["  [Processer](kompetens/kompetensträd/processer) "])
+                         ["  [Processer](/kompetens/kompetensträd/processer) "])
 
     def test_should_convert_multiple_dokuwiki_links_on_same_line(self):
         lines = ["  t.ex [[kompetens:kompetensträd:processer|Processer]], [[kompetens:kompetensträd:team|Team]], [[kompetens:kompetensträd:programmering|Programmering]] eller [[kompetens:kompetensträd:projekt|Projekt]] "]
         self.assertEqual(convert_links(lines),
-                         ["  t.ex [Processer](kompetens/kompetensträd/processer), [Team](kompetens/kompetensträd/team), [Programmering](kompetens/kompetensträd/programmering) eller [Projekt](kompetens/kompetensträd/projekt) "])
+                         ["  t.ex [Processer](/kompetens/kompetensträd/processer), [Team](/kompetens/kompetensträd/team), [Programmering](/kompetens/kompetensträd/programmering) eller [Projekt](/kompetens/kompetensträd/projekt) "])
 
     def test_should_convert_multiple_dokuwiki_links_with_text(self):
         lines = ["  [[somepage|text]] ",
                  "line with normal text without links ...",  "  [[somepage2|text2]]"]
         self.assertEqual(convert_links(lines),
-                         ["  [text](somepage) ", "line with normal text without links ...", "  [text2](somepage2)"])
+                         ["  [text](/somepage) ", "line with normal text without links ...", "  [text2](/somepage2)"])
 
     def test_should_convert_media_link(self):
         lines = ["  {{mediafile|alttext}} ", "{{mediafile}}  "]
         self.assertEqual(convert_links(lines),
-                         ["  [alttext](mediafile) ", "[mediafile](mediafile)  "])
+                         ["  [alttext](/mediafile) ", "[mediafile](/mediafile)  "])
 
     def test_should_convert_colons_to_slash_in_link(self):
         lines = ["[[:path:path:path|text]]"]
