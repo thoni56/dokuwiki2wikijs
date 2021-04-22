@@ -252,12 +252,13 @@ def collect_all_media():
     for folder, _, media_files in os.walk(os.path.join(path, "data", "media")):
         for f in media_files:
             media_file = os.path.join(folder, f)
+            print(media_file, end="")
             filename = temporary_file_for(
                 convert_filename_to_unicode(media_file))
             filename = filename.replace('media', 'pages')
             ensure_path_exists(filename)
-            print(media_file)
             copyfile(media_file, filename)
+            print(" Copied")
 
 
 if __name__ == "__main__":
@@ -289,6 +290,7 @@ if __name__ == "__main__":
         collect_and_convert_all_pages()
         collect_all_media()
 
+        print("Compressing to 'dokuwiki2wikijs.zip'... ", end="")
         with ZipFile("dokuwiki2wikijs.zip", 'w') as zipObj:
             # Walk through the files in the data/pages subdir
             curdir = os.getcwd()
@@ -296,4 +298,4 @@ if __name__ == "__main__":
             for folder, folders, files in os.walk("."):
                 for file in files:
                     zipObj.write(os.path.join(folder, file))
-        print("'dokuwiki2wikijs.zip' created\n")
+        print("done")
