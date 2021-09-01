@@ -93,11 +93,12 @@ To convert a complete installation run the script with the root of the installat
 You then get a zip-file with the converted pages and media in your current directory.
 
 Setup a Local File System storage in your Wiki.js installation.
-Unpack the zip in a Wiki.js file storage (which you need to have set up).
+Watch out for where Wiki.js can actually create the directory, `/tmp/wiki` is a safe bet.
+Unpack the zip in a Wiki.js in that directory.
 If you are running Wiki.js in a Docker container these are the steps:
 
     > docker cp dokuwiki2wikijs.zip <container>:/tmp
-    > docker exec -it /bin/bash
+    > docker exec -it <container> /bin/bash
     # cd <file storage folder>
     # unzip /tmp/dokuwiki2wikijs.zip
 
