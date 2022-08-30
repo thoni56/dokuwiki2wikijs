@@ -95,13 +95,14 @@ You then get a zip-file with the converted pages and media in your current direc
 Setup a Local File System storage in your Wiki.js installation.
 Watch out for where Wiki.js can actually create the directory, `/tmp/wiki` is a safe bet.
 Unpack the zip in a Wiki.js in that directory.
-If you are running Wiki.js in a Docker container these are the steps:
+If you are running Wiki.js in a Docker container these are the steps to do that:
 
     > docker cp dokuwiki2wikijs.zip <container>:/tmp
     > docker exec -it <container> /bin/bash
     # cd <file storage folder>
     # unzip /tmp/dokuwiki2wikijs.zip
 
+- Ensure that you have your wanted locale set in Wiki.js.
 - In your Wiki.js `Storage/Local File System` settings press "Import Everything" and wait.
 - Re-render all pages (`Settings/Tools/Content/Re-render all pages`) to ensure links are updated.
 - Done.
