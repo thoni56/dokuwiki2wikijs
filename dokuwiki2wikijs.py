@@ -15,6 +15,8 @@ tmp_prefix = os.path.join('/tmp', 'dokuwiki2wikijs')
 def pandoc(infile):
     result = subprocess.run(
         ["pandoc", "-f", "dokuwiki", "-t", "markdown_mmd", "--wrap=none", infile], stdout=subprocess.PIPE)
+    if len(result.stdout) == 0:
+        raise ValueError('Pandoc returned no output for file `%s`. This usually means that Pandoc encountered a syntax error in the input file and crashed. Try running `pandoc -f dokuwiki -t markdown_mmd --wrap=none AFFECTED_FILE` on the affected file to see if there is a syntax error.' % infile)
     return result.stdout.decode('utf-8')
 
 
@@ -176,7 +178,7 @@ def ensure_path_exists(path):
 
 
 def is_markdown(filename):
-    with open(filename) as f:
+    with open(filename, 'r', encoding='utf-8') as f:
         first_line = f.readline()
     return first_line[0] == '#'
 
@@ -245,7 +247,7 @@ def collect_and_convert_all_pages():
                 filename_with_md = filename_with_md.replace(
                     'start.md', 'home.md')
 
-            with open(filename_with_md, "w") as file:
+            with open(filename_with_md, "w", encoding="utf-8") as file:
                 file.writelines('\n'.join(lines))
 
             print(len(lines), "lines")

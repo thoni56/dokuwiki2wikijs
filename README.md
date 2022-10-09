@@ -73,6 +73,7 @@ Although dokuwiki have no problem handling links that are broken over two lines,
 
 - Python3
 - Pandoc with multimarkdown (don't know if that is included by default)
+  - Pandoc 2.6+ is required for `dokuwiki` format support.
 
 # Usage
 
